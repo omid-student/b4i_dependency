@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>ihttp</dependsOn>
+  <dependsOn>istringutils</dependsOn>
+  <dependsOn>ihud</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <class b4a_type="StaticCode">
+    <name>b4i_httputils2service</name>
+    <shortname>HttpUtils2Service</shortname>
+    <objectwrapper>B4IStaticModule</objectwrapper>
+    <field>
+      <name DesignerName="TempFolder">_tempfolder</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <method>
+      <name DesignerName="CompleteJob">_completejob::::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>TaskId</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>success</name>
+        <type>BOOL</type>
+      </parameter>
+      <parameter>
+        <name>errorMessage</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>res</name>
+        <type>B4IHttpResponse*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="hc_ResponseError">_hc_responseerror::::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Response</name>
+        <type>B4IHttpResponse*</type>
+      </parameter>
+      <parameter>
+        <name>Reason</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>StatusCode</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>TaskId</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="hc_ResponseSuccess">_hc_responsesuccess::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Response</name>
+        <type>B4IHttpResponse*</type>
+      </parameter>
+      <parameter>
+        <name>TaskId</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Process_Globals">_process_globals</name>
+      <comment>version 2.62
+Service module
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Service_Create">_service_create</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="SubmitJob">_submitjob:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>job</name>
+        <type>b4i_httpjob*</type>
+      </parameter>
+    </method>
+  </class>
+  <class>
+    <name>_multipartfiledata</name>
+    <shortname>MultipartFileData</shortname>
+    <method>
+      <name>Initialize</name>
+      <comment>Initializes the fields to their default value.</comment>
+      <returntype>void</returntype>
+    </method>
+    <field>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </field>
+    <field>
+      <name>Dir</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name>FileName</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name>KeyName</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name>ContentType</name>
+      <returntype>NSString*</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_httpjob</name>
+    <shortname>HttpJob</shortname>
+    <comment>version 2.62
+Class module
+</comment>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Complete">_complete:</name>
+      <comment>Called by the service when job completes
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>res1</name>
+        <type>B4IHttpResponse*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Delete">_delete:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Delete2">_delete2::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Parameters</name>
+        <type>NSString*[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Download">_download:</name>
+      <comment>Submits a HTTP GET request.
+Consider using Download2 if the parameters should be escaped.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Download2">_download2::</name>
+      <comment>Submits a HTTP GET request.
+Encodes illegal parameter characters.
+&lt;code&gt;Example:
+job.Download2("http://www.example.com", _
+	Array As String("key1", "value1", "key2", "value2"))&lt;/code&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Parameters</name>
+        <type>NSString*[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetBitmap">_getbitmap</name>
+      <comment>Returns the response as a bitmap
+</comment>
+      <returntype>B4IBitmap*</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetBitmapResize">_getbitmapresize:::</name>
+      <comment>Returns the response as a bitmap loaded LoadBitmapResize.
+</comment>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>KeepAspectRatio</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetInputStream">_getinputstream</name>
+      <comment>Returns the response input stream.
+</comment>
+      <returntype>B4IInputStream*</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetRequest">_getrequest</name>
+      <comment>Called by the service to get the request
+</comment>
+      <returntype>B4IHttpRequest*</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetString">_getstring</name>
+      <comment>Returns the response as a string encoded with UTF8.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetString2">_getstring2:</name>
+      <comment>Returns the response as a string.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Encoding</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Head">_head:</name>
+      <comment>Sends a HEAD request.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <comment>Initializes the Job.
+Name - The job's name. Note that the name doesn't need to be unique.
+TargetModule - The activity or service that will handle the JobDone event.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Name</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>TargetModule</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PatchBytes">_patchbytes::</name>
+      <comment>Sends a PATCH request with the given data as the request payload.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Data</name>
+        <type>unsigned char[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PatchString">_patchstring::</name>
+      <comment>Sends a PATCH request with the given string as the request payload.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Text</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostBytes">_postbytes::</name>
+      <comment>Sends a POST request with the given string as the post data
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Data</name>
+        <type>unsigned char[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostFile">_postfile:::</name>
+      <comment>Sends a POST request with the given file as the post data.
+This method doesn't work with assets files.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Dir</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>FileName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostMultipart">_postmultipart:::</name>
+      <comment>Sends a multipart POST request.
+NameValues - A map with the keys and values. Pass Null if not needed.
+Files - List of MultipartFileData items. Pass Null if not needed.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>NameValues</name>
+        <type>B4IMap*</type>
+      </parameter>
+      <parameter>
+        <name>Files</name>
+        <type>B4IList*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostString">_poststring::</name>
+      <comment>Sends a POST request with the given data as the post data.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Text</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PutBytes">_putbytes::</name>
+      <comment>Sends a PUT request with the given string as the post data
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Data</name>
+        <type>unsigned char[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PutString">_putstring::</name>
+      <comment>Sends a PUT request with the given data as the post data.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Text</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Release">_release</name>
+      <comment>Should be called to free resources held by this job.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <field>
+      <name DesignerName="JobName">_jobname</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name DesignerName="Success">_success</name>
+      <returntype>BOOL</returntype>
+    </field>
+    <field>
+      <name DesignerName="Username">_username</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name DesignerName="Password">_password</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name DesignerName="ErrorMessage">_errormessage</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name DesignerName="Tag">_tag</name>
+      <returntype>NSObject*</returntype>
+    </field>
+  </class>
+  <version>2.62</version>
+</root>

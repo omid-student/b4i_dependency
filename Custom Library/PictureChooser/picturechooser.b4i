@@ -1,0 +1,80 @@
+﻿Build1=Default,com.apps.aaa
+File1=11.jpg
+File2=f4.bil
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=icore
+Library2=imedia
+Library3=icropview
+Module1=PictureChooser
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=1
+Version=5.3
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#MinVersion: 10
+	#LibraryAuthor: www.iranapp.org
+	#LibraryName: PictureChooser
+	#LibraryVersion: 1
+#PlistExtra:<key>NSPhotoLibraryUsageDescription</key><string>Select a photo.</string>
+#PlistExtra:<key>NSCameraUsageDescription</key><string>Taking a photo.</string>
+#PlistExtra:<key>NSMicrophoneUsageDescription</key><string>Record video.</string>
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+ 
+	Private ImageView1 As ImageView
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	'SetDebugAutoFlushLogs(True) 'Uncomment if program crashes before all logs are printed.
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f4")
+	NavControl.ShowPage(Page1)
+	NavControl.NavigationBarVisible	=	False
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+	
+End Sub
+
+Private Sub Application_Background
+	
+End Sub
+
+Sub Button4_Click
+ 
+	PictureChooser.Initialize(Page1,Me,"omid",NavControl)
+	PictureChooser.setCrop(True)
+	PictureChooser.setResizedOutput(100,100)
+	PictureChooser.setScaleCrop(False)
+	PictureChooser.setIsCircular(True)
+	PictureChooser.ChooseFromGallery
+
+End Sub
+
+Sub omid_result(b As Bitmap)
+	ImageView1.Bitmap = b
+End Sub
+
+Sub Button1_Click
+	PictureChooser.Initialize(Page1,Me,"omid",NavControl)
+	PictureChooser.setCrop(False)
+	PictureChooser.Crop(LoadBitmap(File.DirAssets,"11.jpg"))
+End Sub

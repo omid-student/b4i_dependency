@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ILocationManagerPlus</name>
+        <shortname>LocationManagerPlus</shortname>
+        <comment>iLocationPlus.h
+  iLocationPlus
+
+  Created by Marcel Timmermans on 22-11-14.
+  Copyright (c) 2014 Marcel Timmermans. All rights reserved.</comment>
+        <event>LocationChanged (Location1 As Location)</event>
+        <event>AuthorizationStatusChanged (Status As int)</event>
+        <event>LocationError</event>
+        <event>HeadingChanged (MagneticHeading As Double, TrueHeading As Double)</event>
+        <event>AllowCalibration As Boolean</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object. The AuthorizationStatusChanged will be raised with the current status.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Start">Start:</name>
+            <comment>Starts listening for the LocationChanged event.
+If the authorization status is not yet determined then the user will be asked to approve it.
+If location services are disabled then the user will be asked to enable location services.
+The LocationChanged event will be raised with the last known location after this call and then when the location changes.
+MinimumDistance - The minimum distance measured in meters, that will cause the LocationChanged event to fire. Pass 0 to receive all updates.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MinimumDistance</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StartUpdatingLocation">StartUpdatingLocation</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="startMonitoringGreenMode">startMonitoringGreenMode</name>
+            <comment>Start licening to the LocationChange Event with an Accuracy of 100 meters.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="startMonitoringSignificantLocationChanges">startMonitoringSignificantLocationChanges</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="stopMonitoringSignificantLocationChanges">stopMonitoringSignificantLocationChanges</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StartHeading">StartHeading</name>
+            <comment>Starts listening for the HeadingChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops listening for the LocationChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StopHeading">StopHeading</name>
+            <comment>Stops listening for the HeadingChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>AUTHORIZATION_NOT_DETERMINED</name>
+            <comment>Authorization status was not yet set.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_RESTRICTED</name>
+            <comment>Application is not authorized and user is restricted from changing its state (parental control for example).</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_DENIED</name>
+            <comment>Location services are disabled or the user denied access for this application.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>LocationServicesEnabled</name>
+            <comment>Returns true if location services are enabled.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>IsAuthorized</name>
+            <comment>Returns true if your app is authorized to access the location services.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>AuthorizationStatus</name>
+            <comment>Gets the current authorization status. The value will be one of the four AUTHORIZATION constants.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>increasedAccuacy</name>
+            <comment>set in green mode when increasedAccuacy is active</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>validTimeUntilLastLocation</name>
+            <comment>this is the time in the greenmode when the last location is valid. A point older than the validTimeUntilLastLocation will not cause the LocationChanged event fired. This is default 300 ms.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4ILocationWrapper</name>
+        <shortname>Location</shortname>
+        <objectwrapper>CLLocation*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2::</name>
+            <comment>Creates a new Location object that can be used for distance calculations.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Latitude</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>Longitude</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DistanceTo">DistanceTo:</name>
+            <comment>Calculates the distance in meters between the two locations.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>TargetLocation</name>
+                <type>B4ILocationWrapper*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Altitude</name>
+            <comment>Altitude measured in meters. Only valid if VerticalAccuracy is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Accuracy</name>
+            <comment>Horizontal accuracy measured in meters. Negative value means that Latitude and Longitude are invalid.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>VerticalAccuracy</name>
+            <comment>Vertical accuracy measured in meters. Negative value means that the altitude is invalid.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Latitude</name>
+            <comment>Latitude coordinate. Valid if Accuracy property is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Longitude</name>
+            <comment>Longitude coordinate. Valid if Accuracy property is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Speed</name>
+            <comment>Speed measured in meters per second. Only valid if value is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Bearing</name>
+            <comment>Bearing angle (degrees). Only valid if value is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Time</name>
+            <comment>Location time stamp.</comment>
+            <returntype>long long</returntype>
+        </property>
+    </class>
+    <version>0.8</version>
+    <dependsOn>CoreLocation.framework</dependsOn>
+</root>

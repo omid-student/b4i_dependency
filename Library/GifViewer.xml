@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>hhanimatedgifview</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <dependsOn>quartzcore.framework</dependsOn>
+  <dependsOn>imageio.framework</dependsOn>
+  <dependsOn>coregraphics.framework</dependsOn>
+  <dependsOn>mobilecoreservices.framework</dependsOn>
+  <class>
+    <name>b4i_gifviewer</name>
+    <shortname>GifViewer</shortname>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Base</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Lbl</name>
+        <type>B4ILabelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Props</name>
+        <type>B4IMap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Callback</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Play">_play:</name>
+      <comment>Filename can be url,example : http://iranapp.org/a.gif
+For set url for show gif,please add "http://" for first url
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Filename</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1</version>
+  <author>www.iranapp.org</author>
+</root>

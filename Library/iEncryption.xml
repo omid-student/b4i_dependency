@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IMessageDigest</name>
+        <shortname>MessageDigest</shortname>
+        <method>
+            <name DesignerName="GetMessageDigest">GetMessageDigest::</name>
+            <comment>Calculates the message digest (hash or checksum) of the given data.
+Algorithm - One of the following values: MD5, SHA-1, SHA-224, SHA-256, SHA-384 or SHA-512.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Algorithm</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>B4iSecureRandom</name>
+        <shortname>SecureRandom</shortname>
+        <method>
+            <name DesignerName="GetRandomBytes">GetRandomBytes:</name>
+            <comment>Fills the array with cryptographically secure random bytes.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Buffer</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>B4ICipher</name>
+        <shortname>Cipher</shortname>
+        <method>
+            <name DesignerName="GenerateKey">GenerateKey::::</name>
+            <comment>Generates a key from the password.
+Password - The key is derived from this password.
+Algorithm - One of the following values: SHA-1, SHA-22, SHA-256, SHA-384 or SHA-512.
+Salt - The key salt.
+Rounds - Number of rounds that the algorithm will be applied.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Password</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Algorithm</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Salt</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Rounds</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Encrypt">Encrypt::</name>
+            <comment>Encrypts the given data with AES algorithm.
+A random salt and initialization vector are created and stored together with the encrypted data (public data).
+Encrypt and Decrypt methods are compatible with B4J/B4A B4XCipher methods.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Decrypt">Decrypt::</name>
+            <comment>Decrypts the data that was previously created with the Encrypt method.
+Encrypt and Decrypt methods are compatible with B4J/B4A B4XCipher methods.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Decrypt2">Decrypt2:::::</name>
+            <comment>Decrypts the given data and returns an array of bytes with the decrypted data.
+Data - Data to decrypt.
+Key - Cipher key.
+Algorithm - One of the following values: AES, DES, 3DES or BLOWFISH.
+IV - Initialization vector for block algorithms. Pass Null if not required.
+Options - Zero or more OPTION constants combined with Bit.Or.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Key</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Algorithm</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>IV</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Options</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Encrypt2">Encrypt2:::::</name>
+            <comment>Encrypts the given data and returns an array of bytes with the encrypted data.
+Data - Data to encrypt.
+Key - Cipher key.
+Algorithm - One of the following values: AES, DES, 3DES or BLOWFISH.
+IV - Initialization vector for block algorithms. Pass Null if not required.
+Options - Zero or more OPTION constants combined with Bit.Or.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Key</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Algorithm</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>IV</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Options</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>OPTION_PKCS7Padding</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>OPTION_ECBMode</name>
+            <comment>Electronic cook book mode. Default mode is CBC.</comment>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <version>1.02</version>
+</root>

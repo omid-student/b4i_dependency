@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ICamera</name>
+        <shortname>Camera</shortname>
+        <comment>iMedia.h
+
+  Created by b4j on 9/17/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <event>Complete (Success As Boolean, Image As Bitmap, VideoPath As String)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the object and sets the image picker parent.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Page</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TakeVideo">TakeVideo</name>
+            <comment>Shows the camera dialog. The camera will be set in video mode.
+Make sure to handle the Complete event</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="TakePicture">TakePicture</name>
+            <comment>Shows the camera dialog. The camera will be set in image mode.
+Make sure to handle the Complete event</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SelectFromPhotoLibrary">SelectFromPhotoLibrary::</name>
+            <comment>Shows the photo library dialog. This dialog allows the user to select an image or movie from the device photo library.
+The Complete event will be raised.
+FromView - Relevant for iPad only. The dialog arrow will point to this view or BarButton.
+MediaType - One of the TYPE constants.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>FromView</name>
+                <type>NSObject*</type>
+            </parameter>
+            <parameter>
+                <name>MediaType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SelectFromSavedPhotos">SelectFromSavedPhotos::</name>
+            <comment>Shows the saved photos dialog. This dialog allows the user to select an image or movie from the device camera roll album.
+The Complete event will be raised.
+FromView - Relevant for iPad only. The dialog arrow will point to this view or BarButton.
+MediaType - One of the TYPE constants.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>FromView</name>
+                <type>NSObject*</type>
+            </parameter>
+            <parameter>
+                <name>MediaType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>IsSupported</name>
+            <comment>Checks whether camera is supported.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>IsVideoSupported</name>
+            <comment>Checks whether video camera is supported.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>FrontCamera</name>
+            <comment>Gets or sets whether the front camera will be used by default.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TYPE_IMAGE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TYPE_MOVIE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TYPE_ALL</name>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IMoviePlayerWrapper</name>
+        <shortname>VideoView</shortname>
+        <event>Complete</event>
+        <event>Ready</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadVideo">LoadVideo::</name>
+            <comment>Loads the video from the given path.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadVideoUrl">LoadVideoUrl:</name>
+            <comment>Streams the video from the given Url. The Ready event will fire when the buffer is ready.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Url</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Play">Play</name>
+            <comment>Starts or resumes playback.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Pause">Pause</name>
+            <comment>Pauses the playback.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops playback and sets the position to 0.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>View</name>
+            <comment>Returns the view itself. You should use this property to add the view.</comment>
+            <returntype>B4IViewWrapper*</returntype>
+        </property>
+        <property>
+            <name>Duration</name>
+            <comment>Returns the video duration in milliseconds. Returns 0 if the duration is not yet known.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>Position</name>
+            <comment>Gets or sets the current position, measured in milliseconds.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ShowControls</name>
+            <comment>Set to true to show the video control panel. The default value is true.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4ILLCamera</name>
+        <shortname>LLCamera</shortname>
+        <comment>Provides low level access to the camera.
+This object allows you to embed the camera features inside your layout and provides more control over the camera settings.
+You can also work with the preview frames directly.</comment>
+        <event>PictureTaken (Data() As Byte)</event>
+        <event>Preview (Image As Bitmap)</event>
+        <method>
+            <name DesignerName="BeginConfiguration">BeginConfiguration</name>
+            <comment>Starts a configuration block. Call CommitConfiguration to commit the changes.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="CommitConfiguration">CommitConfiguration</name>
+            <comment>Commits the changes and ends the configuration block.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::::</name>
+            <comment>Initializes the camera.
+Panel - The preview panel.
+EventName - Sets the subs that will handle the events.
+FrontCamera - If true then the front camera will be used (if a front camera is available).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Panel</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FrontCamera</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="StartPreview">StartPreview</name>
+            <comment>Starts the data flow from the camera.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StopPreview">StopPreview</name>
+            <comment>Stops the data flow.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Resize">Resize</name>
+            <comment>This method should be called whenever the preview panel is resized or the orientation changes.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="TakePicture">TakePicture</name>
+            <comment>Takes a picture. The PictureTaken event will be raised. Note that this method does not stop the data flow (like in B4A).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ReleaseFrame">ReleaseFrame:</name>
+            <comment>This method should be called at the end of the Preview event with the bitmap passed as a parameter (only required if you are handling this event).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bmp</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>FLASH_OFF</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>FLASH_ON</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>FLASH_AUTO</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TORCH_OFF</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TORCH_ON</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TORCH_AUTO</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ZOOM_MAX</name>
+            <comment>Gets the maximum zoom factor.</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>PRESET_PHOTO</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_HIGH</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_MEDIUM</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_LOW</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_352x288</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_640x480</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_1280x720</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PRESET_1920x1080</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PreserveRatio</name>
+            <comment>Gets or sets whether the preview image fills the panel (false) or the picture ratio is preserved.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>FlashMode</name>
+            <comment>Gets or sets the flash mode. The value should be one of the FLASH constants.
+You can only set this property inside a configuration block.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TorchMode</name>
+            <comment>Gets or sets the torch mode. The value should be one of the TORCH constants.
+You can only set this property inside a configuration block.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Zoom</name>
+            <comment>Gets or sets the zoom factor. The value should be between 1 to ZOOM_MAX.
+You can only set this property inside a configuration block.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>AuthorizationDenied</name>
+            <comment>Returns true if the user has denied the app from using the camera.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>Preset</name>
+            <comment>Gets or sets the preset mode. The value should be one of the PRESET constants.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IAudioRecorder</name>
+        <shortname>AudioRecorder</shortname>
+        <objectwrapper>AVAudioRecorder*</objectwrapper>
+        <comment>AudioRecorder allows you to record audio from the device microphone (or connected headset).
+The audio is saved to a file.</comment>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::::::</name>
+            <comment>Initializes the recorder and sets the file that will hold the record data.
+Dir / FileName - The audio will be written to this file. Existing file will be deleted.
+SampleRate - Sample rate in Hz. Common values: 44100, 22050 and 11025.
+Mono - True for one channel false for two channels.
+Encoding - 8 bit or 16 bit encoding.
+MPEG4 - Whether to use MPEG4 encoding or linear PCM.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>SampleRate</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Mono</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>Encoding</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>MPEG4</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2:::</name>
+            <comment>Similar to Initialize. Allows you to set the recorder settings. See Apple documentation for more information about the possible settings.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Settings</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Record">Record</name>
+            <comment>Starts recording.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops recording.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.21</version>
+    <dependsOn>AVFoundation.framework</dependsOn>
+</root>

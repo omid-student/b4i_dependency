@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iStringUtils</name>
+        <shortname>StringUtils</shortname>
+        <comment>iStringUtils.h
+  iStringUtils
+
+  Created by b4j on 9/2/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <method>
+            <name DesignerName="EncodeUrl">EncodeUrl::</name>
+            <comment>Encodes a string into application/x-www-form-urlencoded format.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>TextToEncode</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>CharSet</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DecodeUrl">DecodeUrl::</name>
+            <comment>Decodes an application/x-www-form-urlencoded string.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>TextToDecode</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>CharSet</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="EncodeBase64">EncodeBase64:</name>
+            <comment>Encodes the given bytes array into Base64 notation.
+Example:&lt;code&gt;
+    Dim su As StringUtils
+    Dim encoded As String = su.EncodeBase64(data) 'data is a bytes array
+    &lt;/code&gt;</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DecodeBase64">DecodeBase64:</name>
+            <comment>Decodes data from Base64 string.</comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SaveCSV">SaveCSV::::</name>
+            <comment>Saves the table as a CSV file.
+Dir - Output file folder.
+FileName - Output file name.
+SeparatorChar - The fields separator character.
+Table - A List with arrays of strings as items. Each array represents a row. All arrays should be of the same length.
+Example:&lt;code&gt;
+Dim su As StringUtils
+su.SaveCSV(File.DirDocuments, "1.csv", ",", table)&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>SeparatorChar</name>
+                <type>unichar</type>
+            </parameter>
+            <parameter>
+                <name>Table</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SaveCSV2">SaveCSV2:::::</name>
+            <comment>Similar to SaveCSV. Will save the headers list as the first row. This should be a list of strings.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>SeparatorChar</name>
+                <type>unichar</type>
+            </parameter>
+            <parameter>
+                <name>Table</name>
+                <type>B4IList*</type>
+            </parameter>
+            <parameter>
+                <name>Headers</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadCSV">LoadCSV:::</name>
+            <comment>Loads a CSV file and stores it in a list of string arrays.
+Dir - CSV file folder.
+FileName - CSV file name.
+SeparatorChar - The fields separator character.
+Example:&lt;code&gt;
+Dim su As StringUtils
+Dim Table As List
+Table = su.LoadCSV(File.DirDocuments, "1.csv", ",")&lt;/code&gt;</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>SeparatorChar</name>
+                <type>unichar</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadCSV2">LoadCSV2::::</name>
+            <comment>Similar to LoadCSV. Will load the first row to the headers list.</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>SeparatorChar</name>
+                <type>unichar</type>
+            </parameter>
+            <parameter>
+                <name>Headers</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1</version>
+</root>

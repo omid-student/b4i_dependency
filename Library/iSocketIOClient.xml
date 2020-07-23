@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>Starscream.framework.swift.3</dependsOn>
+  <dependsOn>SocketIO.framework.swift.3</dependsOn>
+  <class>
+    <name>isocketioclient</name>
+    <shortname>iSocketIOClient</shortname>
+    <event>OnConnect</event>
+    <event>OnConnecting</event>
+    <event>OnDisconnect(reason As String)</event>
+    <event>OnError(reason As String)</event>
+    <event>OnReconnecting(reason As String)</event>
+    <event>OnReconnectAttempt(attemptNumber As Int)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="AddEvent">_addevent::</name>
+      <comment>Add event listener
+&lt;b&gt;Example:&lt;/b&gt; &lt;code&gt;socket.addEvent("notification","notify")&lt;/code&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>server_event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>app_event</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Connect">_connect::</name>
+      <comment>Connect SocketIO to the server
+&lt;b&gt;Example:&lt;/b&gt; &lt;code&gt;socket.connect("http://172.0.0.1:999/",false)&lt;/code&gt;
+
+Other parameters will have default value as followings:
+&lt;b&gt;reconnection&lt;/b&gt; = True
+&lt;b&gt;reconnectionAttempts&lt;/b&gt; = Infinite
+&lt;b&gt;reconnectionDelay&lt;/b&gt; = 1
+&lt;b&gt;reconnectionDelayMax&lt;/b&gt; = 10
+&lt;b&gt;timeout&lt;/b&gt; = 30
+
+&lt;b&gt;OnConnecting&lt;/b&gt; event will be raised whenever it tries to connect to the server
+&lt;b&gt;OnConnect&lt;/b&gt; will be raised on successful connection
+&lt;b&gt;OnDisconnect&lt;/b&gt; will be raised on disconnection, you need to reconnect manually
+&lt;b&gt;OnReconnectAttempt&lt;/b&gt; will be raised if it tries to reconnect
+&lt;b&gt;OnReconnecting&lt;/b&gt; will be raised if it tries to reconnect
+&lt;b&gt;OnError&lt;/b&gt; will be raised if any error occurs
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>host</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>secure</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ConnectWithOptions">_connectwithoptions:::::::</name>
+      <comment>Connect SocketIO to the server with custom options
+&lt;b&gt;Example:&lt;/b&gt; &lt;code&gt;socket.connect("http://172.0.0.1:999/",false, true, 5,1,10,30) &lt;/code&gt;
+
+&lt;b&gt;OnConnecting&lt;/b&gt; event will be raised whenever it tries to connect to the server
+&lt;b&gt;OnConnect&lt;/b&gt; will be raised on successful connection
+&lt;b&gt;OnDisconnect&lt;/b&gt; will be raised on disconnection, you need to reconnect manually
+&lt;b&gt;OnReconnectAttempt&lt;/b&gt; will be raised if it tries to reconnect
+&lt;b&gt;OnReconnecting&lt;/b&gt; will be raised if it tries to reconnect
+&lt;b&gt;OnError&lt;/b&gt; will be raised if any error occurs
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>host</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>secure</name>
+        <type>BOOL</type>
+      </parameter>
+      <parameter>
+        <name>reconnection</name>
+        <type>BOOL</type>
+      </parameter>
+      <parameter>
+        <name>reconnectionAttempts</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>reconnectionDelay</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>reconnectionDelayMax</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>timeout</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Disconnect">_disconnect</name>
+      <comment>Disconnect SocketIO
+On successful disconnection it will raise 'OnDisconnect' event
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Emit">_emit::</name>
+      <comment>Sends a message to the server, requesting an ack.
+&lt;b&gt;NOTE:&lt;/b&gt; It Is up to the server send an ack back, just calling this method does Not mean the server will ack.
+Check that your server’s api will ack the event being sent.
+&lt;b&gt;Sending Single Data Example:&lt;/b&gt; &lt;code&gt;socket.emit("eventname","something")&lt;/code&gt;
+&lt;b&gt;Getting Acknowledgment from server&lt;/b&gt;&lt;code&gt;
+Sub eventname_Ack(data As Object)
+	Log(data)
+End Sub&lt;/code&gt;
+
+&lt;b&gt;Sending Multiple Data Example:&lt;/b&gt; &lt;code&gt;
+Dim newjson As JSONGenerator
+Dim m As Map
+m.Initialize
+m.Put("time",DateTime.Now)
+m.Put("msg","something")
+newjson.Initialize(m)
+socket.emit("user_msg",newjson.ToString)&lt;/code&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>str</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <comment>Initializes the Socket.io object
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>callback</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoveEvent">_removeevent::</name>
+      <comment>Remove event listener
+&lt;b&gt;Example:&lt;/b&gt; &lt;code&gt;socket.removeEvent("notification","notify")&lt;/code&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>server_event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>app_event</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SendAck">_sendack::</name>
+      <comment>Call to acknowledge receiving an event.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ack</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>data</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setConnectParams" HideFromIDE="true">_setconnectparams:</name>
+      <comment>GET parameters that will be included in the connect url
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>params</name>
+        <type>B4IMap*</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="ConnectParams">_connectparams</name>
+      <comment>GET parameters that will be included in the connect url
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>B4IMap*</type>
+      </parameter>
+    </property>
+  </class>
+  <version>1.01</version>
+  <author>Brandsum</author>
+</root>

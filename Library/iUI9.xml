@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ISFSafariViewController</name>
+        <shortname>SafariController</shortname>
+        <event>PageFinished (Success As Boolean)</event>
+        <event>Closed</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the controller and sets the initial url.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Show">Show:</name>
+            <comment>Shows the safari controller. The PageFinished event will be raised after this call.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Parent</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>TintColor</name>
+            <comment>Changes the controller tint color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+</root>

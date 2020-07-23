@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iTopNotifications</name>
+        <shortname>TopNotificationsManager</shortname>
+        <objectwrapper>NSObject*</objectwrapper>
+        <comment>Wrapper for LNRSimpleNotifications.
+Shows a sliding notification. The user can tap on the notification to dismiss it.</comment>
+        <event>Click</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowNotification">ShowNotification:::</name>
+            <comment>Shows a notification.
+Title - Notification title.
+Body - Notification body.
+DurationMs - Notification duration in milliseconds. Pass -1000 to create a notification that is only dismissed with a click.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Title</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Body</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>DurationMs</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetPosition">SetPosition:</name>
+            <comment>Sets the notifications position. True = Top, False = Bottom.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Top</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Icon</name>
+            <comment>Gets or sets the notifications icon.</comment>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BodyFont</name>
+            <comment>Gets or sets the body font.</comment>
+            <returntype>B4IFontWrapper*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IFontWrapper*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TitleFont</name>
+            <comment>Gets or sets the title font.</comment>
+            <returntype>B4IFontWrapper*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IFontWrapper*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BackgroundColor</name>
+            <comment>Gets or sets the background color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BodyTextColor</name>
+            <comment>Gets or sets the body text color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TitleTextColor</name>
+            <comment>Gets or sets the title text color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>LNRSimpleNotifications.framework.swift.3</dependsOn>
+</root>

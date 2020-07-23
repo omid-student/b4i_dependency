@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IJSONParser</name>
+        <shortname>JSONParser</shortname>
+        <comment>Parses JSON formatted strings. Objects are converted to Maps and arrays are converted to Lists.
+Typical code:&lt;code&gt;
+Dim JSON As JSONParser
+JSON.Initialize(File.ReadString(File.DirAssets, "example.json"))
+Dim m1 As Map = JSON.NextObject 'the whole file is parsed now&lt;/code&gt;</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initializes the object and sets the text that will be parsed.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="NextObject">NextObject</name>
+            <comment>Parses the text assuming that the top level value is an object.</comment>
+            <returntype>B4IMap*</returntype>
+        </method>
+        <method>
+            <name DesignerName="NextArray">NextArray</name>
+            <comment>Parses the text assuming that the top level value is an array.</comment>
+            <returntype>B4IList*</returntype>
+        </method>
+    </class>
+    <class>
+        <name>B4IJSONGenerator</name>
+        <shortname>JSONGenerator</shortname>
+        <comment>Generates JSON strings from a Map or List containing other objects.
+The generator supports maps, lists, arrays, strings and numbers.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initializes the generator with the given map.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Map</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2:</name>
+            <comment>Initializes the generator with the given list.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>List</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ToString">ToString</name>
+            <comment>Generates a compact JSON string.</comment>
+            <returntype>NSString*</returntype>
+        </method>
+        <method>
+            <name DesignerName="ToPrettyString">ToPrettyString:</name>
+            <comment>Generates a JSON string with white spaces to improve the readability.
+Note that the Indent parameter is ignored (it is kept for signature compatibility).</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>Indent</name>
+                <type>int</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1</version>
+</root>

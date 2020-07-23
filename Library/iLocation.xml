@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ILocationManager</name>
+        <shortname>LocationManager</shortname>
+        <event>LocationChanged (Location1 As Location)</event>
+        <event>AuthorizationStatusChanged (Status As int)</event>
+        <event>LocationError</event>
+        <event>HeadingChanged (MagneticHeading As Double, TrueHeading As Double)</event>
+        <event>AllowCalibration As Boolean</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object. The AuthorizationStatusChanged will be raised with the current status.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Start">Start:</name>
+            <comment>Starts listening for the LocationChanged event.
+If the authorization status is not yet determined then the user will be asked to approve it.
+If location services are disabled then the user will be asked to enable location services.
+The LocationChanged event will be raised with the last known location after this call and then when the location changes.
+MinimumDistance - The minimum distance measured in meters, that will cause the LocationChanged event to fire. Pass 0 to receive all updates.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MinimumDistance</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StartHeading">StartHeading</name>
+            <comment>Starts listening for the HeadingChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops listening for the LocationChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StopHeading">StopHeading</name>
+            <comment>Stops listening for the HeadingChanged event.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>AUTHORIZATION_NOT_DETERMINED</name>
+            <comment>Authorization status was not yet set.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_RESTRICTED</name>
+            <comment>Application is not authorized and user is restricted from changing its state (parental control for example).</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_DENIED</name>
+            <comment>Location services are disabled or the user denied access for this application.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>LocationServicesEnabled</name>
+            <comment>Returns true if location services are enabled.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>IsAuthorized</name>
+            <comment>Returns true if your app is authorized to access the location services.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>AuthorizationStatus</name>
+            <comment>Gets the current authorization status. It will be one of the three AUTHORIZATION constants or IsAuthorized will be true.</comment>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4ILocationWrapper</name>
+        <shortname>Location</shortname>
+        <objectwrapper>CLLocation*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2::</name>
+            <comment>Creates a new Location object that can be used for distance calculations.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Latitude</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>Longitude</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DistanceTo">DistanceTo:</name>
+            <comment>Calculates the distance in meters between the two locations.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>TargetLocation</name>
+                <type>B4ILocationWrapper*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Altitude</name>
+            <comment>Altitude measured in meters. Only valid if VerticalAccuracy is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Accuracy</name>
+            <comment>Horizontal accuracy measured in meters. Negative value means that Latitude and Longitude are invalid.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>VerticalAccuracy</name>
+            <comment>Vertical accuracy measured in meters. Negative value means that the altitude is invalid.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Latitude</name>
+            <comment>Latitude coordinate. Valid if Accuracy property is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Longitude</name>
+            <comment>Longitude coordinate. Valid if Accuracy property is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Speed</name>
+            <comment>Speed measured in meters per second. Only valid if value is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Bearing</name>
+            <comment>Bearing angle (degrees). Only valid if value is non-negative.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Time</name>
+            <comment>Location time stamp.</comment>
+            <returntype>long long</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IGeocoder</name>
+        <shortname>Geocoder</shortname>
+        <objectwrapper>CLGeocoder*</objectwrapper>
+        <comment>Provides services for converting between coordinates to addresses and vice versa.
+Requests are sent in the background over the internet connection. The Complete event is raised when data
+is available or if the request has failed.
+Note that you should not send more than a single request at a time.</comment>
+        <event>Complete (Success As Boolean, Placemarks As List)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object and sets the sub that will handle the Complete event.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ResolveCoordinate">ResolveCoordinate::</name>
+            <comment>Resolves the given coordinate (specified as latitude / longitude). The Complete event will be raised.
+If the operation succeeded then there will be exactly one Placemark object in the list.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Lat</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>Lng</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ResolveAddress">ResolveAddress:</name>
+            <comment>Resolves the given string address. The complete event will be raised.
+If the operation succeeded then there will be one or more Placemark objects in the list.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Address</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IPlaceMark</name>
+        <shortname>Placemark</shortname>
+        <objectwrapper>CLPlacemark*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Lat</name>
+            <comment>Gets the placemark latitude coordinate.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Lng</name>
+            <comment>Gets the placemark longitude coordinate.</comment>
+            <returntype>double</returntype>
+        </property>
+        <property>
+            <name>Name</name>
+            <comment>Gets the placemark name.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Country</name>
+            <comment>Gets the placemark country.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>PostalCode</name>
+            <comment>Gets the placemark postal code.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>AdministrativeArea</name>
+            <comment>Gets the placemark state or province.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Locality</name>
+            <comment>Gets the placemark city.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>SubLocality</name>
+            <comment>Gets the placemark additional city-level information.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Thoroughfare</name>
+            <comment>Gets the placemark street address.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>SubThoroughfare</name>
+            <comment>Gets the placemark additional street-level information.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.2</version>
+    <dependsOn>CoreLocation.framework</dependsOn>
+</root>

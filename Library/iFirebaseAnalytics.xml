@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iFirebaseAnalytics</name>
+        <shortname>FirebaseAnalytics</shortname>
+        <method>
+            <name DesignerName="Initialize">Initialize</name>
+            <comment>Initializes the object. You should initialize it before using any other Firebase service.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendEvent">SendEvent::</name>
+            <comment>Sends an event to the analytics service.
+EventName - Event name.
+Parameters - Map of parameters. Pass Null if not needed.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Parameters</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1</version>
+    <dependsOn>FirebaseAnalytics.framework.3</dependsOn>
+    <dependsOn>FirebaseInstanceID.framework.3</dependsOn>
+    <dependsOn>GoogleInterchangeUtilities.framework.3</dependsOn>
+    <dependsOn>GoogleSymbolUtilities.framework.3</dependsOn>
+    <dependsOn>GoogleUtilities.framework.3</dependsOn>
+</root>

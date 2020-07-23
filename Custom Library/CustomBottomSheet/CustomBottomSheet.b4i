@@ -1,0 +1,64 @@
+﻿Build1=Default,com.app.aaaa
+File1=f1.bil
+File2=f2.bil
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=icore
+Module1=CustomBottomSheet
+NumberOfFiles=2
+NumberOfLibraries=1
+NumberOfModules=1
+Version=5.3
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#ATSEnabled: True
+	#MinVersion: 8
+	#ProvisionFile: comapp.mobileprovision
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+	Private BottomSheet As CustomBottomSheet
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+
+
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f1")
+	NavControl.ShowPage(Page1)
+ 
+End Sub
+
+Sub Page1_Click
+	BottomSheet.OpenBottomSheet
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+	Private LayoutPanel As Panel
+	LayoutPanel.Initialize("")
+	LayoutPanel.LoadLayout("f2")
+	BottomSheet.Initialize(Page1.RootPanel, Me, "Done",LayoutPanel,40)
+End Sub
+
+Sub Panel1_Touch(Action As Int, X As Float, Y As Float)
+	BottomSheet.HandleTouchEvent(Action,X,Y)
+End Sub
+
+Private Sub Application_Background
+	
+End Sub

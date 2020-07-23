@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ISaxParser</name>
+        <shortname>SaxParser</shortname>
+        <comment>iXmlSax.h
+  iXmlSax
+
+  Created by b4j on 9/11/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <event>StartElement (Uri As String, Name As String, Attributes As Map)</event>
+        <event>EndElement (Uri As String, Name As String, Text As StringBuilder)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Parse" RaisesSynchronousEvents="true">Parse:::</name>
+            <comment>Parses the given input stream. The StartElement and EndElement events will be raised.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>InputStream</name>
+                <type>B4IInputStream*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Parse2" RaisesSynchronousEvents="true">Parse2:::</name>
+            <comment>Parses the given text. The StartElement and EndElement events will be raised.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Parents</name>
+            <comment>A list that holds the names of the parents elements.
+During parsing you can use this list to recognize the current element.</comment>
+            <returntype>B4IList*</returntype>
+        </property>
+    </class>
+    <version>1.1</version>
+</root>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iBarcode</name>
+        <shortname>BarcodeScanner</shortname>
+        <comment>The BarcodeScanner uses the device camera to scan for barcode codes.
+The Ready event will be raised after the scanner is initialized.
+Once the scanner is ready you can call Start to start scanning.
+The Detected event will be raised whenever a code is detected.</comment>
+        <event>Ready (Success As Boolean)</event>
+        <event>Detected (Codes As List)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the scanner. The Ready event will be raised when the scanner is ready.
+EventName - Sets the subs that handle the events.
+View - The preview panel.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2::::</name>
+            <comment>Similar to Initialize. Will only detect codes that match one of the types from the Types list (or array).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Types</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Resize">Resize</name>
+            <comment>Resizes the preview frame to match the preview view.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Start">Start</name>
+            <comment>Starts scanning.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops scanning.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>TYPE_QR</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_UPCE</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_39</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_39Mod43</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_EAN13</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_EAN8</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_93</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_128</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_PDF417</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TORCH_OFF</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TORCH_ON</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TORCH_AUTO</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TYPE_Interleaved2of5</name>
+            <comment>iOS 8+ only</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_ITF14</name>
+            <comment>iOS 8+ only</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TYPE_DataMatrix</name>
+            <comment>iOS 8+ only</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>TorchMode</name>
+            <comment>Gets or sets the camera torch mode. One of the TORCH constants.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>AllowTapToFocus</name>
+            <comment>Gets or sets whether the user can tap on the screen to focus the camera. Default value is true.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IBarcodeCode</name>
+        <shortname>BarcodeCode</shortname>
+        <objectwrapper>AVMetadataMachineReadableCodeObject*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Value</name>
+            <comment>Returns the code string value.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.2</version>
+    <dependsOn>AVFoundation.framework</dependsOn>
+</root>

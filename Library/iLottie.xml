@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <b4x_version>6.30</b4x_version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <dependsOn>Lottie.framework.swift.3</dependsOn>
+  <class>
+    <name>b4i_ilottie</name>
+    <shortname>iLottie</shortname>
+    <event>AnimationFinished(Completed as boolean)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="AnimationFromFile">_animationfromfile::</name>
+      <comment>Loads an animation from a specific file path. WARNING Do not use a web URL for file path.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>dir</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>filename</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AnimationFromJSONString">_animationfromjsonstring:</name>
+      <comment>Creates an animation from the deserialized JSON String
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>JSONString</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AnimationFromURL">_animationfromurl:</name>
+      <comment>Creates an animation from the deserialized JSON String
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>url</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getAnimationDuration" HideFromIDE="true">_getanimationduration</name>
+      <comment>Read only of the duration in seconds of the animation at speed of 1
+</comment>
+      <returntype>float</returntype>
+    </method>
+    <method>
+      <name DesignerName="getIsAnimationPlaying" HideFromIDE="true">_getisanimationplaying</name>
+      <comment>Flag is YES when the animation is playing
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <comment>Initialize the library
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>callback</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Pause">_pause</name>
+      <comment>Stops the animation at the current frame. The completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Play">_play</name>
+      <comment>Plays the animation from its current position To the end of the animation.
+The animation will start from its current position.
+If loopAnimation Is YES the animation will Loop from beginning To end indefinitely.
+If loopAnimation Is NO the animation will Stop And the completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="PlayFromToFrame">_playfromtoframe::</name>
+      <comment>Plays the animation from specific frame To a specific frame.
+The animation will start from its current position.
+If loopAnimation Is YES the animation will Loop start frame To end frame indefinitely.
+If loopAnimation Is NO the animation will Stop And the completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>FromFrame</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>ToFrame</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PlayFromToProgress">_playfromtoprogress::</name>
+      <comment>Plays the animation from specific progress To a specific progress (0 to 1)
+The animation will start from its current position.
+If loopAnimation Is YES the animation will Loop from the startProgress To the endProgress indefinitely
+If loopAnimation Is NO the animation will Stop And the completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>FromProgress</name>
+        <type>float</type>
+      </parameter>
+      <parameter>
+        <name>ToProgress</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PlayToFrame">_playtoframe:</name>
+      <comment>Plays the animation from its current position To a specific frame.
+The animation will start from its current position.
+If loopAnimation Is YES the animation will Loop from beginning To ToFrame indefinitely.
+If loopAnimation Is NO the animation will Stop And the completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ToFrame</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAnimationFrame" HideFromIDE="true">_setanimationframe:</name>
+      <comment>Sets progress of animation to a specific frame. If the animation is playing it will stop and the completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>frame</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAnimationProgress" HideFromIDE="true">_setanimationprogress:</name>
+      <comment>Sets a progress from 0 - 1 of the animation.
+If the animation is playing it will stop and the completion block will be called.
+The current progress of the animation in absolute time.
+e.g. a value of 0.75 always represents the same point in the animation, regardless of positive Or negative speed.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>progress</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAnimationSpeed" HideFromIDE="true">_setanimationspeed:</name>
+      <comment>Sets the speed of the animation. Accepts a negative value for reversing animation.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>speed</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAutoReverseAnimation" HideFromIDE="true">_setautoreverseanimation:</name>
+      <comment>The animation will play forward and then backwards if loopAnimation is also TRUE
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>reverse</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setCacheEnable" HideFromIDE="true">_setcacheenable:</name>
+      <comment>Enables or disables caching of the backing animation model. Defaults to TRUE
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>enable</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setContentMode" HideFromIDE="true">_setcontentmode:</name>
+      <comment>Set the content mode to one of the CONTENT constant.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>mode</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setLoopAnimation" HideFromIDE="true">_setloopanimation:</name>
+      <comment>Tells the animation to loop indefinitely. Defaults is False.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>indefinitely</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Stop">_stop</name>
+      <comment>Stops the animation and rewinds to the beginning. The completion block will be called.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <property>
+      <name DesignerName="AnimationDuration">_animationduration</name>
+      <comment>Read only of the duration in seconds of the animation at speed of 1
+</comment>
+      <returntype>float</returntype>
+    </property>
+    <property>
+      <name DesignerName="IsAnimationPlaying">_isanimationplaying</name>
+      <comment>Flag is YES when the animation is playing
+</comment>
+      <returntype>BOOL</returntype>
+    </property>
+    <property>
+      <name DesignerName="AnimationFrame">_animationframe</name>
+      <comment>Sets progress of animation to a specific frame. If the animation is playing it will stop and the completion block will be called.
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="AnimationProgress">_animationprogress</name>
+      <comment>Sets a progress from 0 - 1 of the animation.
+If the animation is playing it will stop and the completion block will be called.
+The current progress of the animation in absolute time.
+e.g. a value of 0.75 always represents the same point in the animation, regardless of positive Or negative speed.
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>float</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="AnimationSpeed">_animationspeed</name>
+      <comment>Sets the speed of the animation. Accepts a negative value for reversing animation.
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>float</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="AutoReverseAnimation">_autoreverseanimation</name>
+      <comment>The animation will play forward and then backwards if loopAnimation is also TRUE
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="CacheEnable">_cacheenable</name>
+      <comment>Enables or disables caching of the backing animation model. Defaults to TRUE
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="ContentMode">_contentmode</name>
+      <comment>Set the content mode to one of the CONTENT constant.
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="LoopAnimation">_loopanimation</name>
+      <comment>Tells the animation to loop indefinitely. Defaults is False.
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <field>
+      <name DesignerName="AnimationView">_animationview</name>
+      <returntype>B4IViewWrapper*</returntype>
+    </field>
+    <field>
+      <name DesignerName="ASPECT_FIT_CONTENT">_aspect_fit_content</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="ASPECT_FILL_CONTENT">_aspect_fill_content</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="SCALE_FILL_CONTENT">_scale_fill_content</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <version>1</version>
+  <author>Brandsum</author>
+</root>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IBannerView</name>
+        <shortname>AdBannerView</shortname>
+        <objectwrapper>ADBannerView*</objectwrapper>
+        <event>ReceiveAd</event>
+        <event>FailedToReceiveAd (ErrorCode As String)</event>
+        <event>ActionBegin</event>
+        <event>ActionFinish</event>
+        <event>Click</event>
+        <event>LongClick</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetColorAnimated">SetColorAnimated::</name>
+            <comment>Animates the view's background color.
+DurationMS - Animation duration measured in milliseconds.
+BackgroundColor - The new background color.
+Note that Labels do not support this type of animation.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BackgroundColor</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetAlphaAnimated">SetAlphaAnimated::</name>
+            <comment>Animates the view's alpha level.
+DurationMS - Animation duration measured in milliseconds.
+Alpha - The new alpha level (0 - transparent, 1 - fully opaque).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Alpha</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetLayoutAnimated">SetLayoutAnimated::::::</name>
+            <comment>Animates the view's layout.
+DurationMS - Animation duration measured in milliseconds. Set to 0 to change the layout immediately.
+DumpingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
+Set to 1 for no spring effect.
+Left, Top, Width and Height - The new layout.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>DumpingRatio</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBorder">SetBorder:::</name>
+            <comment>Sets the view's border width, color and corner radius.
+Note that the corner radius should be 0 if the view should show a shadow as well.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>CornerRadius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetShadow">SetShadow:::::</name>
+            <comment>Adds a shadow to to the view. The border corners radius should be set to 0 when adding shadows.
+Colors - The shadow color.
+OffsetX, OffsetY - The horizontal and vertical offsets.
+Opacity - Sets the shadow opacity: 0 - transparent, 1 - opaque.
+StaticRect - (optimization parameter) Set this parameter to True if the view's size is constant.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>OffsetX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>OffsetY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Opacity</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>StaticRect</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SizeToFit">SizeToFit</name>
+            <comment>Resizes the view to make it fit its content.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="RequestFocus">RequestFocus</name>
+            <comment>Tries to set the focus on the current view. Returns True if the focus was set. Most views are not focusable.
+When a text view is focused the keyboard is shown.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="ResignFocus">ResignFocus</name>
+            <comment>Removes the focus from the current view. Removing the focus from a text view will hide the keyboard.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="RemoveViewFromParent">RemoveViewFromParent</name>
+            <comment>Removes the view from its parent (same as B4A View.RemoveView method).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="BringToFront">BringToFront</name>
+            <comment>Brings the view to front.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendToBack">SendToBack</name>
+            <comment>Sends the view to the back.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetParallaxEffect">SetParallaxEffect::</name>
+            <comment>Adds a parallax effect to the view. The view will slightly move when the device is tilted.
+Vertical - Vertical offset. Can be a positive or negative value.
+Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Vertical</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Horizontal</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the ad view.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>BannerSize</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <comment>Gets or sets the view's left position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Top</name>
+            <comment>Gets or sets the view's top position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <comment>Gets or sets the view's width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Height</name>
+            <comment>Gets or sets the view's height.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Color</name>
+            <comment>Gets or sets the view's background color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Alpha</name>
+            <comment>Gets or sets the view's alpha level. 0 - transparent, 1 (default) - fully opaque.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TintColor</name>
+            <comment>Gets or sets the view's tint color. Some views use this color to change their appearance.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Visible</name>
+            <comment>Gets or sets whether the view is visible.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsFocused</name>
+            <comment>Returns true if the view is focused.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>UserInteractionEnabled</name>
+            <comment>Gets or sets whether the user can interact with this view. True by default.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>SIZE_BANNER</name>
+            <comment>A banner size ad. The width should be the same as the device width.
+iPad height: 66 pixels.
+iPhone height: portrait - 50 pixels, landscape - 32 pixels.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>SIZE_RECTANGLE</name>
+            <comment>An iPad only banner. Size is 320x250.</comment>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>iAd.framework</dependsOn>
+</root>

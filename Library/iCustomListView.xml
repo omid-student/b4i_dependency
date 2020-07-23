@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <class>
+    <name>b4i_customlistview</name>
+    <shortname>CustomListView</shortname>
+    <event>ItemClick (Index As Int, Value As Object)</event>
+    <event>ItemLongClick (Index As Int, Value As Object)</event>
+    <event>ReachEnd</event>
+    <designerProperty>Key: DividerColor, DisplayName: Divider Color, FieldType: Color, DefaultValue: 0xFFA9A9A9</designerProperty>
+    <designerProperty>Key: DividerHeight, DisplayName: Divider Height, FieldType: Int, DefaultValue: 2</designerProperty>
+    <designerProperty>Key: TextColor, DisplayName: Text Color, FieldType: Color, DefaultValue: 0xFF000000</designerProperty>
+    <designerProperty>Key: TextBackgroundColor, DisplayName: Text Background Color, FieldType: Color, DefaultValue: 0xFFFFFFFF</designerProperty>
+    <designerProperty>Key: InsertAnimationDuration, DisplayName: Insert Animation Duration, FieldType: Int, DefaultValue: 300</designerProperty>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Add">_add:::</name>
+      <comment>Adds a custom item.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Pnl</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>ItemHeight</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AddTextItem">_addtextitem::</name>
+      <comment>Adds a text item. The item height will be adjusted based on the text.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Clear">_clear</name>
+      <comment>Clears all items.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Base</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Lbl</name>
+        <type>B4ILabelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Props</name>
+        <type>B4IMap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getFirstVisibleIndex" HideFromIDE="true">_getfirstvisibleindex</name>
+      <comment>Gets the index of the first visible item.
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetItemFromView">_getitemfromview:</name>
+      <comment>Returns the index of the item that holds the given view.
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>v</name>
+        <type>B4IViewWrapper*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getLastVisibleIndex" HideFromIDE="true">_getlastvisibleindex</name>
+      <comment>Gets the index of the last visible item.
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetPanel">_getpanel:</name>
+      <comment>Returns the Panel stored at the specified index.
+</comment>
+      <returntype>B4IPanelWrapper*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetSize">_getsize</name>
+      <comment>Returns the number of items.
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetValue">_getvalue:</name>
+      <comment>Returns the value stored at the specified index.
+</comment>
+      <returntype>NSObject*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>vCallback</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>vEventName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="InsertAt">_insertat::::</name>
+      <comment>Adds a custom item at the specified index.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>pnl</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>ItemHeight</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="InsertAtTextItem">_insertattextitem:::</name>
+      <comment>Inserts a text item at the specified index.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Text</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="JumpToItem">_jumptoitem:</name>
+      <comment>Scrolls the list to the specified item.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoveAt">_removeat:</name>
+      <comment>Removes the item at the specified index.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ReplaceAt">_replaceat::::</name>
+      <comment>Replaces the item at the specified index with a new item.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>pnl</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>ItemHeight</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ResizeItem">_resizeitem::</name>
+      <comment>Changes the height of an existing item.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>ItemHeight</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ScrollToItem">_scrolltoitem:</name>
+      <comment>Smoothly scrolls the list to the specified item.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="FirstVisibleIndex">_firstvisibleindex</name>
+      <comment>Gets the index of the first visible item.
+</comment>
+      <returntype>int</returntype>
+    </property>
+    <property>
+      <name DesignerName="LastVisibleIndex">_lastvisibleindex</name>
+      <comment>Gets the index of the last visible item.
+</comment>
+      <returntype>int</returntype>
+    </property>
+    <field>
+      <name DesignerName="sv">_sv</name>
+      <returntype>B4IScrollView*</returntype>
+    </field>
+    <field>
+      <name DesignerName="DefaultTextFont">_defaulttextfont</name>
+      <returntype>B4IFontWrapper*</returntype>
+    </field>
+    <field>
+      <name DesignerName="DefaultTextColor">_defaulttextcolor</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="DefaultTextBackgroundColor">_defaulttextbackgroundcolor</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="AnimationDuration">_animationduration</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <version>1.76</version>
+</root>

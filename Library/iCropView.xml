@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ICropView</name>
+        <shortname>iCropView</shortname>
+        <comment>#############################################################
+  iCropView.h
+  iCropView
+
+  Created by Alberto Iglesias on 9/28/18.
+  Copyright © 2018 Alberto Iglesias. All rights reserved.
+ #############################################################</comment>
+        <event>onInitialized(EventName As String)</event>
+        <event>onDone(ImageCropped As Bitmap)</event>
+        <event>onCancel()</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Start">Start:::</name>
+            <comment>Start Cropping</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Parent</name>
+                <type>B4IPage*</type>
+            </parameter>
+            <parameter>
+                <name>pImage</name>
+                <type>UIImage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>DebugMode</name>
+            <comment>Enable/Disable Debug mode from Library</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Author</name>
+            <comment>Author of this Library</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>LicenseEmail</name>
+            <comment>License Email</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LicenseKey</name>
+            <comment>License Key</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Version</name>
+            <comment>Library Version</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Title</name>
+            <comment>Title of Cropping</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ButtonDone</name>
+            <comment>Title of Done Button</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ButtonCancel</name>
+            <comment>Title of Done Cancel</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsCircular</name>
+            <comment>Cropp with Circular Shape</comment>
+            <returntype>BOOL*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsSquare</name>
+            <comment>Crop with Square Shape</comment>
+            <returntype>BOOL*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>HideAspectButton</name>
+            <comment>Hide Aspect Ratio Button</comment>
+            <returntype>BOOL*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LockAspectRatio</name>
+            <comment>Lock Aspect Ratio</comment>
+            <returntype>BOOL*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>RatioH</name>
+            <comment>Aspect Ratio Horizontal</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>RatioV</name>
+            <comment>Aspect Ratio Vertical</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ToolbarOnTop</name>
+            <comment>Toolbar on Top</comment>
+            <returntype>BOOL*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.02</version>
+    <author>Alberto Iglesias (alberto@visualnet.inf.br)</author>
+</root>

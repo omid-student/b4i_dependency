@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iTestFlight</name>
+        <shortname>TestFlightManager</shortname>
+        <comment>iTestFlight.h
+  iTestFlight
+
+  Created by Marcel Timmermans on 22-11-14.
+  Copyright (c) 2014 Marcel Timmermans. All rights reserved.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Init with Application Token</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>appToken</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="PassCheckpoint">PassCheckpoint:</name>
+            <comment>When a tester does something you care about in your app, you can pass a checkpoint. For example completing a level, adding a todo item, etc. The checkpoint progress is used to provide insight into how your testers are testing your apps. The passed checkpoints are also attached to crashes, which can help when creating steps to replicate. Checkpoints are visible for all beta builds.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>checkPointName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddCustomEnvironmentInformation">AddCustomEnvironmentInformation::</name>
+            <comment>In beta builds, if you want to see some extra information about your user, you can add some custom environment information. You must add this information before the session starts (a session starts at takeOff:) to see it on TestFlight's website. NB: You can only see this information for beta users.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>info</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>forKey</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SubmitFeedback">SubmitFeedback:</name>
+            <comment>In beta builds, if you collect feedback from your users, you may pass it back to TestFlight which will associate it with the user's current session.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>feedback</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>sdkVersion</name>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>0.7</version>
+    <dependsOn>libz.dylib</dependsOn>
+</root>

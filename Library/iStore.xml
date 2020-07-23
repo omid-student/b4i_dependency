@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IStore</name>
+        <shortname>Store</shortname>
+        <comment>The Store object provides access to Apple's in app purchases features. See the forum tutorial for more information.</comment>
+        <event>PurchaseCompleted (Success As Boolean, Product As Purchase)</event>
+        <event>TransactionsRestored (Success As Boolean)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object and sets the subs that will handle the events. You should initialize and use a single Store instance.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RequestPayment">RequestPayment:</name>
+            <comment>Starts a payment request process for the given product id. The user will be asked to log in and approve the purchase.
+The PurchaseCompleted event will later be raised.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ProductId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RestoreTransactions">RestoreTransactions</name>
+            <comment>Restores successful transactions of non-consumable products. The PurchaseCompleted will be raised for each transaction.
+Note that the user might be asked to log in to his account. You should not call this method when the app starts.
+Only when the user asks to restore previous transactions.
+The TransactionsRestored event will later be raised.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>CanMakePayments</name>
+            <comment>Checks whether the device supports in app purchases (it might be restricted).</comment>
+            <returntype>BOOL</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IPurchase</name>
+        <shortname>Purchase</shortname>
+        <objectwrapper>SKProduct*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Error</name>
+            <comment>Returns the error object if the transaction was not successful.</comment>
+            <returntype>B4IExceptionWrapper*</returntype>
+        </property>
+        <property>
+            <name>TransactionDate</name>
+            <comment>Returns the transaction date. Only relevant if the transaction was successful.</comment>
+            <returntype>long long</returntype>
+        </property>
+        <property>
+            <name>TransactionIdentifier</name>
+            <comment>Returns the transaction unique identifier.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>ProductIdentifier</name>
+            <comment>Returns the product identifier.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>StoreKit.framework</dependsOn>
+</root>

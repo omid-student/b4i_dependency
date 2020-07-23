@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>BleManager</name>
+        <shortname>BleManager</shortname>
+        <objectwrapper>CBCentralManager*</objectwrapper>
+        <comment>BleManager allows you to discover, connect and read data from BLE peripheral devices.
+This library is supported by iOS 7.1+.</comment>
+        <event>StateChanged (State As Int)</event>
+        <event>DeviceFound (Name As String, Id As String, AdvertisingData As Map, RSSI As Double)</event>
+        <event>Disconnected</event>
+        <event>Connected (Services As List)</event>
+        <event>DataAvailable (Service As String, Characteristics As Map)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetNotify">SetNotify:::</name>
+            <comment>Adds or removes a notification listener that monitors value changes.
+Note that you must call ReadData once before you can call this method.
+The DataAvailable method will be raised when the value of the characteristic changes.
+Service - The service id (as returned in the Connected event).
+Characteristic - The characteristic id (as returned in the DataAvailable event).
+Notify - True to add a listener, false to remove it.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Characteristic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Notify</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object. The StateChanged event will be raised after this method with the current BLE state.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Scan">Scan:</name>
+            <comment>Starts scanning for devices. DeviceFound event will be raised when a device is found.
+ServiceUUIDs - A list (or array) with service uuids. Devices that don't advertise these uuids will not be discovered.
+Pass Null to discover all devices.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ServiceUUIDs</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Scan2">Scan2::</name>
+            <comment>Similar to Scan. If AllowDuplicates is true then the DeviceFound event will be raised whenever a packet is received.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ServiceUUIDs</name>
+                <type>B4IList*</type>
+            </parameter>
+            <parameter>
+                <name>AllowDuplicates</name>
+                <type>bool</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StopScan">StopScan</name>
+            <comment>Stops scanning for new devices.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Connect">Connect:</name>
+            <comment>Connects to a device with the given id. You can only connect to previously discovered devices.
+Note that the Disconnected event will be raised if the connection has failed.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DeviceId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Disconnect">Disconnect</name>
+            <comment>Disconnects a connected device.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ReadData">ReadData:</name>
+            <comment>Asynchronously reads all characteristics from the given service. The DataAvailable will be raised when the data is available.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ReadData2">ReadData2::</name>
+            <comment>Asynchronously reads the value of the specified characteristic. Note that you must call ReadData once before you can call this method.
+The DataAvailable will be raised when the data of this characteristic is available.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Characteristic</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="WriteData">WriteData:::</name>
+            <comment>Writes the data to the specified characteristic.
+You must call ReadData once and wait for the DataAvailable event before you can use this method.
+Note that this method does not raise any event.
+Service - The service id (as returned in the Connected event).
+Characteristic - The characteristic id (as returned in the DataAvailable event).
+Data - Data to write.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Characteristic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="WriteDataWithResponse">WriteDataWithResponse:::</name>
+            <comment>Similar to WriteData. Writes the data and expects a response.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Characteristic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetCharacteristicProperties">GetCharacteristicProperties::</name>
+            <comment>Returns a numeric value from which you can find the properties of the specified characteristic.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Service</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Characteristic</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>STATE_UNKNOWN</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_RESETTING</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_UNSUPPORTED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_UNAUTHORIZED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_POWERED_OFF</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_POWERED_ON</name>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <version>1.31</version>
+</root>

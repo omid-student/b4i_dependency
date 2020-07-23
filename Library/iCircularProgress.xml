@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iCircularProgress</name>
+        <comment>iCircularProgress.h
+  iCircularProgress
+
+  Created by Jan on 02.08.15.
+  Copyright (c) 2015 Jan. All rights reserved.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize::::::</name>
+            <comment>Initializes a circular progressview</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Panel</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>MarginLeft</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>MarginTop</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Radius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetProgress" RaisesSynchronousEvents="true">SetProgress::</name>
+            <comment>Sets the progress (0 To 1) of the circle; set DurationMS to 0 for no animation
+The start progress is automatically set to 0 in the normal mode and 1 in the countdown mode</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddProgress" RaisesSynchronousEvents="true">AddProgress::</name>
+            <comment>Adds a value to the current progress(0 To 1) of the circle; set DurationMS to 0 for no animation</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SubtractProgress" RaisesSynchronousEvents="true">SubtractProgress::</name>
+            <comment>Subtracts a value from the current progress(0 To 1) of the circle; set DurationMS to 0 for no animation</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>MarginLeft</name>
+            <comment>Gets or sets the circel's left margin</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>MarginTop</name>
+            <comment>Gets or sets the circel's top margin</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Radius</name>
+            <comment>Gets or sets the circel's radius
+2*radius is equal to the circel's width and height</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LineWidth</name>
+            <comment>Gets or sets the circel's line width</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Progress</name>
+            <comment>Gets the current progress (0 To 1)</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>FilledColor</name>
+            <comment>Gets or sets the circel's filled color</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>UnfilledColor</name>
+            <comment>Gets or sets the circel's unfilled color</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CountdownMode</name>
+            <comment>Gets or sets the countdown mode</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>InAnimation</name>
+            <comment>Gets if the circle is in animation</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>Panel</name>
+            <comment>Gets the panel of the circle</comment>
+            <returntype>UIView*</returntype>
+        </property>
+    </class>
+    <class>
+        <name>CircularProgress</name>
+        <shortname>CircularProgress</shortname>
+        <event>AnimationFinish</event>
+        <event>AnimationProgressChanged (Progress as Float)</event>
+        <designerProperty>Key: marginleft, DisplayName: MarginLeft, FieldType: Float, DefaultValue: 0.0, Description: Set the circel's left margin</designerProperty>
+        <designerProperty>Key: margintop, DisplayName: MarginTop, FieldType: Float, DefaultValue: 0.0, Description: Set the circel's top margin</designerProperty>
+        <designerProperty>Key: radius, DisplayName: Radius, FieldType: Float, DefaultValue: 50.0, Description: Set the circel's radius; 2*radius is equal to the circel's width and height</designerProperty>
+        <designerProperty>Key: countdownmode, DisplayName: CountdownMode, FieldType: Boolean, DefaultValue: False, Description: Set the circel's mode</designerProperty>
+        <designerProperty>Key: linewidth, DisplayName: LineWidth, FieldType: Float, DefaultValue: 10.0, Description: Set the circel's line width</designerProperty>
+        <designerProperty>Key: filledcolor, DisplayName: FilledColor, FieldType: Color, DefaultValue: #FF007AFF, Description: Set the circel's filled color</designerProperty>
+        <designerProperty>Key: unfilledcolor, DisplayName: UnfilledColor, FieldType: Color, DefaultValue: #FFB7B7B7, Description: Set the circel's unfilled color</designerProperty>
+        <designerProperty>Key: progress, DisplayName: Progress, FieldType: Float, DefaultValue: 0, MinRange: 0.0, MaxRange: 1.0, Description: Set the circel's progress (0 to 1)</designerProperty>
+        <method>
+            <name DesignerName="Initialize">Initialize::::::</name>
+            <comment>Initializes a circular progressview</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Panel</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>MarginLeft</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>MarginTop</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Radius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetProgress" RaisesSynchronousEvents="true">SetProgress::</name>
+            <comment>Sets the progress (0 To 1) of the circle; set DurationMS to 0 for no animation
+The start progress is automatically set to 0 in the normal mode and 1 in the countdown mode</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddProgress" RaisesSynchronousEvents="true">AddProgress::</name>
+            <comment>Adds a value to the current progress(0 To 1) of the circle; set DurationMS to 0 for no animation</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SubtractProgress" RaisesSynchronousEvents="true">SubtractProgress::</name>
+            <comment>Subtracts a value from the current progress(0 To 1) of the circle; set DurationMS to 0 for no animation</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Progress</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DesignerCreateView">DesignerCreateView:::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>base</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>lw</name>
+                <type>B4ILabelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>props</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>MarginLeft</name>
+            <comment>Gets or sets the circel's left margin</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>MarginTop</name>
+            <comment>Gets or sets the circel's top margin</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Radius</name>
+            <comment>Gets or sets the circel's radius
+2*radius is equal to the circel's width and height</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LineWidth</name>
+            <comment>Gets or sets the circel's line width</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Progress</name>
+            <comment>Gets the current progress (0 To 1)</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>FilledColor</name>
+            <comment>Gets or sets the circel's filled color</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>UnfilledColor</name>
+            <comment>Gets or sets the circel's unfilled color</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CountdownMode</name>
+            <comment>Gets or sets the countdown mode</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>InAnimation</name>
+            <comment>Gets if the circle is in animation</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>Panel</name>
+            <comment>Gets the panel of the circle</comment>
+            <returntype>UIView*</returntype>
+        </property>
+    </class>
+    <version>1.1</version>
+    <author>Jan</author>
+    <dependsOn>AVFoundation.framework</dependsOn>
+    <dependsOn>UIKit.framework</dependsOn>
+    <dependsOn>QuartzCore.framework</dependsOn>
+</root>

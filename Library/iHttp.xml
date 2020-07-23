@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IHttp</name>
+        <shortname>HttpClient</shortname>
+        <comment>iHttp.h
+  iHttp
+
+  Created by b4j on 9/4/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <event>ResponseSuccess (Response As HttpResponse, TaskId As Int)</event>
+        <event>ResponseError (Response As HttpResponse, Reason As String, StatusCode As Int, TaskId As Int)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object and sets the subs that will handle the events.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializeAcceptAll">InitializeAcceptAll::</name>
+            <comment>Disables the certificates checks. All SSL certificates will be automatically accepted.
+&lt;b&gt;This method should only be used in local secured networks.&lt;/b&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi1</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Execute">Execute::</name>
+            <comment>Executes a request in the background. ResponseSuccess or ResponseError events will later be raised.
+The TaskId is an optional id that can be used to track requests.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Request</name>
+                <type>B4IHttpRequest*</type>
+            </parameter>
+            <parameter>
+                <name>TaskId</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ExecuteCredentials">ExecuteCredentials::::</name>
+            <comment>Similar to Execute. The credentials will be used for basic or digest authentications.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Request</name>
+                <type>B4IHttpRequest*</type>
+            </parameter>
+            <parameter>
+                <name>TaskId</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>UserName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>B4IHttpRequest</name>
+        <shortname>HttpRequest</shortname>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="InitializeGet">InitializeGet:</name>
+            <comment>Initializes a Http GET request (default type of requests).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializeDelete">InitializeDelete:</name>
+            <comment>Initializes a Http DELETE request.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializeHead">InitializeHead:</name>
+            <comment>Initializes a Http HEAD request.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializePut">InitializePut:::</name>
+            <comment>Initializes a Http PUT request. The specified file will be sent as the request body.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializePut2">InitializePut2::</name>
+            <comment>Initializes a Http PUT request. The data will be sent as the request body.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializePost2">InitializePost2::</name>
+            <comment>Initializes a Http POST request. The data will be sent as the request body.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializePost">InitializePost:::</name>
+            <comment>Initializes a Http POST request. The specified file will be sent as the request body.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>URL</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetHeader">SetHeader::</name>
+            <comment>Sets the request header.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Name</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Value</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetContentType">SetContentType:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ContentType</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetContentEncoding">SetContentEncoding:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Encoding</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Timeout</name>
+            <comment>Gets or sets the request timeout measured in milliseconds.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IHttpResponse</name>
+        <shortname>HttpResponse</shortname>
+        <method>
+            <name DesignerName="GetInputStream">GetInputStream</name>
+            <comment>Returns an input stream which can be used to read the response.
+This method is only valid inside the ResponseSuccess event.</comment>
+            <returntype>B4IInputStream*</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetString">GetString</name>
+            <comment>Returns a the server response as a string using UTF8 encoding.
+This method is only valid inside the ResponseSuccess event.</comment>
+            <returntype>NSString*</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetString2">GetString2:</name>
+            <comment>Returns a the server response as a string using the provided encoding.
+This method is only valid inside the ResponseSuccess event.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>CharSet</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetHeaders">GetHeaders</name>
+            <comment>Returns the response headers as a Map.</comment>
+            <returntype>B4IMap*</returntype>
+        </method>
+        <property>
+            <name>StatusCode</name>
+            <comment>Gets the server status code.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ContentLength</name>
+            <returntype>long long</returntype>
+        </property>
+        <property>
+            <name>ContentEncoding</name>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>ContentType</name>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.01</version>
+</root>

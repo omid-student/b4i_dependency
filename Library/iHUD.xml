@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iHUD</name>
+        <shortname>HUD</shortname>
+        <comment>This library is based on MBProgressHUD open source project.</comment>
+        <method>
+            <name DesignerName="ToastMessageShow">ToastMessageShow::</name>
+            <comment>Shows a "toast message". The message will disappear automatically after a few seconds.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Message</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>LongDuration</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ProgressDialogShow">ProgressDialogShow:</name>
+            <comment>Shows a dialog with animated progress wheel. User interaction is disabled until the dialog is dismissed.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ProgressDialogHide">ProgressDialogHide</name>
+            <comment>Dismisses the currently visible progress dialog.</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <version>1</version>
+</root>

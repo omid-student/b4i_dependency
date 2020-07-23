@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iSVG</name>
+        <shortname>SVG</shortname>
+        <objectwrapper>NSObject*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Export">Export::</name>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>SVGKit-iOS.1.2.0</dependsOn>
+    <dependsOn>CoreText.framework</dependsOn>
+    <dependsOn>CoreImage.framework</dependsOn>
+    <dependsOn>libxml2.dylib</dependsOn>
+    <dependsOn>QuartzCore.framework</dependsOn>
+    <dependsOn>CoreGraphics.framework</dependsOn>
+</root>

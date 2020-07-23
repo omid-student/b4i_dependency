@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ISocketWrapper</name>
+        <shortname>Socket</shortname>
+        <event>Connected (Successful As Boolean)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Connect">Connect::::</name>
+            <comment>Tries to to connect to the given address. The Connected event will be raised when operation completes.
+Host - The host name or ip address.
+Port - Port number.
+Timeout - Connection timeout measured in milliseconds. Pass 0 to disable the timeout.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Host</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Timeout</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Close">Close</name>
+            <comment>Closes the socket and the streams. It is safe to call this method multiple times.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Timeout</name>
+            <comment>Gets or sets the socket timeout, measured in milliseconds.
+By default there is no timeout.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>InputStream</name>
+            <comment>Gets the network input stream. In most cases the stream should be passed to an AsyncStreams object.</comment>
+            <returntype>B4IInputStream*</returntype>
+        </property>
+        <property>
+            <name>OutputStream</name>
+            <comment>Gets the network output stream. In most cases the stream should be passed to an AsyncStreams object.</comment>
+            <returntype>B4IOutputStream*</returntype>
+        </property>
+        <property>
+            <name>Connected</name>
+            <comment>Returns true if the socket is connected.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IServerSocketWrapper</name>
+        <shortname>ServerSocket</shortname>
+        <event>NewConnection (Successful As Boolean, NewSocket As Socket)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the server socket and binds it to the given port.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi1</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetMyIP">GetMyIP</name>
+            <comment>Returns the device IP address. Preferably the wifi address. Returns 127.0.0.1 if there is no ip address.</comment>
+            <returntype>NSString*</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetMyWifiIp">GetMyWifiIp</name>
+            <comment>Returns the wifi address. Returns 127.0.0.1 if there is no ip address.</comment>
+            <returntype>NSString*</returntype>
+        </method>
+        <method>
+            <name DesignerName="Listen">Listen</name>
+            <comment>Starts listening for incoming connections. The NewConnection event will be raised when there is a new connection.
+Calling Listen when the server is already listening will not do anything.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Close">Close</name>
+            <comment>Closes the ServerSocket.</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <class>
+        <name>B4IUDPSocket</name>
+        <shortname>UDPSocket</shortname>
+        <comment>UDPSocket supports sending and receiving UDPPackets.</comment>
+        <event>PacketArrived(Packet As UDPPacket)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::::</name>
+            <comment>Initializes the socket and starts listening for packets.
+EventName - Sets the sub that will handle the PacketArrived event.
+Port - Local port to listen on. Pass 0 to let the OS choose an available port.
+ReceiveBufferSize - The maximum size of received packets. Pass 0 if the socket should not listen to incoming packets.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>ReceiveBufferSize</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Send">Send:</name>
+            <comment>Sends the packet.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Packet</name>
+                <type>B4IUDPPacket*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Close">Close</name>
+            <comment>Closes the socket/</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <class>
+        <name>B4IUDPPacket</name>
+        <shortname>UDPPacket</shortname>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the packet with the given data and destination.
+You can reuse the buffer after this call (data is copied).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Host</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize2">Initialize2:::::</name>
+            <comment>Same as Initialize. The data is sent based on the given offset and length.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Data</name>
+                <type>byte[]</type>
+            </parameter>
+            <parameter>
+                <name>Offset</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Length</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Host</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Length</name>
+            <comment>Gets the data length.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>Data</name>
+            <comment>Gets the data.</comment>
+            <returntype>byte[]</returntype>
+        </property>
+        <property>
+            <name>Offset</name>
+            <comment>Gets the received data offset.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>Port</name>
+            <comment>Gets the port of the other socket.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>HostAddress</name>
+            <comment>Gets the IP address of the other socket.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.11</version>
+</root>

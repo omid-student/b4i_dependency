@@ -1,0 +1,57 @@
+﻿Build1=Default,b4i.a
+File1=f1.bil
+FileGroup1=Default Group
+Group=Default Group
+Library1=icore
+Module1=SearchBar
+NumberOfFiles=1
+NumberOfLibraries=1
+NumberOfModules=1
+Version=5.3
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#ATSEnabled: True
+	#MinVersion: 9
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+	Dim s As SearchBar
+	Private Panel1 As Panel
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	'SetDebugAutoFlushLogs(True) 'Uncomment if program crashes before all logs are printed.
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f1")
+	NavControl.ShowPage(Page1)
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+
+	s.Initialize(Me,"")
+'	s.BackgroundColor	=	Colors.Green
+	s.AddToParent(Panel1)
+	
+End Sub
+
+Private Sub Application_Background
+	
+End Sub
+
+Sub Button1_Click
+	s.ShowSearchView
+End Sub

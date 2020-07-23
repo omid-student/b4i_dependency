@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IAnalytics</name>
+        <shortname>AnalyticsTracker</shortname>
+        <comment>This is a wrapper for Google Analytics SDK.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initializes the tracker.
+TrackingId - The tracking id (UA-xxxxx-y).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>TrackingId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SendScreenView">SendScreenView:</name>
+            <comment>Sends a screen view and sets the current screen name.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ScreenName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TrackEvent">TrackEvent::::</name>
+            <comment>Sends an event.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Category</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Action</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Label</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Value</name>
+                <type>long long</type>
+            </parameter>
+        </method>
+        <property>
+            <name>DebugLogs</name>
+            <comment>Set to true to enable verbose logging.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>CoreData.framework</dependsOn>
+    <dependsOn>SystemConfiguration.framework</dependsOn>
+    <dependsOn>libz.dylib</dependsOn>
+    <dependsOn>libsqlite3.tbd</dependsOn>
+    <dependsOn>GoogleAnalyticsServices</dependsOn>
+</root>

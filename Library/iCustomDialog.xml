@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iCustomDialog</name>
+        <shortname>CustomLayoutDialog</shortname>
+        <comment>A non-modal dialog that shows a panel as its content.</comment>
+        <event>Result (Result As Int)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initializes the dialog.
+Panel - The dialog layout. The dialog size will be slightly larger than the panel size.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Panel</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowAsync">ShowAsync::::::</name>
+            <comment>Shows the dialog.
+Title - Dialog title.
+Positive - Positive button text. Pass an empty string to remove button.
+Cancel - Cancel button text. Pass an empty string to remove button.
+Negative - Negative button text. Pass an empty string to remove button.
+Cancelable - Whether the dialog can be dismissed by clicking outside of the dialog.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>Title</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Positive</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Cancel</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Negative</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Cancelable</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CloseDialog">CloseDialog:</name>
+            <comment>Closes the dialog and sets the result.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Result</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetButton">GetButton:</name>
+            <comment>Returns the button with the given type.
+ButtonType - One of the RESULT constants.</comment>
+            <returntype>B4IButtonWrapper*</returntype>
+            <parameter>
+                <name>ButtonType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>RESULT_POSITIVE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_NEGATIVE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_CANCEL</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>CustomColor</name>
+            <comment>Gets or sets the buttons color. Only relevant if Style is set to STYLE_CUSTOM.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Style</name>
+            <comment>Gets or sets the style (color and icon). One of the STYLE constants.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>STYLE_SUCCESS</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_ERROR</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_NOTICE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_WARNING</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_INFO</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_EDIT</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_WAITING</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_QUESTION</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STYLE_CUSTOM</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>CustomIcon</name>
+            <comment>Gets or sets the icon. Only relevant if Style is set to STYLE_CUSTOM.</comment>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+</root>

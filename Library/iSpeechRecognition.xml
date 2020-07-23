@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ISpeechRecognition</name>
+        <shortname>SpeechRecognition</shortname>
+        <comment>Provides access to the device speech recognition (speech to text) feature.
+This feature is only available on iOS 10+.
+Make sure to add the NSSpeechRecognitionUsageDescription and NSMicrophoneUsageDescription keys to the plist.</comment>
+        <event>AuthorizationStatusChanged (Status As int)</event>
+        <event>Result (Success As Boolean, IsFinal As Boolean, Texts As List)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object and sets the subs that will handle the events.
+The AuthorizationStatusChanged event will be raised.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetLanguage">SetLanguage:</name>
+            <comment>Sets the engine language.
+The SupportedLanguages property returns a list with the supported languages.
+This method returns True is the engine is ready. It will return false if the language is not supported or if the engine is not available.
+For example if there is no Internet connection.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>Language</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StartRecording">StartRecording:</name>
+            <comment>Starts audio capturing. The Result event will be raised.
+ReportPartialResults - Whether to return partial results when such are available. If False then the Result event will only be called once
+after StopRecording is called.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ReportPartialResults</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StopRecording">StopRecording</name>
+            <comment>Stops recording. The Ready event will be raised.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SupportedLanguages">SupportedLanguages</name>
+            <comment>Returns a List with the supported languages (two letters code).</comment>
+            <returntype>B4IList*</returntype>
+        </method>
+        <property>
+            <name>AUTHORIZATION_NOT_DETERMINED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_RESTRICTED</name>
+            <comment>Application is not authorized and user is restricted from changing its state (parental control for example).</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>AUTHORIZATION_DENIED</name>
+            <comment>Speech recognition services are disabled or the user denied access for this application.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>IsAuthorized</name>
+            <comment>Returns true if your app is authorized to access the location services.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>DefaultLanguage</name>
+            <comment>Returns the device default language.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>Speech.framework</dependsOn>
+</root>

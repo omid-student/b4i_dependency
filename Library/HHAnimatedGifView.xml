@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>HHAnimatedGifView</name>
+        <shortname>HHAnimatedGifView</shortname>
+        <comment>HHAnimatedGifView.h
+  HHAnimatedGifView
+
+  Created by Haris Hafeez on 06/06/2015.
+  Copyright (c) 2015 Haris Hafeez. All rights reserved.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initialize the GifView for callback using EventName(not yet supported)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetAnimatedGifView">GetAnimatedGifView:</name>
+            <comment>Create an ImageView that can display animated gifs</comment>
+            <returntype>UIImageView*</returntype>
+            <parameter>
+                <name>GifUrl</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetAnimatedGifViewForFile">GetAnimatedGifViewForFile:</name>
+            <comment>Create an ImageView that displays animated gif specified in the parameter.
+The filename should not contain the file extension (.gif)</comment>
+            <returntype>UIImageView*</returntype>
+            <parameter>
+                <name>GifFileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.1</version>
+    <author>Haris Hafeez</author>
+    <dependsOn>QuartzCore.framework</dependsOn>
+    <dependsOn>ImageIO.framework</dependsOn>
+    <dependsOn>CoreGraphics.framework</dependsOn>
+    <dependsOn>MobileCoreServices.framework</dependsOn>
+</root>

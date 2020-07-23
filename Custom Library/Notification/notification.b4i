@@ -1,0 +1,96 @@
+﻿Build1=Default,com.app.asd
+File1=123123.jpg
+File2=f1.bil
+File3=icon-store-1024.png
+File4=msg.jpg
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+Group=Default Group
+Library1=icore
+Library2=imedia
+Module1=InAppNotification
+NumberOfFiles=4
+NumberOfLibraries=2
+NumberOfModules=1
+Version=5.3
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#ATSEnabled: True
+	#MinVersion: 10
+	#ProvisionFile: comapp.mobileprovision
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+	Dim p As InAppNotification
+	Dim p2 As InAppNotification
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f1")
+	NavControl.ShowPage(Page1)
+	
+	Log(DateTime.Now)
+	
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+
+End Sub
+
+Sub notify_click(tag As Object)
+	Log(tag)
+End Sub
+
+Sub Page1_Click
+
+End Sub
+
+Private Sub Application_Background
+	
+End Sub
+
+Sub Button1_Click
+	
+	p.Initialize(Page1,Me,"notify",1)
+	p.Icon = LoadBitmap(File.DirAssets,"123123.jpg")
+	p.AlertBody	=	"Hello mr" & CRLF & "This is advance notification in app" & CRLF & "Thanks"
+	p.PlaySound	=	True
+	p.SoundID	=	1015
+	p.DateTime	=	DateTime.Now
+	p.Tag	=	CreateMap("test":"112321")
+	p.Register
+	
+End Sub
+
+Sub Button2_Click
+	
+	p2.Initialize(Page1,Me,"notify",2)
+	p2.Icon = LoadBitmap(File.DirAssets,"msg.jpg")
+	p2.AlertBody	=	"Hello mr" & CRLF & "This is advance notification in app" & CRLF & "Thanks"
+	p2.Title	=	"Welcome !"
+	p2.PlaySound	=	True
+	p2.SoundID	=	1015
+	p2.DateTime	=	DateTime.Now
+	p2.AutoHide	=	False
+	p2.Tag	=	CreateMap("test":"112321")
+	p2.Register
+	
+End Sub

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>itableview</dependsOn>
+  <dependsOn includesSingletonModules="true">ihttputils2</dependsOn>
+  <dependsOn>istringutils</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <dependsOn>ihttp</dependsOn>
+  <dependsOn>ihud</dependsOn>
+  <class>
+    <name>b4i_gallerygrid</name>
+    <shortname>GalleryGrid</shortname>
+    <event>ItemClick(Index As Int)</event>
+    <event>ItemLongClick(Index As Int)</event>
+    <event>GetImageView(ImageView1 As ImageView,Index As Int)</event>
+    <event>OverScrolled</event>
+    <event>BottomScroll</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Add">_add:</name>
+      <comment>List can be contain urls or bitmaps
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Images</name>
+        <type>B4IList*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Clear">_clear</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCountItem" HideFromIDE="true">_getcountitem</name>
+      <comment>get pictures count in grid
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="HideRefreshView">_hiderefreshview</name>
+      <comment>Hide refresh view fron top
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize::::</name>
+      <comment>Parent is panel that grid add into it
+Welcome to iranapp.org libraries
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Module</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>Event</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Parent</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoveScrollbar">_removescrollbar</name>
+      <comment>hide scrollbar in grid
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ScrollToBottom">_scrolltobottom</name>
+      <comment>scroll grid to bottom
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ScrollToTop">_scrolltotop</name>
+      <comment>scroll grid to top
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="setBorderWidth" HideFromIDE="true">_setborderwidth:</name>
+      <comment>set border with of item(image)
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setCache" HideFromIDE="true">_setcache:</name>
+      <comment>save all images that downloaded
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setEnabled" HideFromIDE="true">_setenabled:</name>
+      <comment>change state of gallery grid
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setPlaceHolder" HideFromIDE="true">_setplaceholder:</name>
+      <comment>if picture cannot download,so show this bitmap instead of it
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Bitmap</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setPullDownRefresh" HideFromIDE="true">_setpulldownrefresh:</name>
+      <comment>if set True,When user pull scroll to down,event OverScrolled raised
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>State</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="CountItem">_countitem</name>
+      <comment>get pictures count in grid
+</comment>
+      <returntype>int</returntype>
+    </property>
+    <property>
+      <name DesignerName="Cache">_cache</name>
+      <comment>save all images that downloaded
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Enabled">_enabled</name>
+      <comment>change state of gallery grid
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="PlaceHolder">_placeholder</name>
+      <comment>if picture cannot download,so show this bitmap instead of it
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="PullDownRefresh">_pulldownrefresh</name>
+      <comment>if set True,When user pull scroll to down,event OverScrolled raised
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+  </class>
+  <version>1</version>
+  <author>B4x</author>
+</root>

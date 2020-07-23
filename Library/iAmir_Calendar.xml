@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <b4x_version>5.00</b4x_version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <class>
+    <name>b4i_amir_calendar</name>
+    <shortname>Amir_Calendar</shortname>
+    <method>
+      <name DesignerName="IsInitialized">_isinitialized</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Build">_build:</name>
+      <comment>Convert Date
+ Using Format And Locale
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Date</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Build2">_build2:::</name>
+      <comment>Convert Date
+</comment>
+      <returntype>long long[]</returntype>
+      <parameter>
+        <name>Year</name>
+        <type>long long</type>
+      </parameter>
+      <parameter>
+        <name>Month</name>
+        <type>long long</type>
+      </parameter>
+      <parameter>
+        <name>Day</name>
+        <type>long long</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Format">_format::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>FromFormat</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>ToFormat</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getAbout" HideFromIDE="true">_getabout</name>
+      <comment>AmirHosseinAghajari
+iAmir_Calendar
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIBuddhist" HideFromIDE="true">_getcibuddhist</name>
+      <comment>Identifier for the Buddhist calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIChinese" HideFromIDE="true">_getcichinese</name>
+      <comment>Identifier for the Chinese calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCICoptic" HideFromIDE="true">_getcicoptic</name>
+      <comment>Identifier for the Coptic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIEthiopicAmeteAlem" HideFromIDE="true">_getciethiopicametealem</name>
+      <comment>Identifier for the Ethiopic (Amete Alem) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIEthiopicAmeteMihret" HideFromIDE="true">_getciethiopicametemihret</name>
+      <comment>Identifier for the Ethiopic (Amete Mihret) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIGregorian" HideFromIDE="true">_getcigregorian</name>
+      <comment>Identifier for the Gregorian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIHebrew" HideFromIDE="true">_getcihebrew</name>
+      <comment>Identifier for the Hebrew calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIIndian" HideFromIDE="true">_getciindian</name>
+      <comment>Identifier for the Indian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIIslamic" HideFromIDE="true">_getciislamic</name>
+      <comment>Identifier for the Islamic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIIslamicCivil" HideFromIDE="true">_getciislamiccivil</name>
+      <comment>Identifier for the Islamic civil calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIIslamicTabular" HideFromIDE="true">_getciislamictabular</name>
+      <comment>Identifier for a tabular Islamic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIIslamicUmmAlQura" HideFromIDE="true">_getciislamicummalqura</name>
+      <comment>Identifier for the Islamic Umm al-Qura calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIISO8601" HideFromIDE="true">_getciiso8601</name>
+      <comment>Identifier for the ISO8601 calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIJapanese" HideFromIDE="true">_getcijapanese</name>
+      <comment>Identifier for the Japanese calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIPersian" HideFromIDE="true">_getcipersian</name>
+      <comment>Identifier for the Persian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCIRepublicOfChina" HideFromIDE="true">_getcirepublicofchina</name>
+      <comment>Identifier for the Republic of China (Taiwan) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCurrentCalendar" HideFromIDE="true">_getcurrentcalendar</name>
+      <comment>get the systems current calendar identifier
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getFrom" HideFromIDE="true">_getfrom</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getTo" HideFromIDE="true">_getto</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <comment>&lt;b&gt; Example : &lt;/b&gt;&lt;code&gt;
+Dim Calendar As Amir_Calendar
+Calendar.Initialize
+Calendar.From=Calendar.CIGregorian
+Calendar.To=Calendar.CIBuddhist
+Calendar.Format("yyyy/MM/dd","")
+Log("Today : "&amp;Calendar.Today)
+Log(Calendar.Build("2018/12/1"))&lt;/code&gt;
+</comment>
+      <returntype>b4i_amir_calendar*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Locale">_locale::</name>
+      <comment>The locale for the receiver.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>FromLocale</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>ToLocale</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Parse">_parse:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Time</name>
+        <type>long long</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Release">_release</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="setFrom" HideFromIDE="true">_setfrom:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>From</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setTo" HideFromIDE="true">_setto:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ToCalendar</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Today">_today</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <property>
+      <name DesignerName="About">_about</name>
+      <comment>AmirHosseinAghajari
+iAmir_Calendar
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIBuddhist">_cibuddhist</name>
+      <comment>Identifier for the Buddhist calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIChinese">_cichinese</name>
+      <comment>Identifier for the Chinese calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CICoptic">_cicoptic</name>
+      <comment>Identifier for the Coptic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIEthiopicAmeteAlem">_ciethiopicametealem</name>
+      <comment>Identifier for the Ethiopic (Amete Alem) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIEthiopicAmeteMihret">_ciethiopicametemihret</name>
+      <comment>Identifier for the Ethiopic (Amete Mihret) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIGregorian">_cigregorian</name>
+      <comment>Identifier for the Gregorian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIHebrew">_cihebrew</name>
+      <comment>Identifier for the Hebrew calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIIndian">_ciindian</name>
+      <comment>Identifier for the Indian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIIslamic">_ciislamic</name>
+      <comment>Identifier for the Islamic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIIslamicCivil">_ciislamiccivil</name>
+      <comment>Identifier for the Islamic civil calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIIslamicTabular">_ciislamictabular</name>
+      <comment>Identifier for a tabular Islamic calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIIslamicUmmAlQura">_ciislamicummalqura</name>
+      <comment>Identifier for the Islamic Umm al-Qura calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIISO8601">_ciiso8601</name>
+      <comment>Identifier for the ISO8601 calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIJapanese">_cijapanese</name>
+      <comment>Identifier for the Japanese calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIPersian">_cipersian</name>
+      <comment>Identifier for the Persian calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CIRepublicOfChina">_cirepublicofchina</name>
+      <comment>Identifier for the Republic of China (Taiwan) calendar.
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="CurrentCalendar">_currentcalendar</name>
+      <comment>get the systems current calendar identifier
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="From">_from</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>NSString*</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="To">_to</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>NSString*</type>
+      </parameter>
+    </property>
+  </class>
+  <version>1</version>
+  <author>AmirHosseinAghajari</author>
+</root>

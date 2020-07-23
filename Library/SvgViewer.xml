@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>isvg</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <dependsOn>svgkit-ios.1.2.0</dependsOn>
+  <dependsOn>coretext.framework</dependsOn>
+  <dependsOn>coreimage.framework</dependsOn>
+  <dependsOn>libxml2.dylib</dependsOn>
+  <dependsOn>quartzcore.framework</dependsOn>
+  <dependsOn>coregraphics.framework</dependsOn>
+  <class>
+    <name>b4i_svgviewer</name>
+    <shortname>SVGViewer</shortname>
+    <designerProperty>Key: filename, DisplayName: Filename in DirAsset, FieldType: String,, DefaultValue:  ,Description: filename of svg file in asset folder.</designerProperty>
+    <designerProperty>Key: fit, DisplayName: Fit Mode, FieldType: Boolean, DefaultValue: True, Description: show fit picture in parent view.</designerProperty>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Base</name>
+        <type>B4IPanelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Lbl</name>
+        <type>B4ILabelWrapper*</type>
+      </parameter>
+      <parameter>
+        <name>Props</name>
+        <type>B4IMap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="img_Click">_img_click</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Callback</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ResizeBitmap">_resizebitmap::</name>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>bmp</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+      <parameter>
+        <name>scale</name>
+        <type>float</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1</version>
+  <author>www.iranapp.org</author>
+</root>

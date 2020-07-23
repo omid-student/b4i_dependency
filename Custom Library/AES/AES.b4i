@@ -1,0 +1,55 @@
+﻿Build1=Default,b4i.exampleww
+Group=Default Group
+Library1=icore
+Library2=iencryption
+Library3=istringutils
+Library4=irandomaccessfile
+Module1=AES
+NumberOfFiles=0
+NumberOfLibraries=4
+NumberOfModules=1
+Version=6
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#ATSEnabled: True
+	#MinVersion: 7
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	'SetDebugAutoFlushLogs(True) 'Uncomment if program crashes before all logs are printed.
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.Color = Colors.White
+	NavControl.ShowPage(Page1)
+	
+	Dim a As AES
+	a.Initialize
+	Log(a.Encrypt("omid","NcRfUjXn2r4u7x!A","NcRfUjXn2r4u7x!A"))
+	Log(a.Decrypt("TmNSZlVqWG4ycjR1N3ghQZ+P58ZhfBPS6Nkf/jekKQc=","NcRfUjXn2r4u7x!A"))
+	
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+	
+End Sub
+
+Private Sub Application_Background
+	
+End Sub

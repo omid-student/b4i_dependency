@@ -1,0 +1,77 @@
+﻿Build1=Default,com.apps.aaaa
+File1=1.jpg
+File2=f1.bil
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=icore
+Library2=ijson
+Library3=ihttputils2
+Library4=iphone
+Library5=iencryption
+Library6=istringutils
+Library7=ihud
+Library8=iui8
+Module1=Library
+Module10=TouchID
+Module11=WebViewExtra
+Module2=Views
+Module3=Video
+Module4=RSA
+Module5=Application
+Module6=DeviceInfo
+Module7=Bitmaps
+Module8=Encryption
+Module9=NavigationBar
+NumberOfFiles=2
+NumberOfLibraries=8
+NumberOfModules=11
+Version=5.8
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#ATSEnabled: True
+	#MinVersion: 7
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'Public variables can be accessed from all modules.
+	Public App As Application
+	Public NavControl As NavigationController
+	Public Page1 As Page
+
+	Private Label1 As Label
+	Private Button1 As Button
+	Private ImageView1 As ImageView
+	Private touch As TouchID
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	'SetDebugAutoFlushLogs(True) 'Uncomment if program crashes before all logs are printed.
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f1")
+	NavControl.ShowPage(Page1)
+ 
+	touch.Initialize(Me,"omid")
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+	
+End Sub
+
+Private Sub Application_Background
+	
+End Sub
+
+Sub Button1_Click
+Library.pla	
+End Sub

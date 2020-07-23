@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ISideMenuController</name>
+        <shortname>SideMenuController</shortname>
+        <objectwrapper>UIViewController*</objectwrapper>
+        <comment>A view controller that allows showing a left and/or right pages in addition to the main NavigationController.</comment>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the object.
+LeftPage - The Page that holds the left menu. Pass Null to disable this menu.
+MainController - The main navigation controller.
+RightPage - The Page that holds the right menu. Pass Null to disable this menu.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>LeftPage</name>
+                <type>B4IPage*</type>
+            </parameter>
+            <parameter>
+                <name>MainController</name>
+                <type>B4INavigationControllerWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>RightPage</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CloseMenu">CloseMenu</name>
+            <comment>Closes the visible menu.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="OpenLeftMenu">OpenLeftMenu</name>
+            <comment>Opens the left menu page.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="OpenRightMenu">OpenRightMenu</name>
+            <comment>Opens the right menu page.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="CreateBarButton">CreateBarButton:</name>
+            <comment>Creates a BarButton with three horizontal lines.</comment>
+            <returntype>B4IBarButtonItemWrapper*</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>OpenGesturesEnabled</name>
+            <comment>Gets or sets whether the user can open the menus with a pan gesture.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LeftMenuMaxWidth</name>
+            <comment>Gets or sets the left menu maximum width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>RightMenuMaxWidth</name>
+            <comment>Gets or sets the right menu maximum width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.01</version>
+</root>

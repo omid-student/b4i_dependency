@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <class>
+    <name>_rundelayeddata</name>
+    <shortname>RunDelayedData</shortname>
+    <method>
+      <name>Initialize</name>
+      <comment>Initializes the fields to their default value.</comment>
+      <returntype>void</returntype>
+    </method>
+    <field>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </field>
+    <field>
+      <name>Module</name>
+      <returntype>NSObject*</returntype>
+    </field>
+    <field>
+      <name>SubName</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <field>
+      <name>Arg</name>
+      <returntype>NSObject*[]</returntype>
+    </field>
+    <field>
+      <name>Delayed</name>
+      <returntype>BOOL</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_callsubutils</name>
+    <shortname>CallSubUtils</shortname>
+    <comment>CallSubUtils is an extended version of CallSub and CallSubDelayed methods.
+It allows setting a delay parameter, measured in milliseconds.
+This is an alternative to using a timer that fires exactly once.
+</comment>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="CallSubDelayedPlus">_callsubdelayedplus:::</name>
+      <comment>Similar to CallSubDelayed. This method allows you to set the delay (in milliseconds).
+Note that the sub name must include an underscore if compiled with obfuscation enabled.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Module</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>SubName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Delay</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CallSubDelayedPlus2">_callsubdelayedplus2::::</name>
+      <comment>Similar to CallSubDelayed. This method allows you to set the delay (in milliseconds).
+Note that the sub name must include an underscore if compiled with obfuscation enabled.
+The target sub should have one parameter with a type of Object().
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Module</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>SubName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Delay</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Arg</name>
+        <type>NSObject*[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CallSubPlus">_callsubplus:::</name>
+      <comment>Similar to CallSub. This method allows you to set the delay (in milliseconds).
+Note that the sub name must include an underscore if compiled with obfuscation enabled.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Module</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>SubName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Delay</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CallSubPlus2">_callsubplus2::::</name>
+      <comment>Similar to CallSub. This method allows you to set the delay (in milliseconds).
+Note that the sub name must include an underscore if compiled with obfuscation enabled.
+The target sub should have one parameter with a type of Object().
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Module</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>SubName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Delay</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Arg</name>
+        <type>NSObject*[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1</version>
+</root>

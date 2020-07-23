@@ -1,0 +1,118 @@
+﻿Build1=Default,com.apps.aa
+File1=1.png
+File2=123123.jpg
+File3=21.jpg
+File4=234234.jpg
+File5=435.jpg
+File6=944866_460801637343221_1470178205_n.jpg
+File7=photo_2015-08-22_18-40-10.jpg
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+Group=Default Group
+Library1=icore
+Library2=ihttputils2
+Library3=istringutils
+Library4=iui8
+Module1=GalleryGrid
+NumberOfFiles=7
+NumberOfLibraries=4
+NumberOfModules=1
+Version=4.81
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: B4i Example
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+ 	#LibraryAuthor:B4x
+	#LibraryName:Gallery
+	#LibraryVersion:1.0
+	#MinVersion: 7
+#End Region
+
+Sub Process_Globals
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+	Dim bt As List
+	Dim a As GalleryGrid
+	Dim l As Label
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	'SetDebugAutoFlushLogs(True) 'Uncomment if program crashes before all logs are printed.
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	
+	Page1.RootPanel.Color = Colors.White
+	NavControl.ShowPage(Page1)
+	l.Initialize("")
+	Page1.RootPanel.AddView(l,-GetDeviceLayoutValues.Width/3,0,GetDeviceLayoutValues.Width/3,-GetDeviceLayoutValues.Width/3)
+	
+End Sub
+
+Private Sub Page1_Resize(Width As Int, Height As Int)
+	
+	bt.Initialize
+	
+	For i = 1 To 50
+		Dim c As Canvas
+		c.Initialize(l)
+		c.DrawColor(Colors.RGB(255,255,Rnd(1,255)))
+		bt.Add(c.CreateBitmap)
+	Next
+	
+	a.Initialize(Me,"item",Page1.RootPanel)
+	a.PullDownRefresh = True
+	a.Add(bt)
+	
+End Sub
+
+Sub item_ItemClick(Index As Int)
+	Log(a.CountItem)
+End Sub
+
+Sub item_OverScrolled
+	
+	a.Clear
+	a.HideRefreshView
+
+	Dim bt As List
+	bt.Initialize
+	For i = 1 To 51
+		Dim c As Canvas
+		c.Initialize(l)
+		c.DrawColor(Colors.RGB(255,Rnd(1,255),Rnd(1,255)))
+		bt.Add(c.CreateBitmap)
+	Next
+	a.Add(bt)
+	Log(a.CountItem)
+End Sub
+
+Sub item_BottomScroll
+	
+	Log(a.CountItem)
+	
+	Dim bt As List
+	bt.Initialize
+	For i = 1 To 6
+		Dim c As Canvas
+		c.Initialize(l)
+		c.DrawColor(Colors.RGB(255,Rnd(1,255),Rnd(1,255)))
+		bt.Add(c.CreateBitmap)
+	Next
+	a.Add(bt)
+	
+End Sub
+Private Sub Application_Background
+	
+End Sub

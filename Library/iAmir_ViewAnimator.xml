@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iAmir_ViewAnimator</name>
+        <shortname>Amir_ViewAnimator</shortname>
+        <comment>iAmir_ViewAnimator
+
+  Created by AmirHossein Aghajari
+  Copyright © 2018 AmirHossein Aghajari. All rights reserved.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Pause">Pause</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Resume">Resume</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Repeat">Repeat:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>value</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Count</name>
+                <type>NSInteger</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ThenAfter">ThenAfter:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Animate">Animate:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AnimateWithRepeat">AnimateWithRepeat:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>value</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Count</name>
+                <type>NSInteger</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeOrigin">MakeOrigin:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>X</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Y</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeCenter">MakeCenter:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeX">MakeX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeY">MakeY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeWidth">MakeWidth:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeHeight">MakeHeight:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeOpacity">MakeOpacity:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeBackground">MakeBackground:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>UIColor*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeBorderColor">MakeBorderColor:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>UIColor*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeBorderWidth">MakeBorderWidth:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeCornerRadius">MakeCornerRadius:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeScale">MakeScale:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeScaleX">MakeScaleX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeScaleY">MakeScaleY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MakeAnchor">MakeAnchor:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveX">MoveX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveY">MoveY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveXY">MoveXY:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveHeight">MoveHeight:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveWidth">MoveWidth:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Rotate">Rotate:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RotateX">RotateX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RotateY">RotateY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RotateZ">RotateZ:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MovePolar">MovePolar:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformIdentity">TransformIdentity</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="TransformX">TransformX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformY">TransformY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformZ">TransformZ:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformXY">TransformXY:arg2:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformScale">TransformScale:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformScaleX">TransformScaleX:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="TransformScaleY">TransformScaleY:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveOnPath">MoveOnPath:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>UIBezierPath*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveAndRotateOnPath">MoveAndRotateOnPath:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>UIBezierPath*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="MoveAndReverseRotateOnPath">MoveAndReverseRotateOnPath:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>UIBezierPath*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AnchorCenter">AnchorCenter</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorTopLeft">AnchorTopLeft</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorTopRight">AnchorTopRight</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorBottomLeft">AnchorBottomLeft</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorBottomRight">AnchorBottomRight</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorTop">AnchorTop</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorBottom">AnchorBottom</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorLeft">AnchorLeft</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AnchorRight">AnchorRight</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseIn">EaseIn</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOut">EaseOut</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOut">EaseInOut</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseBack">EaseBack</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="Spring">Spring</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="Bounce">Bounce</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInQuad">EaseInQuad</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutQuad">EaseOutQuad</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutQuad">EaseInOutQuad</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInCubic">EaseInCubic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutCubic">EaseOutCubic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutCubic">EaseInOutCubic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInQuart">EaseInQuart</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutQuart">EaseOutQuart</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutQuart">EaseInOutQuart</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInQuint">EaseInQuint</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutQuint">EaseOutQuint</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutQuint">EaseInOutQuint</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInSine">EaseInSine</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutSine">EaseOutSine</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutSine">EaseInOutSine</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInExpo">EaseInExpo</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutExpo">EaseOutExpo</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutExpo">EaseInOutExpo</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInCirc">EaseInCirc</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutCirc">EaseOutCirc</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutCirc">EaseInOutCirc</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInElastic">EaseInElastic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutElastic">EaseOutElastic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutElastic">EaseInOutElastic</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInBack">EaseInBack</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutBack">EaseOutBack</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutBack">EaseInOutBack</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInBounce">EaseInBounce</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseOutBounce">EaseOutBounce</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="EaseInOutBounce">EaseInOutBounce</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+        </method>
+        <method>
+            <name DesignerName="Delay">Delay:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Wait">Wait:</name>
+            <returntype>iAmir_ViewAnimator*</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1</version>
+</root>

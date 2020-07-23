@@ -1,0 +1,96 @@
+﻿Build1=Default,com.apps.contratclient
+File1=f1.bil
+File2=f2.bil
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=icore
+Library2=ixui
+Module1=UltimateListView
+Module2=CustomListView
+NumberOfFiles=2
+NumberOfLibraries=2
+NumberOfModules=2
+Version=5.3
+@EndOfDesignText@
+'Code module
+#Region  Project Attributes 
+	#ApplicationLabel: ULV
+	#Version: 1.0.0 
+	'Orientation possible values: Portrait, LandscapeLeft, LandscapeRight and PortraitUpsideDown
+	#iPhoneOrientations: Portrait, LandscapeLeft, LandscapeRight
+	#iPadOrientations: Portrait, LandscapeLeft, LandscapeRight, PortraitUpsideDown
+	#Target: iPhone, iPad
+	#LibraryAuthor: www.iranapp.org
+	#LibraryName: Conversion
+	#LibraryVersion: 1
+#End Region
+
+Sub Process_Globals
+	Public App As Application
+	Public NavControl As NavigationController
+	Private Page1 As Page
+	Private ulv As UltimateListView
+	Private ls As List
+	Private Panel1 As Panel
+End Sub
+
+Private Sub Application_Start (Nav As NavigationController)
+	
+	NavControl = Nav
+	Page1.Initialize("Page1")
+	Page1.Title = "Page 1"
+	Page1.RootPanel.LoadLayout("f2")
+	NavControl.ShowPage(Page1)
+	
+	ls.Initialize
+
+End Sub
+
+Sub Page1_Resize(Width As Int,Height As Int)
+	ulv.Initialize(Me,"ulv")
+	ulv.CreateView(Panel1)
+	ulv.DividerHeight	=	6dip
+	ulv.PressedDrawable	=	Colors.Red
+	ulv.AddLayout("LIST","Item_LayoutCreator", "Item_ContentFiller", 40dip, True)
+	ulv.AddRowLayout("ROW","ulv_RowContentFiller","ulv_RowLayoutCreator",100%x/3,3,Array As Int(100%x/3,100%x/3,100%x/3),1,Colors.Red,True)
+	ulv.AddPullDownRefresh
+End Sub
+
+Sub Item_LayoutCreator(LayoutName As String, LayoutPanel As B4XView)
+	LayoutPanel.LoadLayout("f1")
+End Sub
+
+Sub Item_ContentFiller(LayoutPanel As B4XView, Position As Int)
+	Dim lbl As Label = LayoutPanel.GetView(0) 'First (and only) view in the panel
+	lbl.Text = "Test " & Rnd(1,299)
+End Sub
+
+Sub ulv_RowContentFiller(RowID As Long, LayoutName As String, CellPanel As Object, CellIndex As Byte, Position As Int)
+	Dim CellPanel2 As Panel	=	CellPanel
+	CellPanel2.Color	=	Colors.RGB(Rnd(1,255),Rnd(1,255),Rnd(1,255))
+End Sub
+
+Sub ulv_RowLayoutCreator(LayoutName As String, CellPanel As Panel, CellIndex As Byte)
+	
+End Sub
+
+Sub ulv_ItemClick(Position As Int,Layout As Panel)
+	
+End Sub
+
+Sub ulv_Scrolled(FirstVisibleItem As Int,IsAtBottom As Boolean)
+
+End Sub
+
+Private Sub Application_Background
+	
+End Sub
+
+Sub ulv_OverScrolled(Action As Object, ScrollY As Int)
+	Log(Action)
+End Sub
+
+Sub Button1_Click
+	ulv.BulkAddItems(2,"ROW",1)
+End Sub

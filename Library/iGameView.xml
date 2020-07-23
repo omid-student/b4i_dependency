@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IBitmapData</name>
+        <shortname>BitmapData</shortname>
+        <property>
+            <name>Bitmap</name>
+            <comment>The bitmap that will be drawn. Must be set.</comment>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>SrcRect</name>
+            <comment>Sets the area in the bitmap that will be drawn. Pass null if you want to draw the full bitmap.</comment>
+            <returntype>B4IRect*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DestRect</name>
+            <comment>Sets the target area. Must be set.</comment>
+            <returntype>B4IRect*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Rotate</name>
+            <comment>Sets the rotation angle measured in degrees.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Flip</name>
+            <comment>Sets the flip state. One of the FLIP constants.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Delete</name>
+            <comment>Set to True to remove the bitmap before the next iteration.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>FLIP_NONE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>FLIP_VERTICALLY</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>FLIP_HORIZONTALLY</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>FLIP_BOTH</name>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IGameView</name>
+        <shortname>GameView</shortname>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the game view.
+EventName - Sets the subs that will handle the events. Currently there are no events.
+Panel - The GameView will draw over this panel. Note that you should not add any views to this panel.
+You can put views above.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Panel</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Invalidate">Invalidate</name>
+            <comment>Applies the changes.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="PlaySoundEffect">PlaySoundEffect:::</name>
+            <comment>Plays the sound file. If the file was played before (or prepared with PrepareSoundEffect) then it will
+be loaded from the cache.
+Dir / FileName - File path.
+Volume - Playback volume between 0 to 1.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Volume</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="PrepareSoundEffect">PrepareSoundEffect::</name>
+            <comment>Loads the given file into the cache.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="PlayMusic">PlayMusic::::</name>
+            <comment>Plays a music file. Only one music file can be played at a time.
+Dir / FileName - File path.
+Volume - Playback volume between 0 to 1.
+Loop - Whether to repeat the playback until StopMusic is called.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Volume</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Loop</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StopMusic">StopMusic</name>
+            <comment>Stops playing the music file.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Panel</name>
+            <comment>Returns the GameView drawing panel.</comment>
+            <returntype>B4IPanelWrapper*</returntype>
+        </property>
+        <property>
+            <name>BitmapsData</name>
+            <comment>Returns the list of BitmapData objects (sprites).</comment>
+            <returntype>B4IList*</returntype>
+        </property>
+    </class>
+    <version>1</version>
+</root>

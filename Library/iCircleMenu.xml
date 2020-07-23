@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iCircleMenu</name>
+        <shortname>CircleMenu</shortname>
+        <event>MenuWillDisplay (aButton As Button, Index As Int)</event>
+        <event>ButtonDidSelect (aButton As Button, Index As Int)</event>
+        <event>ButtonWillSelect (aButton As Button, Index As Int)</event>
+        <event>ButtonTouchDown (aButton As Button, Index As Int)</event>
+        <event>MenuCollapsed</event>
+        <event>Click</event>
+        <event>LongClick</event>
+        <designerProperty>Key: NormalIcon, DisplayName: NormalIcon, FieldType: String, DefaultValue: , Description: The image to use for the specified normal state</designerProperty>
+        <designerProperty>Key: SelectedIcon, DisplayName: SelectedIcon, FieldType: String, DefaultValue: , Description: The image to use for the specified selected state</designerProperty>
+        <designerProperty>Key: ButtonsCount, DisplayName: ButtonsCount, FieldType: Int, DefaultValue: 0, Description: The number of buttons</designerProperty>
+        <designerProperty>Key: Duration, DisplayName: Duration, FieldType: Int, DefaultValue: 0, Description: The duration in milliseconds of the animation</designerProperty>
+        <designerProperty>Key: Distance, DisplayName: Distance, FieldType: Float, DefaultValue: 0, Description: The Distance between center button and sub buttons</designerProperty>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="CalcRelativeKeyboardHeight">CalcRelativeKeyboardHeight:</name>
+            <comment>Calculates the keyboard top point relative to the current view.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>KeyboardHeight</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetColorAnimated">SetColorAnimated::</name>
+            <comment>Animates the view's background color.
+DurationMS - Animation duration measured in milliseconds.
+BackgroundColor - The new background color.
+Note that Labels do not support this type of animation.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BackgroundColor</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetAlphaAnimated">SetAlphaAnimated::</name>
+            <comment>Animates the view's alpha level.
+DurationMS - Animation duration measured in milliseconds.
+Alpha - The new alpha level (0 - transparent, 1 - fully opaque).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Alpha</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetLayoutAnimated">SetLayoutAnimated::::::</name>
+            <comment>Animates the view's layout.
+DurationMS - Animation duration measured in milliseconds. Set to 0 to change the layout immediately.
+DampingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
+Set to 1 for no spring effect.
+Left, Top, Width and Height - The new layout.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>DampingRatio</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBorder">SetBorder:::</name>
+            <comment>Sets the view's border width, color and corner radius.
+Note that the corner radius should be 0 if the view should show a shadow as well.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>CornerRadius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetShadow">SetShadow:::::</name>
+            <comment>Adds a shadow to to the view. The border corners radius should be set to 0 when adding shadows.
+Colors - The shadow color.
+OffsetX, OffsetY - The horizontal and vertical offsets.
+Opacity - Sets the shadow opacity: 0 - transparent, 1 - opaque.
+StaticRect - (optimization parameter) Set this parameter to True if the view's size is constant.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>OffsetX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>OffsetY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Opacity</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>StaticRect</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SizeToFit">SizeToFit</name>
+            <comment>Resizes the view to make it fit its content.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="RequestFocus">RequestFocus</name>
+            <comment>Tries to set the focus on the current view. Returns True if the focus was set. Most views are not focusable.
+When a text view is focused the keyboard is shown.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="ResignFocus">ResignFocus</name>
+            <comment>Removes the focus from the current view. Removing the focus from a text view will hide the keyboard.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="RemoveViewFromParent">RemoveViewFromParent</name>
+            <comment>Removes the view from its parent (same as B4A View.RemoveView method).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="BringToFront">BringToFront</name>
+            <comment>Brings the view to front.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendToBack">SendToBack</name>
+            <comment>Sends the view to the back.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetParallaxEffect">SetParallaxEffect::</name>
+            <comment>Adds a parallax effect to the view. The view will slightly move when the device is tilted.
+Vertical - Vertical offset. Can be a positive or negative value.
+Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Vertical</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Horizontal</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializeCustom">InitializeCustom::::</name>
+            <comment>Initializes a custom button. Sets the text default color and the pressed state color.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>TextColor</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>PressedTextColor</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes a system button.
+Example:&lt;code&gt;
+Dim b1 As Button
+b1.Initialize("b1", b1.STYLE_SYSTEM)&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Style1</name>
+                <type>UIButtonType</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DesignerCreateView">DesignerCreateView:::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>base</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>lw</name>
+                <type>B4ILabelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>props</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="HideButtons">HideButtons::</name>
+            <comment>Hide button
+Duration: The duration, in milliseconds, of the animation.
+HideDelay: The time to delay, in milliseconds.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Duration</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>HideDelay</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ButtonsIsShown">ButtonsIsShown</name>
+            <comment>Check is sub buttons showed</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetIconToButton">SetIconToButton::</name>
+            <comment>Sets an icon to a button</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Button</name>
+                <type>B4IButtonWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>Icon</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <comment>Gets or sets the view's left position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Top</name>
+            <comment>Gets or sets the view's top position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <comment>Gets or sets the view's width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Height</name>
+            <comment>Gets or sets the view's height.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Color</name>
+            <comment>Gets or sets the view's background color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Alpha</name>
+            <comment>Gets or sets the view's alpha level. 0 - transparent, 1 (default) - fully opaque.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TintColor</name>
+            <comment>Gets or sets the view's tint color. Some views use this color to change their appearance.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Visible</name>
+            <comment>Gets or sets whether the view is visible.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsFocused</name>
+            <comment>Returns true if the view is focused.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>UserInteractionEnabled</name>
+            <comment>Gets or sets whether the user can interact with this view. True by default.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Parent</name>
+            <comment>Returns the views parent. The returned view can be uninitialized (if there is no parent).</comment>
+            <returntype>B4IViewWrapper*</returntype>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <comment>Gets or sets whether the view is enabled.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Text</name>
+            <comment>Gets or sets the button's text.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>STYLE_SYSTEM</name>
+            <returntype>UIButtonType</returntype>
+        </property>
+        <property>
+            <name>STYLE_DETAIL_DISCLOSURE</name>
+            <returntype>UIButtonType</returntype>
+        </property>
+        <property>
+            <name>STYLE_INFO</name>
+            <returntype>UIButtonType</returntype>
+        </property>
+        <property>
+            <name>STYLE_CONTACT_ADD</name>
+            <returntype>UIButtonType</returntype>
+        </property>
+        <property>
+            <name>CustomLabel</name>
+            <comment>Gets the inner label. You can use this property to customize custom buttons.</comment>
+            <returntype>B4ILabelWrapper*</returntype>
+        </property>
+        <property>
+            <name>ButtonsCount</name>
+            <comment>Buttons count</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Duration</name>
+            <comment>Circle animation duration</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Distance</name>
+            <comment>Distance between center button and buttons</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ShowDelay</name>
+            <comment>Delay between show buttons</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>CircleMenu.framework.swift.3</dependsOn>
+</root>

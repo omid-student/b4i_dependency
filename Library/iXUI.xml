@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4XViewWrapper</name>
+        <shortname>B4XView</shortname>
+        <objectwrapper>NSObject*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment> </comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetTextAlignment">SetTextAlignment::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Vertical</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Horizontal</name>
+                <type>NSString*</type>
+            </parameter>
+            <comment>Sets the text alignment.
+Vertical - TOP, CENTER or BOTTOM.
+Horizontal - LEFT, CENTER or RIGHT.
+
+In B4i the vertical alignment has no effect.
+ Supported types:
+ B4A - EditText, Label, Button, CheckBox, RadioButton, ToggleButton
+ B4J - Label, Button, Checkbox, RadioButton, ToggleButton</comment>
+        </method>
+        <method>
+            <name DesignerName="SetLayoutAnimated">SetLayoutAnimated:::::</name>
+            <comment>Sets the view size and position.
+Duration - Animation duration in milliseconds. Pass 0 to make the change immediately.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Duration</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RemoveViewFromParent">RemoveViewFromParent</name>
+            <comment>Removes the view from its parent.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="RequestFocus">RequestFocus</name>
+            <comment>Requests focus to be set to this view. Returns True if the focus has shifted.
+Always returns True in B4J.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetVisibleAnimated">SetVisibleAnimated::</name>
+            <comment>Fades in or fades out the view.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Duration</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Visible</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetAllViewsRecursive">GetAllViewsRecursive</name>
+            <comment>Returns an iterator that iterates over all the child views including views that were added to other child views.
+Make sure to check the view type as it might return subviews as well.
+Example:&lt;code&gt;
+For Each v As B4XView In Panel1.GetAllViewsRecursive
+	...
+Next&lt;/code&gt;
+Supported types
+B4A - Activity, Panel
+B4i - Panel
+B4J - Pane</comment>
+            <returntype>NSObject &lt;B4IIterable&gt;*</returntype>
+        </method>
+        <method>
+            <name DesignerName="LoadLayout" RaisesSynchronousEvents="true">LoadLayout::</name>
+            <comment>null</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>LayoutFile</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetView">GetView:</name>
+            <comment>Returns the view at the given index.
+Supported types
+B4A - Activity, Panel
+B4i - Panel
+B4J - Pane</comment>
+            <returntype>B4XViewWrapper*</returntype>
+            <parameter>
+                <name>Index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddView">AddView:::::</name>
+            <comment>Adds a view.
+Supported types
+B4A - Activity, Panel
+B4i - Panel
+B4J - Pane</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RemoveAllViews">RemoveAllViews</name>
+            <comment>Removes all views.
+Supported types
+B4A - Activity, Panel
+B4i - Panel
+B4J - Pane</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Snapshot">Snapshot</name>
+            <comment>Captures the views appearance.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetBitmap">SetBitmap:</name>
+            <comment>Sets the view's bitmap.
+ Supported types:
+ B4A - All views. The view's Drawable will be set to a BitmapDrawable with Gravity set to CENTER.
+ B4i - ImageView. ContentMode set to Fit.
+ B4J - ImageView. PreserveRatio is set to True.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Bitmap</name>
+                <type>UIImage*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetColorAnimated">SetColorAnimated:::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Duration1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>FromColor</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>ToColor</name>
+                <type>int</type>
+            </parameter>
+            <comment>Changes the background color with a transition animation between the FromColor and the ToColor colors.
+Duration - Animation duration measured in milliseconds.</comment>
+        </method>
+        <method>
+            <name DesignerName="SetColorAndBorder">SetColorAndBorder::::</name>
+            <comment>Sets the background color and border.
+ B4A - The view's drawable will be set to ColorDrawable.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>BackgroundColor</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BorderWidth</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>BorderColor</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BorderCornerRadius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="BringToFront">BringToFront</name>
+            <comment>Changes the Z order of this view and brings it to the front.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendToBack">SendToBack</name>
+            <comment>Changes the Z order of this view and sends it to the back.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetRotationAnimated">SetRotationAnimated::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Duration</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Degree</name>
+                <type>float</type>
+            </parameter>
+            <comment>Rotates the view with animation.
+Duration - Animation duration in milliseconds.
+Degree - Rotation degree.</comment>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the view's tag object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <comment>Gets or sets the left position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Top</name>
+            <comment>Gets or sets the top position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <comment>Gets or sets the view's width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Height</name>
+            <comment>Gets or sets the view's height.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Visible</name>
+            <comment>Gets or sets whether the view is visible.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Parent</name>
+            <comment>Returns the parent. The object returned will be uninitialized if there is no parent.</comment>
+            <returntype>B4XViewWrapper*</returntype>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <comment>Gets or sets whether the view is enabled. Does nothing if the view does not support this property.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Progress</name>
+            <comment>Gets or sets the progress value. The progress value is scaled between 0 to 100 (this is different than the native views range in B4J and B4i). 
+ Supported types:
+ B4A - ProgressBar
+ B4J - ProgressView, ProgressIndicator
+ B4i - ProgressView
+&lt;b&gt;Value should be between 0 to 100.&lt;/b&gt;</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Text</name>
+            <comment>Gets or sets the text. Supported types: 
+B4A - EditText, Label, Button, CheckBox, RadioButton, ToggleButton
+B4i - TextField, TextView, Button, Label
+B4J - TextField, TextArea, Label, Button, CheckBox, RadioButton, ToggleButton</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TextColor</name>
+            <comment>Gets or sets the text colors. Supported types:
+ B4A - EditText, Label, Button, CheckBox, RadioButton,  ToggleButton
+ B4i - TextField, TextView, Label
+ B4J - All types. Based on the native TextColor property if available or -fx-text-fill CSS attribute.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TextSize</name>
+            <comment>Gets or sets the text size.
+Supported types:
+B4A - EditText, Label, Button, CheckBox, RadioButton, ToggleButton
+B4i - TextField, TextView, Button, Label
+B4J - Returns the TextSize property if available and the CSS attribute for other types. Returns 0 if attribute not available.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Font</name>
+            <comment>Gets or sets the font (typeface and text size).
+Supported types:
+B4A - EditText, Label, Button, CheckBox, RadioButton, ToggleButton
+B4i - TextField, TextView, Button, Label
+B4J - Sets the Font property if available. Otherwise sets the CSS attribute.</comment>
+            <returntype>B4XFont*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4XFont*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Checked</name>
+            <comment>Gets or sets the checked state (also named selected or value). 
+Supported types:
+B4A - CheckBox, RadioButton, ToggleButton, Switch
+B4i - Switch
+B4J: CheckBox, RadioButton, ToggleButton.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>NumberOfViews</name>
+            <comment>Returns the number of direct child views.
+Supported types
+B4A - Activity, Panel
+B4i - Panel
+B4J - Pane</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>Color</name>
+            <comment>Gets or sets the background color. Returns 0 if the color is not available.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ScrollViewOffsetY</name>
+            <comment>Gets or sets the vertical scroll position.
+Supported types:
+B4A - ScrollView (returns 0 for HorizontalScrollView).
+B4i - ScrollView
+B4J - ScrollPane</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ScrollViewOffsetX</name>
+            <comment>Gets or sets the horizontal scroll position.
+Supported types:
+B4A - HorizontalScrollView (returns 0 for ScrollView).
+B4i - ScrollView
+B4J - ScrollPane</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ScrollViewInnerPanel</name>
+            <comment>Gets or sets the scroll view inner panel.
+Supported types:
+B4A - HorizontalScrollView, ScrollView
+B4i - ScrollView
+B4J - ScrollPane</comment>
+            <returntype>B4XViewWrapper*</returntype>
+        </property>
+        <property>
+            <name>ScrollViewContentHeight</name>
+            <comment>Gets or set the scroll view inner panel height.
+Supported types:
+B4A - HorizontalScrollView, ScrollView
+B4i - ScrollView
+B4J - ScrollPane</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ScrollViewContentWidth</name>
+            <comment>Gets or set the scroll view inner panel width.
+Supported types:
+B4A - HorizontalScrollView, ScrollView
+B4i - ScrollView
+B4J - ScrollPane</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Rotation</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment>Gets or sets the view's rotation transformation (in degrees).</comment>
+        </property>
+        <comment>A generic view. Any view can be treated as a B4XView.</comment>
+    </class>
+    <class>
+        <name>B4XBitmapWrapper</name>
+        <shortname>B4XBitmap</shortname>
+        <objectwrapper>UIImage*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment> </comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="WriteToStream">WriteToStream:::</name>
+            <comment>Writes the bitmap to the output stream.
+Quality - Value between 0 (smaller size, lower quality) to 100 (larger size, higher quality), 
+which is a hint for the compressor for the required quality.
+Format - JPEG or PNG.
+ 
+Example:&lt;code&gt;
+Dim Out As OutputStream
+Out = File.OpenOutput(XUI.DefaultFolder, "Test.png", False)
+Bitmap1.WriteToStream(out, 100, "PNG")
+Out.Close&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>OutputStream</name>
+                <type>B4IOutputStream*</type>
+            </parameter>
+            <parameter>
+                <name>Quality</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Format</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Resize">Resize:::</name>
+            <comment>Returns a &lt;b&gt;new&lt;/b&gt; bitmap with the given width and height.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>KeepAspectRatio</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Rotate">Rotate:</name>
+            <comment>Returns a &lt;b&gt;new&lt;/b&gt; rotated bitmap. The bitmap will be rotated clockwise.
+The following values are supported on all three platforms: 0, 90, 180, 270.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <parameter>
+                <name>Degrees</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Crop">Crop::::</name>
+            <comment>Returns a &lt;b&gt;new&lt;/b&gt; cropped bitmap.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>null</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>float</returntype>
+            <comment>Returns the bitmap's width.</comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>float</returntype>
+            <comment>Returns the bitmap's height.</comment>
+        </property>
+        <comment>Represents a loaded image. Similar to B4A Bitmap, B4i Bitmap and B4J Image.</comment>
+    </class>
+    <class>
+        <name>B4XFont</name>
+        <shortname>B4XFont</shortname>
+        <objectwrapper>UIFont*</objectwrapper>
+        <comment>An object that holds a typeface and size.</comment>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment> </comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="ToNativeFont">ToNativeFont</name>
+            <returntype>B4IFontWrapper*</returntype>
+            <comment>Returns a native font object representing the same font.</comment>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>null</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Size</name>
+            <returntype>float</returntype>
+            <comment> </comment>
+        </property>
+    </class>
+    <class>
+        <name>B4IXUI</name>
+        <shortname>XUI</shortname>
+        <method>
+            <name DesignerName="LoadBitmap">LoadBitmap::</name>
+            <comment>Loads a bitmap. In most cases you should use LoadBitmapResize instead.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadBitmapResize">LoadBitmapResize:::::</name>
+            <comment>Loads and resizes a bitmap.</comment>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>KeepAspectRatio</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetDataFolder">SetDataFolder:</name>
+            <comment>B4A, B4i - Does nothing.
+ B4J - Sets the subfolder name on Windows. The actual path will be similar to: C:\Users\[user name]\AppData\Roaming\[AppName].
+Does nothing on other platforms.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>AppName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="PaintOrColorToColor">PaintOrColorToColor:</name>
+            <comment>B4A, B4i - Does nothing.
+ B4J - Converts a Paint object to an Int color. Does not do anything if the color is already an Int color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Color</name>
+                <type>NSObject*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SubExists">SubExists:::</name>
+            <comment>Same as SubExists keyword. Adds an additional parameter that is required in B4i (number of parameters).</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>Component</name>
+                <type>NSObject*</type>
+            </parameter>
+            <parameter>
+                <name>Sub</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>NumberOfArguments</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CreateFont">CreateFont::</name>
+            <comment>Creates a new B4XFont from the given font and size. 
+Do NOT use DIP units with font sizes.</comment>
+            <returntype>B4XFont*</returntype>
+            <parameter>
+                <name>Font</name>
+                <type>UIFont*</type>
+            </parameter>
+            <parameter>
+                <name>Size1</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CreateFont2">CreateFont2::</name>
+            <comment>Create a new B4XFont from the given B4XFont and size.
+Do NOT use DIP units with font sizes.</comment>
+            <returntype>B4XFont*</returntype>
+            <parameter>
+                <name>B4XFont</name>
+                <type>B4XFont*</type>
+            </parameter>
+            <parameter>
+                <name>Size1</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CreateDefaultFont">CreateDefaultFont:</name>
+            <comment>Create a new B4XFont with the default typeface.
+Do NOT use DIP units with font sizes.</comment>
+            <returntype>B4XFont*</returntype>
+            <parameter>
+                <name>Size</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CreateDefaultBoldFont">CreateDefaultBoldFont:</name>
+            <comment>Create a new B4XFont with the default bold typeface.
+Do NOT use DIP units with font sizes.</comment>
+            <returntype>B4XFont*</returntype>
+            <parameter>
+                <name>Size</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="CreatePanel">CreatePanel::</name>
+            <returntype>B4XViewWrapper*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <comment>Creates a Panel (or Pane in B4J).
+Note that the panel created will clip its child views. 
+In B4A, this method can only be called from an Activity context.</comment>
+        </method>
+        <method>
+            <name DesignerName="Color_RGB">Color_RGB:::</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>R</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>G</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>B</name>
+                <type>int</type>
+            </parameter>
+            <comment>Returns the color value from the components. Values should be between 0 to 255.</comment>
+        </method>
+        <method>
+            <name DesignerName="Color_ARGB">Color_ARGB::::</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Alpha</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>R</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>G</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>B</name>
+                <type>int</type>
+            </parameter>
+            <comment>Returns the color value from the components. Values should be between 0 to 255.</comment>
+        </method>
+        <method>
+            <name DesignerName="MsgboxAsync">MsgboxAsync:::</name>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Message</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Title</name>
+                <type>NSString*</type>
+            </parameter>
+            <comment>Shows a non-modal Msgbox.
+Returns an object that can be used as the sender filter parameter for the optional Msgbox_Result event.
+Example:&lt;code&gt;xui.MsgboxAsync("Hello", "World")&lt;/code&gt;</comment>
+        </method>
+        <method>
+            <name DesignerName="Msgbox2Async">Msgbox2Async:::::::</name>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Message</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Title</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Positive</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Cancel</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Negative</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Icon</name>
+                <type>UIImage*</type>
+            </parameter>
+            <comment>Shows a non-modal Msgbox.
+Returns an object that can be used as the sender filter parameter for the Msgbox_Result event.
+Message - Dialog message.
+Title - Dialog title.
+Positive - Positive button text. Pass an empty string to remove button.
+Cancel - Cancel button text. Pass an empty string to remove button.
+Negative - Negative button text. Pass an empty string to remove button.
+Icon - Dialog icon. Pass Null to remove. Does nothing in B4i.
+ Example:&lt;code&gt;
+Dim sf As Object = xui.Msgbox2Async("Delete file?", "Title", "Yes", "Cancel", "No", Null)
+Wait For (sf) Msgbox_Result (Result As Int)
+If Result = xui.DialogResponse_Positive Then
+	Log("Deleted!!!")
+End If&lt;/code&gt;</comment>
+        </method>
+        <method>
+            <name DesignerName="FileUri">FileUri::</name>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <comment>Returns a file uri. This can be used with WebView to access local resources.
+The FileName parameter will be url encoded.
+Example: &lt;code&gt;
+WebView1.LoadHtml($"&lt;img src="${xui.FileUri(File.DirAssets, "smiley.png")}" /&gt;"$)
+'or:
+WebView1.LoadUrl($"${xui.FileUri(File.DirAssets, "smiley.png")}"$)
+&lt;/code&gt;</comment>
+        </method>
+        <property>
+            <name>Color_Black</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_DarkGray</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Gray</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_LightGray</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_White</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Red</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Green</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Blue</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Yellow</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Cyan</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Magenta</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Color_Transparent</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>DefaultFolder</name>
+            <comment>B4A - Same as File.DirInternal.
+B4i - Same as File.DirDocuments.
+B4J - Same as File.DirData. You must first call SetDataFolder once before you can use this folder.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>DialogResponse_Positive</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>DialogResponse_Cancel</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>DialogResponse_Negative</name>
+            <returntype>int</returntype>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>IsB4A</name>
+            <returntype>BOOL</returntype>
+            <comment>Returns True in B4A.</comment>
+        </property>
+        <property>
+            <name>IsB4i</name>
+            <returntype>BOOL</returntype>
+            <comment>Returns True in B4i.</comment>
+        </property>
+        <property>
+            <name>IsB4J</name>
+            <returntype>BOOL</returntype>
+            <comment>Returns True in B4J.</comment>
+        </property>
+        <comment>The XUI object includes various methods and utilities.</comment>
+    </class>
+    <class>
+        <name>B4XCanvas</name>
+        <shortname>B4XCanvas</shortname>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <comment>Initializes the canvas.
+In B4A and B4i the canvas will draw on the passed view.
+In B4J the canvas which is a view by itself is added to the passed pane as the first element.</comment>
+        </method>
+        <method>
+            <name DesignerName="Resize">Resize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+            <comment>Resizes the canvas.</comment>
+        </method>
+        <method>
+            <name DesignerName="Invalidate">Invalidate</name>
+            <returntype>void</returntype>
+            <comment>Commits the drawings. Must be called for the drawings to be updated.</comment>
+        </method>
+        <method>
+            <name DesignerName="CreateBitmap">CreateBitmap</name>
+            <returntype>B4XBitmapWrapper*</returntype>
+            <comment>Returns a copy of the canvas bitmap. In B4A it returns the canvas bitmap itself (not a copy).</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawRect">DrawRect::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Rect1</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Filled</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>StrokeWidth</name>
+                <type>float</type>
+            </parameter>
+            <comment>Draws a rectangle.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawLine">DrawLine::::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>x1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y1</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>x2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>StrokeWidth</name>
+                <type>float</type>
+            </parameter>
+            <comment>Draws a line between x1,y1 to x2,y2.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawCircle">DrawCircle::::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Radius</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Filled</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>StrokeWidth</name>
+                <type>float</type>
+            </parameter>
+            <comment>Draws a circle.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawBitmap">DrawBitmap::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Bitmap</name>
+                <type>UIImage*</type>
+            </parameter>
+            <parameter>
+                <name>Destination</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <comment>Draws a bitmap in the given destination. Use B4XBitmap.Crop to draw part of a bitmap.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawBitmapRotated">DrawBitmapRotated:::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Bitmap</name>
+                <type>UIImage*</type>
+            </parameter>
+            <parameter>
+                <name>Destination</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <parameter>
+                <name>Degrees</name>
+                <type>float</type>
+            </parameter>
+            <comment>Similar to DrawBitmap. Draws a rotated bitmap.</comment>
+        </method>
+        <method>
+            <name DesignerName="ClipPath">ClipPath:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Path</name>
+                <type>B4XPath*</type>
+            </parameter>
+            <comment>Clips the drawings to a closed path.</comment>
+        </method>
+        <method>
+            <name DesignerName="RemoveClip">RemoveClip</name>
+            <returntype>void</returntype>
+            <comment>Removes a previously set clip region.</comment>
+        </method>
+        <method>
+            <name DesignerName="ClearRect">ClearRect:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Rect1</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <comment>Clears the given rectangle. Does not work in B4J with clipped paths.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawTextRotated">DrawTextRotated:::::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Font</name>
+                <type>B4XFont*</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Align</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Degrees</name>
+                <type>float</type>
+            </parameter>
+            <comment>Similar to DrawText. Rotates the text before it is drawn.</comment>
+        </method>
+        <method>
+            <name DesignerName="DrawText">DrawText::::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Font</name>
+                <type>B4XFont*</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Align</name>
+                <type>NSString*</type>
+            </parameter>
+            <comment>Draws the text.
+Text - The text that will be drawn.
+x - The origin X coordinate.
+y - The origin Y coordinate.
+Font - The text font.
+Color - Drawing color.
+Alignment - Sets the alignment relative to the origin. One of the following values: LEFT, CENTER, RIGHT.</comment>
+        </method>
+        <method>
+            <name DesignerName="Release">Release</name>
+            <returntype>void</returntype>
+            <comment>Releases native resources related to the canvas. Does nothing in B4A and B4J.</comment>
+        </method>
+        <property>
+            <name>TargetRect</name>
+            <returntype>B4XRect*</returntype>
+            <comment>Returns a B4XRect with the same dimensions as the target view.</comment>
+        </property>
+        <property>
+            <name>TargetView</name>
+            <returntype>B4XViewWrapper*</returntype>
+            <comment>Returns the target view.</comment>
+        </property>
+        <comment>A cross platform canvas.</comment>
+    </class>
+    <class>
+        <name>B4XRect</name>
+        <shortname>B4XRect</shortname>
+        <objectwrapper>B4IRect*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>null</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::::</name>
+            <comment> </comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Right</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Bottom</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>null</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Top</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Right</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Bottom</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment> </comment>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment>Gets or sets the rectangle width.</comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+            <comment>Gets or sets the rectangle height.</comment>
+        </property>
+        <property>
+            <name>CenterX</name>
+            <comment>Returns the horizontal center.</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>CenterY</name>
+            <comment>Returns the vertical center.</comment>
+            <returntype>float</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4XPath</name>
+        <shortname>B4XPath</shortname>
+        <objectwrapper>UIBezierPath*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment> </comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>B4XPath*</returntype>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <comment>Initializes the path and sets the value of the first point.</comment>
+        </method>
+        <method>
+            <name DesignerName="InitializeOval">InitializeOval:</name>
+            <returntype>B4XPath*</returntype>
+            <parameter>
+                <name>Rect1</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <comment>Initializes the path and sets the current path shape to an oval.
+Rect - The oval framing rectangle.</comment>
+        </method>
+        <method>
+            <name DesignerName="InitializeArc">InitializeArc:::::</name>
+            <returntype>B4XPath*</returntype>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Radius</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>StartingAngle</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>SweepAngle</name>
+                <type>float</type>
+            </parameter>
+            <comment>Initializes the path and sets the current path shape to an arc. 
+ x / y - Arc center.
+ Radius - Arc radius.
+ StartingAngle - The starting angle. 0 equals to hour 3.
+ SweepAngle - Sweep angle. Positive = clockwise.</comment>
+        </method>
+        <method>
+            <name DesignerName="InitializeRoundedRect">InitializeRoundedRect::</name>
+            <returntype>B4XPath*</returntype>
+            <parameter>
+                <name>Rect1</name>
+                <type>B4XRect*</type>
+            </parameter>
+            <parameter>
+                <name>CornersRadius</name>
+                <type>float</type>
+            </parameter>
+            <comment>Initializes the path and sets the current path shape to a rectangle with rounded corners.
+Rect - Rectangle.
+CornersRadius - Corners radius.</comment>
+        </method>
+        <method>
+            <name DesignerName="LineTo">LineTo::</name>
+            <returntype>B4XPath*</returntype>
+            <parameter>
+                <name>x</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>y</name>
+                <type>float</type>
+            </parameter>
+            <comment>Adds a line from the last point to the specified point.</comment>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>null</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.5</version>
+</root>

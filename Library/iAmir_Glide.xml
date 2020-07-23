@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <b4x_version>5.00</b4x_version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>ihttp</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <class b4a_type="StaticCode">
+    <name>b4i_amir_glideutils</name>
+    <shortname>Amir_GlideUtils</shortname>
+    <objectwrapper>B4IStaticModule</objectwrapper>
+    <field>
+      <name DesignerName="Options">_options</name>
+      <returntype>B4IMap*</returntype>
+    </field>
+    <field>
+      <name DesignerName="Requests">_requests</name>
+      <returntype>B4IMap*</returntype>
+    </field>
+    <field>
+      <name DesignerName="CanAdd">_canadd</name>
+      <returntype>BOOL</returntype>
+    </field>
+    <field>
+      <name DesignerName="CacheDir">_cachedir</name>
+      <returntype>NSString*</returntype>
+    </field>
+    <method>
+      <name DesignerName="AddRequest">_addrequest:</name>
+      <returntype>int</returntype>
+      <parameter>
+        <name>GR</name>
+        <type>b4i_amir_gliderequest*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadImgTransformations">_loadimgtransformations:::</name>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>Map</name>
+        <type>B4IMap*</type>
+      </parameter>
+      <parameter>
+        <name>Bitmap</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+      <parameter>
+        <name>img</name>
+        <type>B4IImageViewWrapper*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadTransformations">_loadtransformations:::</name>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>Map</name>
+        <type>B4IMap*</type>
+      </parameter>
+      <parameter>
+        <name>Bitmap</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+      <parameter>
+        <name>img</name>
+        <type>B4IImageViewWrapper*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoveRequest">_removerequest:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Key</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SaveBitmap">_savebitmap:::::</name>
+      <comment>format is JPEG,PNG
+quality is between 0 and 100 , 100 is high quality
+</comment>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>Bitmap1</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+      <parameter>
+        <name>Dir</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Filename</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Format</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Quality</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Start">_start:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Request</name>
+        <type>b4i_amir_gliderequest*</type>
+      </parameter>
+    </method>
+    <method>
+      <name>process_globals</name>
+      <returntype>void</returntype>
+    </method>
+  </class>
+  <class>
+    <name>b4i_amir_glide</name>
+    <shortname>Amir_Glide</shortname>
+    <method>
+      <name DesignerName="ApplyDefaultRequestOptions">_applydefaultrequestoptions:</name>
+      <returntype>void</returntype>
+      <parameter>
+        <name>iOptions</name>
+        <type>b4i_amir_gliderequestoptions*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AsBitmap">_asbitmap</name>
+      <returntype>b4i_amir_glide*</returntype>
+    </method>
+    <method>
+      <name DesignerName="AsGif">_asgif</name>
+      <returntype>b4i_amir_glide*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ClearCache">_clearcache</name>
+      <returntype>void</returntype>
+    </method>
+    <method>
+      <name DesignerName="ClearGifCache">_cleargifcache</name>
+      <returntype>void</returntype>
+    </method>
+    <method>
+      <name DesignerName="getAbout" HideFromIDE="true">_getabout</name>
+      <comment>AmirHosseinAghajari
+iAmir_Glide
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getPhotoCacheDir" HideFromIDE="true">_getphotocachedir</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getRO" HideFromIDE="true">_getro</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getTR" HideFromIDE="true">_gettr</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <returntype>b4i_amir_glide*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Load">_load:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Obj</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadByte">_loadbyte:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Bytes</name>
+        <type>unsigned char[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadFile">_loadfile::</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Dir</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Name</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadImage">_loadimage:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Bitmap</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadURI">_loaduri:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Path</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadURL">_loadurl:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RetryFaildRequests">_retryfaildrequests</name>
+      <returntype>void</returntype>
+    </method>
+    <method>
+      <name DesignerName="setPhotoCacheDir" HideFromIDE="true">_setphotocachedir:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>iCacheDir</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setSaveFaildRequests" HideFromIDE="true">_setsavefaildrequests:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>canSave</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="About">_about</name>
+      <comment>AmirHosseinAghajari
+iAmir_Glide
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="PhotoCacheDir">_photocachedir</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>NSString*</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="RO">_ro</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </property>
+    <property>
+      <name DesignerName="TR">_tr</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </property>
+    <property>
+      <name DesignerName="SaveFaildRequests">_savefaildrequests</name>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <field>
+      <name DesignerName="LastRequest">_lastrequest</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_amir_gliderequest</name>
+    <shortname>Amir_GlideRequest</shortname>
+    <event>onLoadFailed (Error As String,Code As Int,Tag As Object)</event>
+    <event>onResourceReady (Bitmap As Object,IsFirstResource As boolean,Tag As Object)</event>
+    <event>onGifResourceReady (GifPlayer As Amir_GlideGifSource,IsFirstResource As boolean,Tag As Object)</event>
+    <event>onAnimate (ImageView As ImageView)</event>
+    <method>
+      <name DesignerName="Apply">_apply:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>iOptions</name>
+        <type>b4i_amir_gliderequestoptions*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AsBitmap">_asbitmap</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+    </method>
+    <method>
+      <name DesignerName="AsGif">_asgif</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ClearImageView">_clearimageview</name>
+      <returntype>void</returntype>
+    </method>
+    <method>
+      <name DesignerName="CompileWith">_compilewith:::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Response</name>
+        <type>B4IHttpResponse*</type>
+      </parameter>
+      <parameter>
+        <name>Message</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Code</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ErrorRequest">_errorrequest:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>iError</name>
+        <type>b4i_amir_gliderequest*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getErrorCode" HideFromIDE="true">_geterrorcode</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="getErrorMessage" HideFromIDE="true">_geterrormessage</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getGifSource" HideFromIDE="true">_getgifsource</name>
+      <returntype>b4i_amir_glidegifsource*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getIsGif" HideFromIDE="true">_getisgif</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getIsLoadedSuccessful" HideFromIDE="true">_getisloadedsuccessful</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getIsRunning" HideFromIDE="true">_getisrunning</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getIsSuccess" HideFromIDE="true">_getissuccess</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetRequest">_getrequest</name>
+      <returntype>B4IHttpRequest*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Into">_into:</name>
+      <returntype>void</returntype>
+      <parameter>
+        <name>ImageView</name>
+        <type>B4IImageViewWrapper*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Listener">_listener:::</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>iTarget</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>Tag</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadGif">_loadgif:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Path</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadImage">_loadimage:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Bitmap</name>
+        <type>B4IBitmap*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadUrl">_loadurl:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RetryOnError">_retryonerror:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Retry</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RunOnThread">_runonthread:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>iThread</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setIsGif" HideFromIDE="true">_setisgif:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>isGif</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Submit">_submit</name>
+      <returntype>void</returntype>
+    </method>
+    <method>
+      <name DesignerName="ThumbnailRequest">_thumbnailrequest:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>iThumbnail</name>
+        <type>b4i_amir_gliderequest*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="UseAnimator">_useanimator::</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>iTarget</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="WithFade">_withfade:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>Duration</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="WithFileName">_withfilename:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>NewName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="WithPath">_withpath:</name>
+      <returntype>b4i_amir_gliderequest*</returntype>
+      <parameter>
+        <name>NewPath</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="ErrorCode">_errorcode</name>
+      <returntype>int</returntype>
+    </property>
+    <property>
+      <name DesignerName="ErrorMessage">_errormessage</name>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="GifSource">_gifsource</name>
+      <returntype>b4i_amir_glidegifsource*</returntype>
+    </property>
+    <property>
+      <name DesignerName="IsGif">_isgif</name>
+      <returntype>BOOL</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="IsLoadedSuccessful">_isloadedsuccessful</name>
+      <returntype>BOOL</returntype>
+    </property>
+    <property>
+      <name DesignerName="IsRunning">_isrunning</name>
+      <returntype>BOOL</returntype>
+    </property>
+    <property>
+      <name DesignerName="IsSuccess">_issuccess</name>
+      <returntype>BOOL</returntype>
+    </property>
+  </class>
+  <class>
+    <name>b4i_amir_gliderequestoptions</name>
+    <shortname>Amir_GlideRequestOptions</shortname>
+    <method>
+      <name DesignerName="CenterCrop">_centercrop</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </method>
+    <method>
+      <name DesignerName="CenterInside">_centerinside</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </method>
+    <method>
+      <name DesignerName="CircleCrop">_circlecrop</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ClearTransformations">_cleartransformations</name>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="DiskCacheMode">_diskcachemode:</name>
+      <comment> 0 : Default
+ 1 : First Resource
+ 2 : Load All Resources
+</comment>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>Mode</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="FitCenter">_fitcenter</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Format">_format:</name>
+      <comment>PNG or JPEG
+</comment>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>ImageFormat</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Quality">_quality:</name>
+      <comment>quality is between 0 and 100 , 100 is high quality
+</comment>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>QualitySize</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Resize">_resize::</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SkipCache">_skipcache:</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>iSkipCache</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="TimeOut">_timeout:</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>reqTimeOut</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ToMap">_tomap</name>
+      <returntype>B4IMap*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Transform">_transform:</name>
+      <returntype>b4i_amir_gliderequestoptions*</returntype>
+      <parameter>
+        <name>iTransformations</name>
+        <type>b4i_amir_glidetransformation*</type>
+      </parameter>
+    </method>
+  </class>
+  <class>
+    <name>b4i_amir_glidetransformation</name>
+    <shortname>Amir_GlideTransformation</shortname>
+    <method>
+      <name DesignerName="AddCustom">_addcustom::</name>
+      <comment>&lt;b&gt; Events : &lt;/b&gt;
+&lt;code&gt; EventName_onTransform (Image As Bitmap) As Bitmap &lt;/code&gt;
+</comment>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>Target</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Blur">_blur</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Blur2">_blur2:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Radius</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CenterCrop">_centercrop</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="CenterInside">_centerinside</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="CircleCrop">_circlecrop</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="CircleCrop2">_circlecrop2:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Quality</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CircleCrop3">_circlecrop3::</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Radius</name>
+        <type>float</type>
+      </parameter>
+      <parameter>
+        <name>Quality</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Crop">_crop::::</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Left</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Top</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="FitCenter">_fitcenter</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+    </method>
+    <method>
+      <name DesignerName="ImageQuality">_imagequality:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Quality</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Orientation">_orientation:</name>
+      <comment>Orientations:
+Up = 0
+Down = 1
+Left = 2
+Right = 3
+UpMirrored = 4
+DownMirrored = 5
+LeftMirrored = 6
+RightMirrored = 7
+</comment>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>types</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Rotate">_rotate:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Degrees</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RoundedCorners">_roundedcorners:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Radius</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Tint">_tint:</name>
+      <returntype>b4i_amir_glidetransformation*</returntype>
+      <parameter>
+        <name>Color</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ToMap">_tomap</name>
+      <returntype>B4IMap*</returntype>
+    </method>
+  </class>
+  <class>
+    <name>b4i_amir_glidegifsource</name>
+    <shortname>Amir_GlideGifSource</shortname>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetDuration">_getduration</name>
+      <returntype>float</returntype>
+    </method>
+    <method>
+      <name DesignerName="getEnabled" HideFromIDE="true">_getenabled</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetFrameAt">_getframeat:</name>
+      <returntype>B4IBitmap*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getFrameCount" HideFromIDE="true">_getframecount</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetFrameDuration">_getframeduration:</name>
+      <returntype>float</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getIndex" HideFromIDE="true">_getindex</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="getLoopable" HideFromIDE="true">_getloopable</name>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getMaxFrameDuration" HideFromIDE="true">_getmaxframeduration</name>
+      <returntype>float</returntype>
+    </method>
+    <method>
+      <name DesignerName="getMinFrameDuration" HideFromIDE="true">_getminframeduration</name>
+      <returntype>float</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize::</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>args</name>
+        <type>NSObject*[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="OnGetFrameDurationListener">_ongetframedurationlistener::</name>
+      <comment>&lt;b&gt; Event : &lt;/b&gt;
+ &lt;code&gt;EventName_GetFrameDuration (Duration As Float,Index As int) As Float&lt;/code&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Target</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setEnabled" HideFromIDE="true">_setenabled:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Enabled</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setIndex" HideFromIDE="true">_setindex:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setLoopable" HideFromIDE="true">_setloopable:</name>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Loopable</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setMaxFrameDuration" HideFromIDE="true">_setmaxframeduration:</name>
+      <comment>pass -1 for default
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Duration</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setMinFrameDuration" HideFromIDE="true">_setminframeduration:</name>
+      <comment>pass -1 for default
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Duration</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="Enabled">_enabled</name>
+      <returntype>BOOL</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="FrameCount">_framecount</name>
+      <returntype>int</returntype>
+    </property>
+    <property>
+      <name DesignerName="Index">_index</name>
+      <returntype>int</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Loopable">_loopable</name>
+      <returntype>BOOL</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="MaxFrameDuration">_maxframeduration</name>
+      <comment>pass -1 for default
+</comment>
+      <returntype>float</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>float</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="MinFrameDuration">_minframeduration</name>
+      <comment>pass -1 for default
+</comment>
+      <returntype>float</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>float</type>
+      </parameter>
+    </property>
+  </class>
+  <version>1.04</version>
+  <author>AmirHosseinAghajari</author>
+</root>

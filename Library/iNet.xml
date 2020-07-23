@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IFTP</name>
+        <shortname>FTP</shortname>
+        <event>DeleteCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>DownloadCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>UploadCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>ListCompleted (ServerPath As String, Success As Boolean, Folders() As FTPEntry, Files() As FTPEntry)</event>
+        <event>CommandCompleted (Command As String, Success As Boolean, ReplyCode As Int, ReplyString As String)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::::::</name>
+            <comment>Initializes the object and set the subs that will handle the events.
+EventName - Subs prefix.
+Host - FTP host name or ip address.
+Port - FTP port number (usually 21).
+User / Password - User credentials.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Host</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>User</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DownloadFile">DownloadFile::::</name>
+            <comment>Downloads the file from the server. The DownloadCompleted event will be raised when download completes.
+ServerFilePath - Full path to the remote file.
+Unused - Unused boolean value (kept for signature compatibility).
+DeviceFolder / DeviceFile - The file will be downloaded to this path.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ServerFilePath</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Unused</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>DeviceFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>DeviceFile</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="UploadFile">UploadFile::::</name>
+            <comment>Uploads a local file to the server. The UploadCompleted event will be raised when upload completes.
+DeviceFolder / DeviceFile - File to upload.
+Unused - Unused boolean value (kept for signature compatibility).
+ServerFilePath - The full path to the server file that will be created.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DeviceFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>DeviceFile</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Unused</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>ServerFilePath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DeleteFile">DeleteFile:</name>
+            <comment>Deletes a file from the server. The DeleteCompleted event will be raised.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SendCommand">SendCommand::</name>
+            <comment>Sends an FTP command. The CommandCompleted event will be raised with the server reply.
+Should only be used with commands that return the reply in the command channel.
+Example:&lt;code&gt;
+    FTP.SendCommand("MKD", "/somefolder/newfolder")&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Command</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Parameters</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="List">List:</name>
+            <comment>Fetches the list of folders and files in the specified path.
+The ListCompleted event will be raised when the data is available.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>PassiveMode</name>
+            <comment>Gets or sets whether FTP is in passive mode. The default mode is active mode.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IFTPEntry</name>
+        <shortname>FTPEntry</shortname>
+        <property>
+            <name>Name</name>
+            <comment>Returns the entry name.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Timestamp</name>
+            <comment>Returns the last modified time.</comment>
+            <returntype>long long</returntype>
+        </property>
+        <property>
+            <name>Size</name>
+            <comment>Returns the file size.</comment>
+            <returntype>long long</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4ISMTP</name>
+        <shortname>SMTP</shortname>
+        <event>MessageSent (Success As Boolean)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::::::</name>
+            <comment>Initializes the object.
+Server - Server address. Host name or ip.
+Port - mail server port.
+Username / Password - Account credentials.
+EventName - Sets the subs that handle the events.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Server</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Username</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Send">Send</name>
+            <comment>Sends the message. The MessageSent will later be raised.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="AddAttachment">AddAttachment::</name>
+            <comment>Adds an attachment to the message.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Body</name>
+            <comment>Gets or sets the message body.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Subject</name>
+            <comment>Gets or sets the message subject.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>To</name>
+            <comment>Gets or sets the list of "To" recipients.
+Example:&lt;code&gt;SMTP.To.Add("email@example.com")&lt;/code&gt;</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IList*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CC</name>
+            <comment>Gets or sets the list of "CC" recipients.</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IList*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BCC</name>
+            <comment>Gets or sets the list of "BCC" recipients.</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IList*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Sender</name>
+            <comment>Gets or sets the sender field. By default it is the same as the user name.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>HtmlBody</name>
+            <comment>Gets or sets whether the message body is Html text.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>UseSSL</name>
+            <comment>Gets or sets whether the connection should be done with SSL sockets (for example Gmail smtp over port 465).</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>StartTLSMode</name>
+            <comment>Gets or sets whether the connection should be done in StartTLS mode (for example Gmail smtp over port 587).</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DebugLogs</name>
+            <comment>Set to true to log debug messages.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.2</version>
+    <dependsOn>CFNetwork.framework</dependsOn>
+</root>

@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>icore</dependsOn>
+  <dependsOn>avfoundation.framework</dependsOn>
+  <dependsOn>TapsellSDKv3.framework.swift.3</dependsOn>
+  <class>
+    <name>b4i_tapsell</name>
+    <shortname>Tapsell</shortname>
+    <comment>Tapsell SDK.
+</comment>
+    <event>AdOpened(item As TapsellAd)</event>
+    <event>AdClosed(item As TapsellAd)</event>
+    <event>AdFinished(item As TapsellAd,completed as boolean)</event>
+    <event>AdAvailable(item As TapsellAd)</event>
+    <event>NoAdAvailable</event>
+    <event>Expiring(item As TapsellAd)</event>
+    <event>Error(error As String)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getAppUserId" HideFromIDE="true">_getappuserid</name>
+      <comment>Get/Set the app user id.
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getDebugMode" HideFromIDE="true">_getdebugmode</name>
+      <comment>Get/Set the debug mode.
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <comment>You must initialize it from Application_Start event.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>apiKey</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>eventName</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RequestAdForZone">_requestadforzone:::</name>
+      <comment>Request an interstitial or reward video
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>zoneID</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>option</name>
+        <type>b4i_tsadrequestoptions*</type>
+      </parameter>
+      <parameter>
+        <name>callback</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAppUserId" HideFromIDE="true">_setappuserid:</name>
+      <comment>Get/Set the app user id.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>id</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setDebugMode" HideFromIDE="true">_setdebugmode:</name>
+      <comment>Get/Set the debug mode.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>on</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="AppUserId">_appuserid</name>
+      <comment>Get/Set the app user id.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>NSString*</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="DebugMode">_debugmode</name>
+      <comment>Get/Set the debug mode.
+</comment>
+      <returntype>BOOL</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>BOOL</type>
+      </parameter>
+    </property>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW320H50">_tapsellplusbannersizew320h50</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW320H100">_tapsellplusbannersizew320h100</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW250H250">_tapsellplusbannersizew250h250</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW300H250">_tapsellplusbannersizew300h250</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW468H60">_tapsellplusbannersizew468h60</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="TapsellPlusBannerSizeW728H90">_tapsellplusbannersizew728h90</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_tsbanneradview</name>
+    <shortname>TSBannerAdView</shortname>
+    <comment>Tapsell Standard Banner Ad view. Add this to your view from designer.
+</comment>
+    <event>RequestFilled</event>
+    <event>HideBannerClicked</event>
+    <event>NoAdAvailable</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <comment>Load ad to this view with NativeVideoAd Zone ID
+</comment>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="LoadAd">_loadad::</name>
+      <comment>Load ad to this view with StandardBannerAd Zone ID
+Size must be one of the &lt;b&gt;BANNER_..&lt;/b&gt; constant.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ZoneID</name>
+        <type>NSString*</type>
+      </parameter>
+      <parameter>
+        <name>size</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <field>
+      <name DesignerName="BANNER_320x50">_banner_320x50</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="BANNER_320x100">_banner_320x100</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="BANNER_250x250">_banner_250x250</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="BANNER_300x250">_banner_300x250</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_tsnativebanneradview</name>
+    <shortname>TSNativeBannerAdView</shortname>
+    <comment>Tapsell Native Banner Ad view. Add this to your view from designer.
+</comment>
+    <event>RequestFilled</event>
+    <event>Error(error As String)</event>
+    <event>NoAdAvailable</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <comment>Get the base panel
+</comment>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="LoadAd">_loadad:</name>
+      <comment>Load ad to this view with NativeBannerAd Zone ID
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ZoneID</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+  </class>
+  <class>
+    <name>b4i_tsnativevideoadview</name>
+    <shortname>TSNativeVideoAdView</shortname>
+    <comment>Tapsell Native Video Ad view. Add this to your view from designer.
+</comment>
+    <event>RequestFilled</event>
+    <event>Error(error As String)</event>
+    <event>NoAdAvailable</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetBase">_getbase</name>
+      <comment>Get the base panel
+</comment>
+      <returntype>B4IPanelWrapper*</returntype>
+    </method>
+    <method>
+      <name DesignerName="LoadAd">_loadad:</name>
+      <comment>Load ad to this view with NativeVideoAd Zone ID
+&lt;b&gt;You must call it from Page_Appear event.&lt;/b&gt;
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ZoneID</name>
+        <type>NSString*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="UnloadAd">_unloadad</name>
+      <comment>Unload ad from this view
+&lt;b&gt;You must call it from Page_Disappear event.&lt;/b&gt;
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+  </class>
+  <class>
+    <name>b4i_tapsellad</name>
+    <shortname>TapsellAd</shortname>
+    <comment>Tapsell ad object.
+</comment>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="getCacheTime" HideFromIDE="true">_getcachetime</name>
+      <comment>Check if the cache time
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getID" HideFromIDE="true">_getid</name>
+      <comment>Check if the ad id
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="getZoneId" HideFromIDE="true">_getzoneid</name>
+      <comment>Check if the zone id
+</comment>
+      <returntype>NSString*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize:::</name>
+      <comment>Dont initialize on your own. Use the ad object from the event itself.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>item</name>
+        <type>NSObject*</type>
+      </parameter>
+      <parameter>
+        <name>callback</name>
+        <type>NSObject*</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="isAdShown">_isadshown</name>
+      <comment>Check if the ad is shown or not
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="isBannerAd">_isbannerad</name>
+      <comment>Check if the ad is a BannerAd
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="isExpired">_isexpired</name>
+      <comment>Check if the ad is expired or not
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="isRewardedAd">_isrewardedad</name>
+      <comment>Check if the ad is a RewardAd
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="isValid">_isvalid</name>
+      <comment>Check if the ad is a ValidAd
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="isVideoAd">_isvideoad</name>
+      <comment>Check if the ad is a VideoAd
+</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="Show">_show:</name>
+      <comment>Show the ad.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>option</name>
+        <type>b4i_tsadshowoptions*</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="CacheTime">_cachetime</name>
+      <comment>Check if the cache time
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="ID">_id</name>
+      <comment>Check if the ad id
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+    <property>
+      <name DesignerName="ZoneId">_zoneid</name>
+      <comment>Check if the zone id
+</comment>
+      <returntype>NSString*</returntype>
+    </property>
+  </class>
+  <class>
+    <name>b4i_tsadrequestoptions</name>
+    <shortname>TSAdRequestOptions</shortname>
+    <comment>Tapsell ad request option. Usually used for ad caching.
+</comment>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="AsObject">_asobject</name>
+      <comment>Get the underlying object
+</comment>
+      <returntype>NSObject*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize::</name>
+      <comment>cacheType must be one of &lt;b&gt;CacheType..&lt;/b&gt; constant.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>cacheType</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <field>
+      <name DesignerName="CacheTypeCached">_cachetypecached</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="CacheTypeStreamed">_cachetypestreamed</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4i_tsadshowoptions</name>
+    <shortname>TSAdShowOptions</shortname>
+    <comment>Tapsell Interstitial and Reward ad show options.
+</comment>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>BOOL</returntype>
+    </method>
+    <method>
+      <name DesignerName="AsObject">_asobject</name>
+      <comment>Get the underlying object
+</comment>
+      <returntype>NSObject*</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize::::</name>
+      <comment>Orientation must be one of &lt;b&gt;Orientation..&lt;/b&gt; constant.
+BackDisabled will disable close button of the ads.
+ShowDialoge will show an confirmation dialog when user click on close button.
+</comment>
+      <returntype>NSString*</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>B4I*</type>
+      </parameter>
+      <parameter>
+        <name>Orientation</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>BackDisabled</name>
+        <type>BOOL</type>
+      </parameter>
+      <parameter>
+        <name>ShowDialoge</name>
+        <type>BOOL</type>
+      </parameter>
+    </method>
+    <field>
+      <name DesignerName="OrientationLockedPortrait">_orientationlockedportrait</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="OrientationLockedLandscape">_orientationlockedlandscape</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="OrientationUnlocked">_orientationunlocked</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="OrientationLockedReverserdLandscape">_orientationlockedreverserdlandscape</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name DesignerName="OrientationLockedReverserdPortrait">_orientationlockedreverserdportrait</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <version>1</version>
+  <author>Biswajit Sarkar</author>
+</root>

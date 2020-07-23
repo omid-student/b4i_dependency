@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iFirebaseStorage</name>
+        <shortname>FirebaseStorage</shortname>
+        <event>UploadCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>DownloadCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>MetadataCompleted (Metadata As StorageMetadata, Success As Boolean)</event>
+        <event>DeleteCompleted (ServerPath As String, Success As Boolean)</event>
+        <event>DownloadUrlAvailable (ServerPath As String, Success As Boolean, Url As String)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.
+Bucket - The url from Firebase console (ex: gs://yourapp.appspot.com)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Bucket</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="UploadFile">UploadFile::::</name>
+            <comment>Reads the data from the file and uploads it to the specified ServerPath.
+The UploadCompleted event will be raised on the current module.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DownloadFile">DownloadFile::::</name>
+            <comment>Downloads the remote resource and writes it to the specified file.
+The DownloadCompleted event will be raised in the current module.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetMetadata">GetMetadata::</name>
+            <comment>Retrieves the metadata of the remote resource. The MetadataCompleted event will be raised in the current module.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DeleteFile">DeleteFile::</name>
+            <comment>Deletes the remote resource. The DeleteCompleted event will be raised in the current module.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetDownloadUrl">GetDownloadUrl::</name>
+            <comment>Gets a shareable url. The DownloadUrlAvailable event will be raised in the current module.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>ServerPath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>B4IStorageMetadata</name>
+        <shortname>StorageMetadata</shortname>
+        <objectwrapper>FIRStorageMetadata*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Size</name>
+            <comment>Returns the resource size in bytes.</comment>
+            <returntype>long long</returntype>
+        </property>
+        <property>
+            <name>Timestamp</name>
+            <comment>Returns the last updated time as ticks. This method will throw an exception if the value is not available.</comment>
+            <returntype>long long</returntype>
+        </property>
+        <property>
+            <name>Name</name>
+            <comment>Returns the resource name.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Path</name>
+            <comment>Returns the resource path.</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.1</version>
+    <dependsOn>GoogleNetworkingUtilities.framework.3</dependsOn>
+    <dependsOn>FirebaseStorage.framework.3</dependsOn>
+</root>

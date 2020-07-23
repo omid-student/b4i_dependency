@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IXmlBuilder</name>
+        <shortname>XMLBuilder</shortname>
+        <comment>iXmlBuilder.h
+  iXmlBuilder
+
+  Created by b4j on 12/28/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <method>
+            <name DesignerName="Create">Create:</name>
+            <returntype>B4IXmlBuilder*</returntype>
+            <parameter>
+                <name>Name</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Element">Element:</name>
+            <returntype>B4IXmlBuilder*</returntype>
+            <parameter>
+                <name>Name</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Text">Text:</name>
+            <returntype>B4IXmlBuilder*</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Attribute">Attribute::</name>
+            <returntype>B4IXmlBuilder*</returntype>
+            <parameter>
+                <name>Name</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Value</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Up">Up</name>
+            <returntype>B4IXmlBuilder*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AsString">AsString</name>
+            <returntype>NSString*</returntype>
+        </method>
+    </class>
+    <version>1</version>
+</root>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IActivityBar</name>
+        <shortname>ActivityBar</shortname>
+        <event>onInitialized(EventName As String)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Show">Show:::</name>
+            <comment>Show the Bar</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>title</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>action</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowWithImage">ShowWithImage::::</name>
+            <comment>Show the Bar with image</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>title</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>action</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>imagepath</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Dismiss">Dismiss::</name>
+            <comment>Hide the Bar</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>action</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DismissAll">DismissAll:</name>
+            <comment>Hide the All Bar</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>DebugMode</name>
+            <comment>Enable/Disable Debug mode from Library</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Author</name>
+            <comment>Author of this Library</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Version</name>
+            <comment>Library Version</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>1.01</version>
+    <author>Alberto Iglesias (alberto@visualnet.inf.br)</author>
+</root>

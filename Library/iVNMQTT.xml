@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IMQTT</name>
+        <shortname>MQTT</shortname>
+        <event>onConnect(Status As Int)</event>
+        <event>onConnect2(Status As Int)</event>
+        <event>onPublish(Status As Int)</event>
+        <event>Received (Message As String)</event>
+        <event>onSubscribe (Topic as String)</event>
+        <event>onInitialized ()</event>
+        <event>onDisconnect(Status As Int)</event>
+        <event>onDisconnect2(Status As Int)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Publish">Publish::::</name>
+            <comment>Publish a message to Topic</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Topic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Payload</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>qos</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Retained</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Connect">Connect::::</name>
+            <comment>Connect to Broker</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Broker</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Username</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="setWill">setWill::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>payload</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>willTopic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>willQos</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>bretain</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="setWillData">setWillData::::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>payload</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>willTopic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>willQos</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>bretain</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Subscribe">Subscribe:</name>
+            <comment>Subscribe into a Topic</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Topic</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Subscribe2">Subscribe2::</name>
+            <comment>Subscribe into a Topic with Quality of Service</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Topic</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>qos</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Unsubscribe">Unsubscribe:</name>
+            <comment>Unsubscribe a Topic</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Topic</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Disconnect">Disconnect</name>
+            <comment>Disconnect from Broker</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ClearWill">ClearWill</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Reconnect">Reconnect</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="IsConnected">IsConnected</name>
+            <comment>Get status of connection</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>DebugMode</name>
+            <comment>Enable/Disable Debug mode from Library</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CleanSession</name>
+            <comment>Enable/Disable Clean Session</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>reconnectDelay</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>reconnectDelayMax</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>reconnectExponentialBackoff</name>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>QoS_AtMostOnce</name>
+            <comment>QoS0, At most once: The message is delivered at most once, or it may not be delivered at all. Its delivery across the network is not acknowledged. The message is not stored. The message could be lost if the client is disconnected, or if the server fails. QoS0 is the fastest mode of transfer. It is sometimes called "fire and forget".</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>QoS_AtLeastOnce</name>
+            <comment>QoS1, At least once: The message is always delivered at least once. It might be delivered multiple times if there is a failure before an acknowledgment is received by the sender. The message must be stored locally at the sender, until the sender receives confirmation that the message has been published by the receiver. The message is stored in case the message must be sent again.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>QoS_ExactlyOnce</name>
+            <comment>QoS2, Exactly once</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>KeepAlive</name>
+            <comment>Timeout for broker</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ClientID</name>
+            <comment>Set/Get the Client ID for broker know who you are. Default = UUID from Device</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Author</name>
+            <comment>Author of this Library</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Version</name>
+            <comment>Library Version</comment>
+            <returntype>NSString*</returntype>
+        </property>
+    </class>
+    <version>2.06</version>
+    <author>Alberto Iglesias (alberto@visualnet.inf.br)</author>
+</root>

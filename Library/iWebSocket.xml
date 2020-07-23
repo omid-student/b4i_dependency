@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IWebSocket</name>
+        <shortname>WebSocket</shortname>
+        <comment>Implementation of WebSocket client.</comment>
+        <event>Connected</event>
+        <event>Closed (Reason As String)</event>
+        <event>TextMessage (Message As String)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Connect">Connect:</name>
+            <comment>Connects to the given Url. The Url should start with ws://</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Url</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SendText">SendText:</name>
+            <comment>Sends a text message.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Close">Close</name>
+            <comment>Closes the connection.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Connected</name>
+            <comment>Returns true if the WebSocket is connected.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+    </class>
+    <version>1</version>
+    <dependsOn>libicucore.dylib</dependsOn>
+    <dependsOn>CFNetwork.framework</dependsOn>
+    <dependsOn>Security.framework</dependsOn>
+</root>

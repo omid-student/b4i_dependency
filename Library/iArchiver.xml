@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IArchiver</name>
+        <shortname>Archiver</shortname>
+        <comment>iArchiver.h
+  iArchiver
+
+  Created by b4j on 12/15/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <event>ZipDone (Success As Boolean)</event>
+        <event>UnzipDone (Success As Boolean)</event>
+        <method>
+            <name DesignerName="ZipFolder">ZipFolder:::</name>
+            <comment>Zips the given folder (including subfolders).
+InDir - Folder to compress.
+OutArchiveFolder, OutArchiveName - New zip file path.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>InDir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutArchiveFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutArchiveName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Unzip">Unzip::::</name>
+            <comment>Unzips the given zip file.
+InAcrhiveFolder, InArchiveName - Zip file path.
+OutDir - Destination folder.
+Password - Zip file password. Pass "" if no password is required.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>InArchiveFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>InArchiveName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutDir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AsyncZipFolder">AsyncZipFolder:::::</name>
+            <comment>Asynchronously zips the folder. The ZipDone event will be raised when the operation completes.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>InDir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutArchiveFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutArchiveName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AsyncUnzip">AsyncUnzip::::::</name>
+            <comment>Asynchronously unzips the folder. The UnzipDone event will be raised when the operation completes.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>InArchiveFolder</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>InArchiveName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>OutDir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.01</version>
+    <dependsOn>libz.dylib</dependsOn>
+</root>

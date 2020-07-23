@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iFacebook</name>
+        <shortname>FacebookSdk</shortname>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initializes the object.
+AppId - Facebook App ID.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>AppID</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="OpenUrl">OpenUrl:::</name>
+            <comment>Should be called from Application_OpenUrl. Returns True if the url was handled.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>Url</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Data</name>
+                <type>NSObject*</type>
+            </parameter>
+            <parameter>
+                <name>SourceApplication</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SignIn">SignIn</name>
+            <comment>Signs in using Facebook.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SignOut">SignOut</name>
+            <comment>Signs out from Firebase and Facebook.</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <version>1</version>
+    <dependsOn>FBSDKCoreKit.framework.3</dependsOn>
+    <dependsOn>FBSDKLoginKit.framework.3</dependsOn>
+</root>

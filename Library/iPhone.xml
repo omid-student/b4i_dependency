@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4IMessageComposer</name>
+        <shortname>MessageComposer</shortname>
+        <objectwrapper>MFMessageComposeViewController*</objectwrapper>
+        <event>Complete (Result As Int)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetRecipients">SetRecipients:</name>
+            <comment>Sets the message recipients.
+Example:&lt;code&gt;
+Message.SetRecipients(Array("123456789"))&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recipients</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Show">Show:</name>
+            <comment>Shows the message composer.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Parent</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Body</name>
+            <comment>Gets or sets the message body.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CanSendText</name>
+            <comment>Returns true if the device can send text messages/</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>RESULT_CANCELLED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_SENT</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_FAILED</name>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IClipboard</name>
+        <shortname>Clipboard</shortname>
+        <property>
+            <name>StringItem</name>
+            <comment>Gets or sets the last item in the clipboard. Returns an empty string if no string item is available.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ImageItem</name>
+            <comment>Gets or sets the last item in the clipboard. Returns an uninitialized Bitmap if no image item is available.</comment>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IMailComposer</name>
+        <shortname>MailComposer</shortname>
+        <objectwrapper>MFMailComposeViewController*</objectwrapper>
+        <event>Complete (Result As Int)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetToRecipients">SetToRecipients:</name>
+            <comment>Sets the "To" recipients.
+Example:&lt;code&gt;
+Mail.SetToRecipients(Array("hello@example.com"))&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recipients</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetCcRecipients">SetCcRecipients:</name>
+            <comment>Similar to SetToRecipients. Sets the "Cc" recipients.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recipients</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBccRecipients">SetBccRecipients:</name>
+            <comment>Similar to SetToRecipients. Sets the "Bcc" recipients.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recipients</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetSubject">SetSubject:</name>
+            <comment>Sets the mail subject.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Subject</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBody">SetBody::</name>
+            <comment>Sets the mail body.
+Body - Message text.
+Html - True for Html mail, false for plain text.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Body</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Html</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddAttachment">AddAttachment:::</name>
+            <comment>Adds an attachment to the mail.
+MimeType - The attachment MIME type. Use application/octet-stream for binary files.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>MimeType</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Show">Show:</name>
+            <comment>Shows the mail composer.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Parent</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CanSendMail</name>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>RESULT_CANCELLED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_SENT</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_FAILED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RESULT_SAVED</name>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4ITTS</name>
+        <shortname>TTS</shortname>
+        <objectwrapper>AVSpeechSynthesizer*</objectwrapper>
+        <comment>Synthesizes text to speech and plays it.</comment>
+        <event>Complete (Text As String)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Speak">Speak::</name>
+            <comment>Speaks the given text. The Complete event will be raised after the text is spoken.
+Text - Text to speak.
+ClearQueue - Whether to dismiss all waiting texts.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>ClearQueue</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops speaking and dismisses texts in the queue.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetLanguage">SetLanguage:</name>
+            <comment>Sets the voice language. The language code is made of the language (two lower case letters) and the locale (two upper case
+letters) separated with a dash. You can use GetSupportedLanguages to find all the supported language codes.
+Returns true if the language was set successfully.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>LanguageCode</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetSupportedLanguages">GetSupportedLanguages</name>
+            <comment>Returns a list with all the supported language codes.</comment>
+            <returntype>B4IList*</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>SpeechRate</name>
+            <comment>Gets or sets the speech rate. The value should be between MIN_SPEECH_RATE to MAX_SPEECH_RATE.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Pitch</name>
+            <comment>Gets or sets the pitch value. The value should be between 0.5 to 2.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>MAX_SPEECH_RATE</name>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>MIN_SPEECH_RATE</name>
+            <returntype>float</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IPhone</name>
+        <shortname>Phone</shortname>
+        <method>
+            <name DesignerName="Vibrate">Vibrate</name>
+            <comment>Vibrates the device for a short period.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetFlashlight">SetFlashlight:</name>
+            <comment>Sets the flash light state. Return true if the operation was successful.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>On</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddImageToAlbum">AddImageToAlbum:</name>
+            <comment>Adds the given image to the device album.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Image</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddVideoToAlbum">AddVideoToAlbum::</name>
+            <comment>Adds the specified video to the device album. Returns false if the device does not support this feature.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="KeyChainPut">KeyChainPut::</name>
+            <comment>Puts a key/value pair in the keychain. These values will be available even if the app is reinstalled.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Value</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="KeyChainGet">KeyChainGet:</name>
+            <comment>Gets a stored value from the keychain. Returns an empty string if the key is not found.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="KeyChainRemove">KeyChainRemove:</name>
+            <comment>Removes a key/value pair from the keychain.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>B4ISettings</name>
+        <shortname>Settings</shortname>
+        <comment>See the settings tutorial for more information.</comment>
+        <method>
+            <name DesignerName="Initialize">Initialize</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetBoolean">GetBoolean:</name>
+            <comment>Gets a Boolean value.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetInt">GetInt:</name>
+            <comment>Gets an Int value.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetString">GetString:</name>
+            <comment>Gets a String value.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Put">Put::</name>
+            <comment>Sets the value of the existing key or adds a new key / value pair.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Key</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Value</name>
+                <type>NSObject*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Synchronize">Synchronize</name>
+            <comment>Persists the changes.</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <class>
+        <name>B4IMotion</name>
+        <shortname>Motion</shortname>
+        <objectwrapper>CMMotionManager*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize</name>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Start">Start</name>
+            <comment>Starts monitoring the motion sensors.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Stop">Stop</name>
+            <comment>Stops monitoring the motion sensors.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StartMagnetometer">StartMagnetometer</name>
+            <comment>Starts monitoring the magnetometer sensor.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StopMagnetometer">StopMagnetometer</name>
+            <comment>Stops monitoring the magnetometer sensor.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetMagnetometer">GetMagnetometer</name>
+            <comment>Returns an array with the raw magnetometer data (x, y and z).
+Returns an empty array if data is not available.</comment>
+            <returntype>double[]</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetAttitude">GetAttitude</name>
+            <comment>Returns an array with the device attitude measured in radians (yaw, pitch and roll).</comment>
+            <returntype>double[]</returntype>
+        </method>
+        <method>
+            <name DesignerName="GetUserAcceleration">GetUserAcceleration</name>
+            <comment>Returns the device acceleration measured in G units (9.81 m / s^2) not including the earth gravity (x, y and z).</comment>
+            <returntype>double[]</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4IDocumentInteractionWrapper</name>
+        <shortname>DocumentInteraction</shortname>
+        <objectwrapper>UIDocumentInteractionController</objectwrapper>
+        <event>Closed</event>
+        <event>SendingFile</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::::</name>
+            <comment>Initializes the controller and sets the file that should be opened.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="OpenFile">OpenFile:</name>
+            <comment>Shows the dialog. FromView should be a View or BarButton. The dialog will be anchored to this view (on iPad).
+Returns False if there is no app that can open the file.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>FromView</name>
+                <type>NSObject*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="PreviewFile">PreviewFile:</name>
+            <comment>Opens a file preview. The preview will also include options such as printing the document.
+Returns False if the file type is not supported.
+The following types of documents are supported: iWord, Microsoft Office, RTF, PDF, images, text files and CSV files.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>ParentPage</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>UTI</name>
+            <comment>Gets or sets the file type.</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.7</version>
+    <dependsOn>MessageUI.framework</dependsOn>
+    <dependsOn>CoreMotion.framework</dependsOn>
+    <dependsOn>AVFoundation.framework</dependsOn>
+</root>

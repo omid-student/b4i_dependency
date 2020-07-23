@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>icrypto</name>
+        <shortname>Crypto</shortname>
+        <comment>icrypto.h
+  icrypto
+
+  Created by Alberto Iglesias on 8/17/16.
+  Copyright © 2016 Alberto Iglesias. All rights reserved.</comment>
+        <event>onInitialized(EventName As String)</event>
+        <method>
+            <name DesignerName="Decrypt">Decrypt::</name>
+            <comment>Decrypt</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>encryptedData</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Crypt">Crypt::</name>
+            <comment>Crypt</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>message</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Crypt128MD5">Crypt128MD5::</name>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>message</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Decrypt128MD5">Decrypt128MD5::</name>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>encryptedData</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <comment>Initializes the object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LicenseShow">LicenseShow</name>
+            <comment>Show License</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="isRegistered">isRegistered</name>
+            <comment>Check if is registered</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <property>
+            <name>Author</name>
+            <comment>Author of this Library</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>Version</name>
+            <comment>Library Version</comment>
+            <returntype>NSString*</returntype>
+        </property>
+        <property>
+            <name>DebugMode</name>
+            <comment>Enable/Disable Debug mode from Library</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LicenseEmail</name>
+            <comment>License Email</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>LicenseKey</name>
+            <comment>License Key</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>CryptoPassword</name>
+            <comment>Password for CryptoPassword</comment>
+            <returntype>NSString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSString*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <author>Alberto Iglesias (alberto@visualnet.inf.br)</author>
+</root>

@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ITableView</name>
+        <shortname>TableView</shortname>
+        <objectwrapper>UITableView*</objectwrapper>
+        <comment>TableView shows a list of items (cells).
+The TableView is divided into one or more sections.
+TableView reuses the cells views and only updates the content. TableView can show very large lists.
+&lt;b&gt;TableView2 which adds support for action buttons, requires iOS 8+&lt;/b&gt;.</comment>
+        <event>SelectedChanged (SectionIndex As Int, Cell As TableCell)</event>
+        <event>AccessoryButtonClicked (SectionIndex As Int, Cell As TableCell)</event>
+        <event>ActionButtonClicked (SectionIndex As Int, Cell As TableCell, Text As String)</event>
+        <event>Click</event>
+        <event>LongClick</event>
+        <designerProperty>Key: Grouped, DisplayName: Grouped, FieldType: Boolean, DefaultValue: False</designerProperty>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetColorAnimated">SetColorAnimated::</name>
+            <comment>Animates the view's background color.
+DurationMS - Animation duration measured in milliseconds.
+BackgroundColor - The new background color.
+Note that Labels do not support this type of animation.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BackgroundColor</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetAlphaAnimated">SetAlphaAnimated::</name>
+            <comment>Animates the view's alpha level.
+DurationMS - Animation duration measured in milliseconds.
+Alpha - The new alpha level (0 - transparent, 1 - fully opaque).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Alpha</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetLayoutAnimated">SetLayoutAnimated::::::</name>
+            <comment>Animates the view's layout.
+DurationMS - Animation duration measured in milliseconds. Set to 0 to change the layout immediately.
+DumpingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
+Set to 1 for no spring effect.
+Left, Top, Width and Height - The new layout.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>DumpingRatio</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBorder">SetBorder:::</name>
+            <comment>Sets the view's border width, color and corner radius.
+Note that the corner radius should be 0 if the view should show a shadow as well.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>CornerRadius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetShadow">SetShadow:::::</name>
+            <comment>Adds a shadow to to the view. The border corners radius should be set to 0 when adding shadows.
+Colors - The shadow color.
+OffsetX, OffsetY - The horizontal and vertical offsets.
+Opacity - Sets the shadow opacity: 0 - transparent, 1 - opaque.
+StaticRect - (optimization parameter) Set this parameter to True if the view's size is constant.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>OffsetX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>OffsetY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Opacity</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>StaticRect</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SizeToFit">SizeToFit</name>
+            <comment>Resizes the view to make it fit its content.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="RequestFocus">RequestFocus</name>
+            <comment>Tries to set the focus on the current view. Returns True if the focus was set. Most views are not focusable.
+When a text view is focused the keyboard is shown.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="ResignFocus">ResignFocus</name>
+            <comment>Removes the focus from the current view. Removing the focus from a text view will hide the keyboard.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="RemoveViewFromParent">RemoveViewFromParent</name>
+            <comment>Removes the view from its parent (same as B4A View.RemoveView method).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="BringToFront">BringToFront</name>
+            <comment>Brings the view to front.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendToBack">SendToBack</name>
+            <comment>Sends the view to the back.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetParallaxEffect">SetParallaxEffect::</name>
+            <comment>Adds a parallax effect to the view. The view will slightly move when the device is tilted.
+Vertical - Vertical offset. Can be a positive or negative value.
+Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Vertical</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Horizontal</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="GetItems">GetItems:</name>
+            <comment>Returns a List with the TableCells in the specified index.
+Modifying this list will affect the items in this section. You should call TableView.ReloadSection if you have added or removed items.</comment>
+            <returntype>B4IList*</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="DesignerCreateView">DesignerCreateView:::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>base</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>lw</name>
+                <type>B4ILabelWrapper*</type>
+            </parameter>
+            <parameter>
+                <name>props</name>
+                <type>B4IMap*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initializes the TableView.
+EventName - Set the subs that will handle the events.
+Grouped - Whether to use the grouped style or the plain style. The plain style uses floating headers.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Grouped</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddSection">AddSection::</name>
+            <comment>Adds a section to the TableView with the given header title and footer title.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Header</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Footer</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddSingleLine">AddSingleLine:</name>
+            <comment>Adds a single line item to the TableView. This method returns a TableCell object which you can further modify.</comment>
+            <returntype>B4ITableCell*</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddTwoLines">AddTwoLines::</name>
+            <comment>Adds a two lines item to the TableView. This method returns a TableCell object which you can further modify.</comment>
+            <returntype>B4ITableCell*</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>DetailText</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetSelection">SetSelection::</name>
+            <comment>Sets the selected item and scrolls to this item.
+SectionIndex - The item section index (o if there is only a single section).
+RowIndex - The index of the item in the section. Pass -1 to deselect the current selected item.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>RowIndex</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Clear">Clear</name>
+            <comment>Removes all items from the TableView.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ReloadAll">ReloadAll</name>
+            <comment>Reloads all the TableCell data.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ReloadSection">ReloadSection:</name>
+            <comment>Reloads the data of a specific section. You should call this method if you have added or removed items from this section.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="BeginUpdates">BeginUpdates</name>
+            <comment>Call this method before you call InsertCells or RemoveCells. You must call EndUpdates at the end.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="InsertCells">InsertCells:::</name>
+            <comment>This method should only be called after BeginUpdates was called.
+Inserts one or more cells in the list. You do not need to call ReloadSection to apply the changes.
+SectionIndex - The section index.
+RowIndex - The first item will be added at this index.
+Cells - A list with TableCells.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>RowIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Cells</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RemoveCells">RemoveCells:::</name>
+            <comment>This method should only be called after BeginUpdates was called.
+Removes one or more cells from list. You do not need to call ReloadSection to apply the changes.
+SectionIndex - The section index.
+StartRowIndex - Index of the first item that will be removed.
+Count - Number of items to remove.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>StartRowIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Count</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="EndUpdates">EndUpdates</name>
+            <comment>Ends an updates block that was previously started with BeginUpdates.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="ScrollTo">ScrollTo:::</name>
+            <comment>Scrolls the table to the given section and row index.
+ScrollPosition - One of the SCROLL constants. This item will be scrolled to this position.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SectionIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>RowIndex</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>ScrollPosition</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <comment>Gets or sets the view's left position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Top</name>
+            <comment>Gets or sets the view's top position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <comment>Gets or sets the view's width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Height</name>
+            <comment>Gets or sets the view's height.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Color</name>
+            <comment>Gets or sets the view's background color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Alpha</name>
+            <comment>Gets or sets the view's alpha level. 0 - transparent, 1 (default) - fully opaque.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TintColor</name>
+            <comment>Gets or sets the view's tint color. Some views use this color to change their appearance.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Visible</name>
+            <comment>Gets or sets whether the view is visible.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsFocused</name>
+            <comment>Returns true if the view is focused.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>UserInteractionEnabled</name>
+            <comment>Gets or sets whether the user can interact with this view. True by default.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>NumberOfSections</name>
+            <comment>Returns the number of sections added to the TableView.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>SelectedRow</name>
+            <comment>Returns the selected row item. Return Null if there is no selected row.</comment>
+            <returntype>B4ITableCell*</returntype>
+        </property>
+        <property>
+            <name>SelectedSection</name>
+            <comment>Returns the index of the section that holds the selected item. Returns -1 if there is no selected item.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>SeparatorColor</name>
+            <comment>Gets or sets the separator color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>RowHeight</name>
+            <comment>Gets or sets the rows heights.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>SCROLL_TOP</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>SCROLL_MIDDLE</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>SCROLL_BOTTOM</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>BaseView</name>
+            <comment>When the TableView is added as a custom view (from the designer) it is added to a base panel.
+This property will return the base panel. You can use this property to move the TableView.
+Note that if the view was added by code then this property will return the TableView itself.</comment>
+            <returntype>B4IViewWrapper*</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4ITableCell</name>
+        <shortname>TableCell</shortname>
+        <comment>Represents a single item in a TableView.</comment>
+        <method>
+            <name DesignerName="InitializeSingleLine">InitializeSingleLine:</name>
+            <comment>Initializes a single line item with the given text.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="InitializeTwoLines">InitializeTwoLines::</name>
+            <comment>Initializes a two lines item with the given texts.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>DetailText</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="AddActionButton">AddActionButton::</name>
+            <comment>Adds an action button. The button will be displayed when the user swipes the item.
+The TableView_ActionButtonClicked event will be raised when the button is clicked.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ClearActionButtons">ClearActionButtons</name>
+            <comment>Removes the action buttons from the button.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="Update">Update</name>
+            <comment>Applies any changes done to visible cell. You should call this method after you update one or more properties
+of an existing cell.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>ACCESSORY_NONE</name>
+            <comment>No accessory view.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ACCESSORY_INDICATOR</name>
+            <comment>Shows a chevron symbol (arrow). This accessory symbol does not track touch events.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ACCESSORY_DISCLOSURE_BUTTON</name>
+            <comment>Shows a chevron image with an info button. This symbol does track touch events.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ACCESSORY_DETAIL_BUTTON</name>
+            <comment>Shows an info button. This symbol does track touch events.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ACCESSORY_CHECKMARK</name>
+            <comment>Shows a check mark. This symbol does not track touch events.</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>CustomView</name>
+            <comment>The Panel together with its child views will be added to the cell.
+Usually you will also need to set the table RowHeight and set the Panel's width and height.</comment>
+            <returntype>B4IPanelWrapper*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IPanelWrapper*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Text</name>
+            <comment>Gets or sets the main text attributed string.</comment>
+            <returntype>B4IAttributedString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IAttributedString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DetailText</name>
+            <comment>Gets or sets the second line attributed string.</comment>
+            <returntype>B4IAttributedString*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IAttributedString*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Bitmap</name>
+            <comment>Gets or sets the item bitmap.</comment>
+            <returntype>B4IBitmap*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IBitmap*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets a tag object that is tied to this cell.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IndentationWidth</name>
+            <comment>Gets or sets the indentation width. Default value is 10 pixels (points).</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IndentationLevel</name>
+            <comment>Gets or sets the indentation level. Default value is 0.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>AccessoryType</name>
+            <comment>Gets or sets the accessory symbol that shows at the right side of the cell.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ShowSelection</name>
+            <comment>Gets or sets whether the item will be highlighted when selected. Default value is True.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.21</version>
+</root>

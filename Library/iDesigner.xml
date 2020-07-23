@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>b4iDesignerAppDelegate</name>
+        <comment>iDesigner.h
+  iDesigner
+
+  Created by b4j on 9/23/14.
+  Copyright (c) 2014 Anywhere Software. All rights reserved.</comment>
+        <property>
+            <name>window</name>
+            <returntype>UIWindow*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>UIWindow*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.2</version>
+</root>

@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>iPopTip</name>
+        <shortname>PopTip</shortname>
+        <objectwrapper>UIView*</objectwrapper>
+        <comment>AMPopTip.h
+  AMPopTip
+
+  Created by Jörg Behrens on 31.03.16.
+  Copyright © 2016 Jan. All rights reserved.</comment>
+        <event>Dismiss</event>
+        <event>Tap</event>
+        <event>Appear</event>
+        <event>Click</event>
+        <event>LongClick</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetColorAnimated">SetColorAnimated::</name>
+            <comment>Animates the view's background color.
+DurationMS - Animation duration measured in milliseconds.
+BackgroundColor - The new background color.
+Note that Labels do not support this type of animation.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>BackgroundColor</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetAlphaAnimated">SetAlphaAnimated::</name>
+            <comment>Animates the view's alpha level.
+DurationMS - Animation duration measured in milliseconds.
+Alpha - The new alpha level (0 - transparent, 1 - fully opaque).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Alpha</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetLayoutAnimated">SetLayoutAnimated::::::</name>
+            <comment>Animates the view's layout.
+DurationMS - Animation duration measured in milliseconds. Set to 0 to change the layout immediately.
+DumpingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
+Set to 1 for no spring effect.
+Left, Top, Width and Height - The new layout.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DurationMS</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>DumpingRatio</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Top</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetBorder">SetBorder:::</name>
+            <comment>Sets the view's border width, color and corner radius.
+Note that the corner radius should be 0 if the view should show a shadow as well.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>CornerRadius</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetShadow">SetShadow:::::</name>
+            <comment>Adds a shadow to to the view. The border corners radius should be set to 0 when adding shadows.
+Colors - The shadow color.
+OffsetX, OffsetY - The horizontal and vertical offsets.
+Opacity - Sets the shadow opacity: 0 - transparent, 1 - opaque.
+StaticRect - (optimization parameter) Set this parameter to True if the view's size is constant.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Color</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>OffsetX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>OffsetY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>Opacity</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>StaticRect</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SizeToFit">SizeToFit</name>
+            <comment>Resizes the view to make it fit its content.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="RequestFocus">RequestFocus</name>
+            <comment>Tries to set the focus on the current view. Returns True if the focus was set. Most views are not focusable.
+When a text view is focused the keyboard is shown.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="ResignFocus">ResignFocus</name>
+            <comment>Removes the focus from the current view. Removing the focus from a text view will hide the keyboard.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="RemoveViewFromParent">RemoveViewFromParent</name>
+            <comment>Removes the view from its parent (same as B4A View.RemoveView method).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="BringToFront">BringToFront</name>
+            <comment>Brings the view to front.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SendToBack">SendToBack</name>
+            <comment>Sends the view to the back.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="SetParallaxEffect">SetParallaxEffect::</name>
+            <comment>Adds a parallax effect to the view. The view will slightly move when the device is tilted.
+Vertical - Vertical offset. Can be a positive or negative value.
+Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Vertical</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Horizontal</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowText">ShowText:::::</name>
+            <comment>Show the popover
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param text The text displayed.
+@param direction The direction of the popover.
+@param maxWidth The maximum width of the popover. If the popover won't fit in the given space, this will be overridden.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>MaxWidth</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowAttributedText">ShowAttributedText:::::</name>
+            <comment>Show the popover
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param text The attributed text displayed.
+@param direction The direction of the popover.
+@param maxWidth The maximum width of the popover. If the popover won't fit in the given space, this will be overridden.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>B4IAttributedString*</type>
+            </parameter>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>MaxWidth</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowCustomView">ShowCustomView::::</name>
+            <comment>Show the popover with a custom view
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param customView The custom view
+@param direction The direction of the popover.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>CustomView</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowText2">ShowText2::::::</name>
+            <comment>Show the popover
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param text The text displayed.
+@param direction The direction of the popover.
+@param maxWidth The maximum width of the popover. If the popover won't fit in the given space, this will be overridden.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.
+@param interval The time interval that determines when the poptip will self-dismiss</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>MaxWidth</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+            <parameter>
+                <name>Interval</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowAttributedText2">ShowAttributedText2::::::</name>
+            <comment>Show the popover
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param text The attributed text displayed.
+@param direction The direction of the popover.
+@param maxWidth The maximum width of the popover. If the popover won't fit in the given space, this will be overridden.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.
+@param interval The time interval that determines when the poptip will self-dismiss</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>B4IAttributedString*</type>
+            </parameter>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>MaxWidth</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+            <parameter>
+                <name>Interval</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowCustomView2">ShowCustomView2:::::</name>
+            <comment>Show the popover with a custom view
+
+Shows an animated popover in a given view, from a given rectangle.
+The property isVisible will be set as YES as soon as the popover is added to the given view.
+
+@param customView The custom view
+@param direction The direction of the popover.
+@param view The view that will hold the popover.
+@param frame The originating frame. The popover's arrow will point to the center of this frame.
+@param interval The time interval that determines when the poptip will self-dismiss</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>CustomView</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>View</name>
+                <type>UIView*</type>
+            </parameter>
+            <parameter>
+                <name>Frame</name>
+                <type>B4IRect*</type>
+            </parameter>
+            <parameter>
+                <name>Interval</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Hide">Hide</name>
+            <comment>Hide the popover
+
+Hides the popover and removes it from the view.
+The property isVisible will be set to NO when the animation is complete and the popover is removed from the parent view.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="UpdateText">UpdateText:</name>
+            <comment>Update the text
+
+Set the new text shown in the poptip
+@param text The new text</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Text</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="StartActionAnimation">StartActionAnimation</name>
+            <comment>Makes the popover perform the action animation
+
+Makes the popover perform the action indefinitely. The action animation calls for the user's attention after the popover is shown</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="StopActionAnimation">StopActionAnimation</name>
+            <comment>Stops the popover action animation
+
+Stops the popover action animation. Does nothing if the popover wasn't animating in the first place.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Left</name>
+            <comment>Gets or sets the view's left position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Top</name>
+            <comment>Gets or sets the view's top position.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Width</name>
+            <comment>Gets or sets the view's width.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Height</name>
+            <comment>Gets or sets the view's height.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Color</name>
+            <comment>Gets or sets the view's background color.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Alpha</name>
+            <comment>Gets or sets the view's alpha level. 0 - transparent, 1 (default) - fully opaque.</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TintColor</name>
+            <comment>Gets or sets the view's tint color. Some views use this color to change their appearance.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Visible</name>
+            <comment>Gets or sets whether the view is visible.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsFocused</name>
+            <comment>Returns true if the view is focused.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>UserInteractionEnabled</name>
+            <comment>Gets or sets whether the user can interact with this view. True by default.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Parent</name>
+            <comment>Returns the views parent. The returned view can be uninitialized (if there is no parent).</comment>
+            <returntype>B4IViewWrapper*</returntype>
+        </property>
+        <property>
+            <name>Font</name>
+            <comment>Font
+
+Holds the Font used in the popover</comment>
+            <returntype>B4IFontWrapper*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IFontWrapper*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TextColor</name>
+            <comment>Text Color
+
+Holds the Color of the text</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TextAlignment</name>
+            <comment>Text Alignment
+ Holds the TextAlignment of the text</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>TextAlignmentLeft</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TextAlignmentRight</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TextAlignmentCenter</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TextAlignmentJustified</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>TextAlignmentNatural</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>PopoverColor</name>
+            <comment>Popover Background Color
+
+Holds the Color for the popover's background</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BorderColor</name>
+            <comment>Popover Border Color
+
+Holds the Color for the popover's bordedr</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>BorderWidth</name>
+            <comment>Popover Border Width
+
+Holds the width for the popover's border</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Radius</name>
+            <comment>Popover border radius
+
+Holds the Float with the popover's border radius</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Rounded</name>
+            <comment>Rounded popover
+
+Holds the BOOLEAN that determines wether the popover is rounded. If set to YES the radius will equal frame.height / 2</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Offset</name>
+            <comment>Offset from the origin
+
+Holds the offset between the popover and origin</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Padding</name>
+            <comment>Text Padding
+
+Holds the Float with the padding used for the inner text</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EdgeInsetsTop</name>
+            <comment>Text EdgeInsets
+
+Holds the insets setting (Top) for padding different direction</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EdgeInsetsLeft</name>
+            <comment>Text EdgeInsets
+
+Holds the insets setting (Left) for padding different direction</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EdgeInsetsBottom</name>
+            <comment>Text EdgeInsets
+
+Holds the insets setting (Bottom) for padding different direction</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EdgeInsetsRight</name>
+            <comment>Text EdgeInsets
+
+Holds the insets setting (Right) for padding different direction</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ArrowWidth</name>
+            <comment>Arrow Width
+
+Holds the width of the arrow</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ArrowHeight</name>
+            <comment>Arrow Height
+
+Holds the height of the arrow</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>AnimationIn</name>
+            <comment>Revealing Animation time
+
+Holds the TimeInterval with the duration of the revealing animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>AnimationOut</name>
+            <comment>Disappearing Animation time
+
+Holds the TimeInterval with the duration of the disappearing animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DelayIn</name>
+            <comment>Revealing Animation delay
+
+Holds the TimeInterval with the delay of the revealing animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DelayOut</name>
+            <comment>Disappearing Animation delay
+
+Holds the TimeInterval with the delay of the disappearing animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EntranceAnimation</name>
+            <comment>Entrance animation type
+
+Holds the enum with the type of entrance animation (triggered once the popover is shown)</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ExitAnimation</name>
+            <comment>Exit animation type
+
+Holds the enum with the type of exit animation (triggered once the popover is dismissed)</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionAnimation</name>
+            <comment>Action animation type
+
+Holds the enum with the type of action animation (triggered once the popover is shown)</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>DirectionUp</name>
+            <comment>Shows the poptip up</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>DirectionDown</name>
+            <comment>Shows the poptip down</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>DirectionLeft</name>
+            <comment>Shows the poptip to the left</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>DirectionRight</name>
+            <comment>Shows the poptip to the right</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>DirectionNone</name>
+            <comment>Shows the poptip up, with no arrow</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>EntranceAnimationScale</name>
+            <comment>The poptip scales from 0% to 100%</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>EntranceAnimationTransition</name>
+            <comment>The poptip moves in position from the edge of the screen</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>EntranceAnimationFadeIn</name>
+            <comment>The poptip fade in</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>EntranceAnimationNone</name>
+            <comment>No animation</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ExitAnimationScale</name>
+            <comment>The poptip scales from 0% to 100%</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ExitAnimationFadeOut</name>
+            <comment>The poptip fade in</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ExitAnimationNone</name>
+            <comment>No animation</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ActionAnimationBounce</name>
+            <comment>The poptip bounces following its direction</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ActionAnimationFloat</name>
+            <comment>The poptip floats in place</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ActionAnimationPulse</name>
+            <comment>The poptip pulsates by changing its size</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ActionAnimationNone</name>
+            <comment>No animation</comment>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ActionFloatOffset</name>
+            <comment>Offset for the float action animation
+
+Holds the offset between the popover initial and ending state during the float action animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionBounceOffset</name>
+            <comment>Offset for the float action animation
+
+Holds the offset between the popover initial and ending state during the float action animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionPulseOffset</name>
+            <comment>Offset for the pulse action animation
+
+Holds the offset in the popover size during the pulse action animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionAnimationIn</name>
+            <comment>Action Animation time
+
+Holds the TimeInterval with the duration of the action animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionAnimationOut</name>
+            <comment>Action Animation stop time
+
+Holds the TimeInterval with the duration of the action stop animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionDelayIn</name>
+            <comment>Action Animation delay
+
+Holds the TimeInterval with the delay of the action animation</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ActionDelayOut</name>
+            <comment>Action Animation stop delay
+
+Holds the TimeInterval with the delay of the action animation stop</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>EdgeMargin</name>
+            <comment>Margin from the left edge
+
+Float value that determines the left most margin from the screen</comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>p</name>
+                <type>float</type>
+            </parameter>
+        </property>
+        <property>
+            <name>FromFrame</name>
+            <comment>The frame the poptip is pointing to
+
+Holds the Rect with the rect the tip is pointing to</comment>
+            <returntype>B4IRect*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>B4IRect*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsVisible</name>
+            <comment>Visibility
+
+Holds the readonly BOOLEAN with the popover visiblity. The popover is considered visible as soon as
+the animation is complete, and invisible when the subview is removed from its parent.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>IsAnimating</name>
+            <comment>Animating
+
+Holds the readonly BOOL with the popover animation state.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+        <property>
+            <name>ShouldDismissOnTap</name>
+            <comment>Dismiss on tap
+
+A boolean value that determines whether the poptip is dismissed on tap.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ShouldDismissOnTapOutside</name>
+            <comment>Dismiss on tap outside
+
+A boolean value that determines whether to dismiss when tapping outside the popover.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>ShouldDismissOnSwipeOutside</name>
+            <comment>Dismiss on swipe outside
+
+A boolean value that determines whether to dismiss when swiping outside the popover.</comment>
+            <returntype>BOOL</returntype>
+            <parameter>
+                <name>p</name>
+                <type>BOOL</type>
+            </parameter>
+        </property>
+        <property>
+            <name>SwipeRemoveGestureDirection</name>
+            <comment>Direction to dismiss on swipe outside
+
+A direction that determines what swipe direction to dismiss when swiping outside the popover.
+The default direction is RemoveGestureDirectionRight if this is not set.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>RemoveGestureDirectioRight</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RemoveGestureDirectioLeft</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RemoveGestureDirectioUp</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>RemoveGestureDirectioDown</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ArrowPositionX</name>
+            <comment>Arrow position
+
+The X-Point originating the arrow.</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>ArrowPositionY</name>
+            <comment>Arrow position
+
+The Y-Point originating the arrow.</comment>
+            <returntype>float</returntype>
+        </property>
+        <property>
+            <name>ContainerView</name>
+            <comment>Container View
+
+A read only reference to the view containing the poptip</comment>
+            <returntype>UIView*</returntype>
+        </property>
+        <property>
+            <name>Direction</name>
+            <comment>Direction
+
+The direction from which the poptip is shown.</comment>
+            <returntype>int</returntype>
+        </property>
+    </class>
+    <version>1.01</version>
+</root>
