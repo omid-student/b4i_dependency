@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Libraries
+Group=Default Group
 ModulesStructureVersion=1
 Type=StaticCode
 Version=4.3
