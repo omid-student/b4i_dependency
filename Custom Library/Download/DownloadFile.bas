@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Libaries
+Group=Default Group
 ModulesStructureVersion=1
 Type=Class
 Version=4.81
@@ -80,6 +80,10 @@ Sub Download(Url As String,OutoutFileDir As String,OutoutFileName As String,Head
 	
 	Dim NativeMe As NativeObject = Me
 	NativeMe.RunMethod("Download::::::",Array(Url,Null,OutoutFileDir & "/" & OutoutFileName,"",Keys,Values))
+	
+	#if debug
+	Log(Url)
+	#End If
 	
 End Sub
 

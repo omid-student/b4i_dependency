@@ -5,13 +5,13 @@ Group=Default Group
 Library1=icore
 Library2=icustomdialog
 Library3=iamir_calendar
-Module1=PersianCalendarDialog
-Module2=PersianCalendar
-Module3=DateUtils
+Module1=ARDatePicker
+Module2=DateUtils
+Module3=PersianCalendar
 NumberOfFiles=1
 NumberOfLibraries=3
 NumberOfModules=3
-Version=6
+Version=6.8
 @EndOfDesignText@
 'Code module
 #Region  Project Attributes 
@@ -64,9 +64,9 @@ End Sub
 
 Sub Button1_Click
 	 
-	 Dim a As PersianCalendarDialog
-	 a.Initialize(Page1)
-	 wait for (a.Show) Complete(Result As Object)
+	 Dim a As ARDatePicker
+	 a.Initialize(Page1,"iransans")
+	 wait for (a.Show("")) Complete(Result As Date)
 	 	Log(Result)
 	 
 End Sub

@@ -107,16 +107,14 @@ ForceRefresh - Whether to force Firebase to refresh the token.</comment>
             <returntype>NSString*</returntype>
         </property>
     </class>
-    <version>1.02</version>
+    <version>2.5</version>
     <dependsOn>AddressBook.framework</dependsOn>
     <dependsOn>SystemConfiguration.framework</dependsOn>
     <dependsOn>SafariServices.framework</dependsOn>
     <dependsOn>GoogleSignIn.framework.3</dependsOn>
-    <dependsOn>GoogleAppUtilities.framework.3</dependsOn>
-    <dependsOn>GoogleAuthUtilities.framework.3</dependsOn>
-    <dependsOn>GoogleNetworkingUtilities.framework.3</dependsOn>
-    <dependsOn>GoogleSymbolUtilities.framework.3</dependsOn>
-    <dependsOn>GoogleSignIn.framework.3</dependsOn>
-    <dependsOn>GoogleUtilities.framework.3</dependsOn>
+    <dependsOn>GTMSessionFetcher.framework.3</dependsOn>
     <dependsOn>FirebaseAuth.framework.3</dependsOn>
+    <dependsOn>FirebaseAuth.framework.3</dependsOn>
+    <dependsOn>AppAuth.framework.3</dependsOn>
+    <dependsOn>GTMAppAuth.framework.3</dependsOn>
 </root>

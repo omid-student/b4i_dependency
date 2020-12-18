@@ -25,10 +25,16 @@ Parameters - Map of parameters. Pass Null if not needed.</comment>
             </parameter>
         </method>
     </class>
-    <version>1</version>
+    <version>2.5</version>
+    <dependsOn>FIRAnalyticsConnector.framework.3</dependsOn>
     <dependsOn>FirebaseAnalytics.framework.3</dependsOn>
-    <dependsOn>FirebaseInstanceID.framework.3</dependsOn>
-    <dependsOn>GoogleInterchangeUtilities.framework.3</dependsOn>
-    <dependsOn>GoogleSymbolUtilities.framework.3</dependsOn>
+    <dependsOn>FirebaseCore.framework.3</dependsOn>
+    <dependsOn>FirebaseCoreDiagnostics.framework.3</dependsOn>
+    <dependsOn>FirebaseInstallations.framework.3</dependsOn>
+    <dependsOn>GoogleAppMeasurement.framework.3</dependsOn>
+    <dependsOn>GoogleDataTransport.framework.3</dependsOn>
+    <dependsOn>GoogleDataTransportCCTSupport.framework.3</dependsOn>
     <dependsOn>GoogleUtilities.framework.3</dependsOn>
+    <dependsOn>PromisesObjC.framework.3</dependsOn>
+    <dependsOn>nanopb.framework.3</dependsOn>
 </root>

@@ -47,7 +47,8 @@
             <returntype>void</returntype>
         </method>
     </class>
-    <version>1</version>
+    <version>2.5</version>
     <dependsOn>FirebaseMessaging.framework.3</dependsOn>
-    <dependsOn>GoogleIPhoneUtilities.framework.3</dependsOn>
+    <dependsOn>Protobuf.framework.3</dependsOn>
+    <dependsOn>FirebaseInstanceID.framework.3</dependsOn>
 </root>

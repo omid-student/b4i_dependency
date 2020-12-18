@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Libraries
+Group=Default Group
 ModulesStructureVersion=1
 Type=StaticCode
 Version=5.3
@@ -66,4 +66,10 @@ End Sub
 
 Sub App As Application
 	Return Main.App
+End Sub
+
+Sub Sdk
+	Dim no As NativeObject
+	no.Initialize("GADRequest")
+	Log(no.RunMethod("sdkVersion", Null).AsString)
 End Sub

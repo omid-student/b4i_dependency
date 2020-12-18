@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Default Group
+Group=Libraries
 ModulesStructureVersion=1
 Type=StaticCode
 Version=4.3
@@ -87,7 +87,7 @@ Sub FullScreenApp(app As Application)
 End Sub
 
 'Add <code>#PlistExtra: <key>UIViewControllerBasedStatusBarAppearance</key><false/></code>
-'set 1 for white statusbar
+'set 1 or 3 for white statusbar
 Sub SetStatusBarStyleLight(app As Application,Style As Int)
 	Dim no As NativeObject = app
 	no.RunMethod("setStatusBarStyle:", Array(Style))

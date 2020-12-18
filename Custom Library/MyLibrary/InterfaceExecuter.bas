@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Default Group
+Group=Libraries
 ModulesStructureVersion=1
 Type=StaticCode
 Version=4.81
@@ -277,11 +277,11 @@ Private Sub JobDone(HttpJob2 As HttpJob)
 	
 End Sub
 
-Private Sub Json2Map(Json As String) As Map
+Private Sub Json2Map(JSON_ As String) As Map
 	
 	Try
 		Dim js As JSONParser
-		js.Initialize(Json)
+		js.Initialize(JSON_)
 		Return js.NextObject
 	Catch
 		Return Null

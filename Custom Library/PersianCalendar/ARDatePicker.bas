@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Default Group
+Group=Libraries
 ModulesStructureVersion=1
 Type=Class
 Version=5.3
@@ -11,7 +11,7 @@ Private Sub Class_Globals
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
-Public Sub Initialize(Page1 As Page,Fontname As String)
+Public Sub Initialize
 
 	base.Initialize("")
 	base.SetLayoutAnimated(1,1,0,0,GetDeviceLayoutValues.Width - 100dip,GetDeviceLayoutValues.Width)
@@ -21,7 +21,6 @@ Public Sub Initialize(Page1 As Page,Fontname As String)
 	
 	Dim properties As Map
 	properties.Initialize
-	properties.Put("fontname",Fontname)
 	properties.Put("headerfontcolor",Colors.Black)
 	properties.Put("headerbgcolor",Colors.White)
 	properties.Put("headerfontsize",14)
@@ -47,7 +46,7 @@ Sub GetPersianCalendar As PersianCalendar
 	Return pr
 End Sub
 
-Sub Show As ResumableSub
+Sub Show(Title As String) As ResumableSub
 	
 	dialog.Initialize(base)
 	dialog.Style	=	dialog.STYLE_CUSTOM
@@ -60,6 +59,21 @@ Sub Show As ResumableSub
 			Return	pr.getDate
 		Else
 			Return	Null
-		End If
+	End If
+	
+End Sub
+
+Public Sub maxYear(Val As Int)
+	
+End Sub
+
+Public Sub maxMonth(Val As Int)
+	
+End Sub
+
+Public Sub build(event As String)
+End Sub
+
+Public Sub minYear(Val As Int)
 	
 End Sub

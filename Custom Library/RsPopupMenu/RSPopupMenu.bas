@@ -7,11 +7,12 @@ Version=4.3
 #Event: MenuItemClick(ItemID As String)
 
 Private Sub Class_Globals
-	Private menu As ActionSheet
+	Private menu_ As ActionSheet
 	Private lstMenu As Map
 	Private lstMenu2 As List
 	Private evt As String
 	Private ob As Object
+	Type ACMenuItem(Id As Int)
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -27,9 +28,12 @@ Sub AddMenuItem(ItemID As String,Order As String,Title As String)
 	lstMenu.Put(Title,ItemID)
 End Sub
 
-Sub Show(Page As Page)
-	menu.Initialize("items","","Cancel","",lstMenu2)
-	menu.Show(Page.RootPanel)
+Sub Show(Page As Page) As ResumableSub
+	menu_.Initialize("items","","بیخیال","",lstMenu2)
+	menu_.Show(Page.RootPanel)
+	Wait For items_Click (Item As String)
+		If lstMenu.ContainsKey(Item) = False Then Return
+		CallSubDelayed2(ob,evt & "_MenuItemClick",lstMenu.Get(Item))
 End Sub
 
 Private Sub items_Click (Item As String)

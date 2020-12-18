@@ -19,6 +19,26 @@ Private Sub Process_Globals
 	#end if
 End Sub
 
+'not worked in b4i
+Public Sub ForceLTRSupported(View As View,Rtl As Boolean)
+	
+End Sub
+
+Public Sub SetCSTextField(Cs As CSBuilder,v As View)
+		
+	If v Is Label Then
+		Dim l As Label
+		l = v
+		l.AttributedText = Cs
+	End If
+	
+End Sub
+
+'not worked in b4i
+Public Sub SetElevation(View As View,Val As Float)
+	
+End Sub
+
 Sub ChangeFont(Panel As Panel,FontName As String)
 	
 	For Each v1 As View In Panel.GetAllViewsRecursive
@@ -27,15 +47,21 @@ Sub ChangeFont(Panel As Panel,FontName As String)
 			
 			Dim lb As Label
 			lb	=	v1
-			lb.Font	=	Font.CreateNew2(FontName,lb.Font.Size)
 				
+			If lb.Font.Name.ToLowerCase.IndexOf("fontawesome") = -1 And lb.Font.Name.ToLowerCase.IndexOf("materialicons") = -1 Then
+				lb.Font	=	Font.CreateNew2(FontName,lb.Font.Size)
+			End If
+			
 		End If
 		
 		If v1 Is Button And v1.Tag = "" Then
 			
 			Dim lb2 As Button
 			lb2	=	v1
-			lb2.CustomLabel.Font	=	Font.CreateNew2(FontName,lb2.CustomLabel.Font.Size)
+			
+			If lb2.CustomLabel.Font.Name.ToLowerCase.IndexOf("fontawesome") = -1 And lb2.CustomLabel.Font.Name.ToLowerCase.IndexOf("materialicons") = -1 Then
+				lb2.CustomLabel.Font	=	Font.CreateNew2(FontName,lb2.CustomLabel.Font.Size)
+			End If
 				
 		End If
 		
@@ -590,11 +616,30 @@ Public Sub SetMultiline(b As Button)
 	no.GetField("titleLabel").SetField("textAlignment", 1)
 End Sub
 
+'that is not working in b4i
+Public Sub ChangeStatusColor(Color As Int)
+	
+End Sub
+
 Sub GetParent(View2 As View) As View
 	Return View2.Parent
 End Sub
 
-Sub HideKeyboard(Page As Page)
+'use below code
+'<code>B4XPages.GetNativeParent(Me).ResignFocus</code>
+Sub HideKeyboard(Page As Object)
+	
+	If Page Is Page Then
+		Dim p As Page
+		p = Page
+		p.ResignFocus
+	Else
+		B4XPages.GetNativeParent(Page).ResignFocus
+	End If
+	
+End Sub
+
+Sub HideKeyboard2(Page As Page)
 	Sleep(50)
 	Page.ResignFocus
 End Sub

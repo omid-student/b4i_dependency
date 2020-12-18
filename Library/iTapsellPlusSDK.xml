@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+    <class>
+        <name>B4ITapsellPlusAdItem</name>
+        <shortname>TapsellPlusAdItem</shortname>
+        <objectwrapper>TapsellPlusAdItem*</objectwrapper>
+        <comment>iTapsellPlusSDK.h
+  iTapsellPlusSDK
+
+  Created by Biswajit Sarkar on 26/03/20.
+  Copyright © 2020 Brandsum. All rights reserved.</comment>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="isDisplayed">isDisplayed</name>
+            <comment>Check if the ad has already been displayed or not</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="getId">getId</name>
+            <comment>Get ad id</comment>
+            <returntype>NSString*</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4ITapsellPlusBannerView</name>
+        <shortname>TapsellPlusBannerView</shortname>
+        <objectwrapper>TapsellPlusBannerView*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW320H50">TapsellPlusBannerSizeW320H50</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW320H100">TapsellPlusBannerSizeW320H100</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW250H250">TapsellPlusBannerSizeW250H250</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW300H250">TapsellPlusBannerSizeW300H250</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW468H60">TapsellPlusBannerSizeW468H60</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="TapsellPlusBannerSizeW728H90">TapsellPlusBannerSizeW728H90</name>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initialize banner view</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="getView">getView</name>
+            <comment>Get the banner view</comment>
+            <returntype>UIView*</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Size</name>
+            <comment>Set/get banner size</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4ITapsellPlusNativeBannerView</name>
+        <shortname>TapsellPlusNativeBannerView</shortname>
+        <objectwrapper>TapsellPlusNativeBannerView*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:</name>
+            <comment>Initialize native banner view.&lt;b&gt;Each native banner view should have a ImageView to load a 16*9 image, a call to action Button, a title Label, a description Label, and an icon ImageView child view. After creating those view to this Native Banner View call setViews to add those.&lt;/b&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="getView">getView</name>
+            <comment>Get the banner view</comment>
+            <returntype>UIView*</returntype>
+        </method>
+        <method>
+            <name DesignerName="setViews">setViews:::::</name>
+            <comment>Set the child view tags needed for the native ad</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>titleLabel</name>
+                <type>UILabel*</type>
+            </parameter>
+            <parameter>
+                <name>descLabel</name>
+                <type>UILabel*</type>
+            </parameter>
+            <parameter>
+                <name>logoImg</name>
+                <type>UIImageView*</type>
+            </parameter>
+            <parameter>
+                <name>adImg</name>
+                <type>UIImageView*</type>
+            </parameter>
+            <parameter>
+                <name>actionBtn</name>
+                <type>UIButton*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <class>
+        <name>B4ITapsellPlus</name>
+        <shortname>TapsellPlus</shortname>
+        <objectwrapper>TapsellPlus*</objectwrapper>
+        <event>RewardReady(adItem as TapsellPlusAdItem)</event>
+        <event>Error(zoneId as string, code as int)</event>
+        <event>Ready(adItem as TapsellPlusAdItem)</event>
+        <event>AdClosed(zoneId as string, completed as boolean)</event>
+        <event>AdOpened(zoneId as string)</event>
+        <event>Reward(zoneId as string)</event>
+        <event>RequestFilled(zoneId as string)</event>
+        <event>Success(adView as View)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize:::</name>
+            <comment>Initialize tapsell plus library</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>eventName</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>apiKey</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="setDebugMode">setDebugMode:</name>
+            <comment>Set debug mode</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>enable</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="requestInterstitialAd">requestInterstitialAd:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="requestRewardedVideoAd">requestRewardedVideoAd:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="showAd">showAd:</name>
+            <comment>Show an ad after its ready</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>adItem</name>
+                <type>B4ITapsellPlusAdItem*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="requestBannerAd">requestBannerAd::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>adContainer</name>
+                <type>B4ITapsellPlusBannerView*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="requestNativeBannerAd">requestNativeBannerAd::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>adContainer</name>
+                <type>B4ITapsellPlusNativeBannerView*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="requestNativeBannerData">requestNativeBannerData:</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="nativeBannerAdClicked">nativeBannerAdClicked::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>zoneId</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>adId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1</version>
+    <author>Biswajit Sarkar</author>
+    <dependsOn>AVFoundation.framework</dependsOn>
+    <dependsOn>TapsellSDKv3.framework.swift.3</dependsOn>
+    <dependsOn>TapsellPlus.framework.swift.3</dependsOn>
+    <dependsOn>TapsellPlusTapsellAdapter.framework.swift.3</dependsOn>
+</root>

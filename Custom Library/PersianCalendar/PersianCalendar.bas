@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Default Group
+Group=Libraries
 ModulesStructureVersion=1
 Type=Class
 Version=4.3
@@ -202,8 +202,8 @@ Private Sub lblday_Click
 	
 	Dim lb As Label
 	lb	=	Sender
-	
-	CurrentDay	=	lb.Text
+
+	CurrentDay	=	TranslateNumber(lb.Text,False)
 	
 	SelectDay(lb,False)
 	
@@ -215,6 +215,21 @@ Private Sub lblday_Click
 		date2.Day	=	lb.Text
 		CallSubDelayed2(mCallBack,mEventName & "_selecteddate",date2)
 	End If
+	
+End Sub
+
+Private Sub TranslateNumber(Numbers As String,ToPersian As Boolean) As String
+	
+	Dim res As String
+	
+	If ToPersian Then
+		res	= Numbers.Replace( "0" , "۰" ).Replace( "1" , "۱" ).Replace( "2" , "۲" ).Replace( "3" , "۳" ).Replace( "4" , "۴" ).Replace( "5" , "۵" ).Replace( "6" , "۶" ).Replace( "7" , "۷" ).Replace( "8" , "۸" ).Replace( "9" , "۹" )
+	Else
+		res	= Numbers.Replace( "۰","0" ).Replace( "۱","1" ).Replace( "۲" , "2" ).Replace( "۳" ,"3" ).Replace( "۴" , "4" ).Replace( "۵" , "5").Replace( "۶" , "6" ).Replace( "۷" , "7" ).Replace( "۸" , "8" ).Replace("۹" , "9")
+		res	= res.Replace( "٠","0" ).Replace( "١","1" ).Replace( "٢" , "2" ).Replace( "٣" ,"3" ).Replace( "٤" , "4" ).Replace("٥","5").Replace( "۵" , "5").Replace( "٦" , "6" ).Replace( "٧" , "7" ).Replace( "٨" , "8" ).Replace("٩" , "9")
+	End If
+	
+	Return res
 	
 End Sub
 
@@ -315,16 +330,14 @@ Private Sub ShowDays(StartDay As Int,TodayMonth As Int,TodayDay As Int)
 			lb.Font			=	Font.CreateNew(Properties.Get("itemfontsize"))
 		End If
 		
-		lb.Text				=	i
+		lb.Text				=	TranslateNumber(i,True)
 		lb.TextAlignment	=	lb.ALIGNMENT_CENTER
 		Base.AddView(lb,Left,Top,width,height)
 		
 		Left	=	Left	-	width
 		
 		If i	=	TodayDay Then
-			
 			SelectDay(lb,True)
-			
 		End If
 		
 		Dim friday_n As Int
@@ -341,7 +354,7 @@ Private Sub ShowDays(StartDay As Int,TodayMonth As Int,TodayDay As Int)
 		
 	Next
 	
-	lblpreview.Text	=	GetMonthName(TodayMonth) & " " & CurrentYear
+	lblpreview.Text	=	GetMonthName(TodayMonth) & " " & TranslateNumber(CurrentYear,True)
 	
 End Sub
 

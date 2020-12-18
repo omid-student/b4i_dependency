@@ -15,6 +15,15 @@
             <returntype>BOOL</returntype>
         </method>
         <method>
+            <name DesignerName="CalcRelativeKeyboardHeight">CalcRelativeKeyboardHeight:</name>
+            <comment>Calculates the keyboard top point relative to the current view.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>KeyboardHeight</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
             <name DesignerName="SetColorAnimated">SetColorAnimated::</name>
             <comment>Animates the view's background color.
 DurationMS - Animation duration measured in milliseconds.
@@ -49,7 +58,7 @@ Alpha - The new alpha level (0 - transparent, 1 - fully opaque).</comment>
             <name DesignerName="SetLayoutAnimated">SetLayoutAnimated::::::</name>
             <comment>Animates the view's layout.
 DurationMS - Animation duration measured in milliseconds. Set to 0 to change the layout immediately.
-DumpingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
+DampingRatio - If smaller than 1 then a spring effect will be applied to the animation. The minimum value should be 0.1.
 Set to 1 for no spring effect.
 Left, Top, Width and Height - The new layout.</comment>
             <returntype>void</returntype>
@@ -58,7 +67,7 @@ Left, Top, Width and Height - The new layout.</comment>
                 <type>int</type>
             </parameter>
             <parameter>
-                <name>DumpingRatio</name>
+                <name>DampingRatio</name>
                 <type>float</type>
             </parameter>
             <parameter>
@@ -209,6 +218,15 @@ Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
                 <type>B4IList*</type>
             </parameter>
         </method>
+        <method>
+            <name DesignerName="LoadAdWithBuilder">LoadAdWithBuilder:</name>
+            <comment>Requests an ad configured with AdRequestBuilder. Note that test devices should be set in the builder.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Builder</name>
+                <type>B4IAdRequestBuilder*</type>
+            </parameter>
+        </method>
         <property>
             <name>Tag</name>
             <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
@@ -305,6 +323,11 @@ Horizontal - Horizontal offset. Can be a positive or negative value.</comment>
             </parameter>
         </property>
         <property>
+            <name>Parent</name>
+            <comment>Returns the views parent. The returned view can be uninitialized (if there is no parent).</comment>
+            <returntype>B4IViewWrapper*</returntype>
+        </property>
+        <property>
             <name>SIZE_BANNER</name>
             <comment>iPhone ad size (320x50)</comment>
             <returntype>NSObject*</returntype>
@@ -373,6 +396,15 @@ Note that you can show it whenever you like.</comment>
             <returntype>void</returntype>
         </method>
         <method>
+            <name DesignerName="LoadAdWithBuilder">LoadAdWithBuilder:</name>
+            <comment>Requests an ad configured with AdRequestBuilder. Note that test devices should be set in the builder.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Builder</name>
+                <type>B4IAdRequestBuilder*</type>
+            </parameter>
+        </method>
+        <method>
             <name DesignerName="IsReady">IsReady</name>
             <comment>Returns true if there is an interstitial ad ready to be shown.</comment>
             <returntype>BOOL</returntype>
@@ -387,7 +419,227 @@ Note that you can show it whenever you like.</comment>
             </parameter>
         </method>
     </class>
-    <version>1.3</version>
+    <class>
+        <name>B4IRewardedVideoAd</name>
+        <shortname>RewardedVideoAd</shortname>
+        <objectwrapper>GADRewardBasedVideoAd*</objectwrapper>
+        <comment>A video ad where the user is rewarded if it is fully watched. The Rewarded event will be raised in that case.
+Note that AdMob does not server these ads directly. You need to use the mediation feature to add an ad network that supports this type of ads.</comment>
+        <event>ReceiveAd</event>
+        <event>FailedToReceiveAd (ErrorCode As String)</event>
+        <event>AdClosed</event>
+        <event>AdOpened</event>
+        <event>AdLeftApplication</event>
+        <event>Rewarded (Item As Object)</event>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadAd">LoadAd:</name>
+            <comment>Sends a request for an ad. The ReceiveAd event will be raised when an ad is available.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>AdUnitId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LoadAdWithBuilder">LoadAdWithBuilder::</name>
+            <comment>Requests an ad configured with AdRequestBuilder. Note that test devices should be set in the builder.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>AdUnitId</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>Builder</name>
+                <type>B4IAdRequestBuilder*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="Show">Show:</name>
+            <comment>Shows the video ad.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Parent</name>
+                <type>B4IPage*</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+        <property>
+            <name>Ready</name>
+            <comment>Returns True if there is an ad ready to be displayed.</comment>
+            <returntype>BOOL</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IConsentManager</name>
+        <shortname>ConsentManager</shortname>
+        <event>InfoUpdated (Success As Boolean)</event>
+        <event>FormResult (Success As Boolean, UserPrefersAdFreeOption As Boolean)</event>
+        <method>
+            <name DesignerName="Initialize">Initialize::</name>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="RequestInfoUpdate">RequestInfoUpdate:</name>
+            <comment>Requests the current consent state. Raises the InfoUpdated event.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>PublishersIds</name>
+                <type>B4IList*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="LogDeviceIdForDebugging">LogDeviceIdForDebugging</name>
+            <comment>Logs the device id that can be used to set the debug geographic location.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name DesignerName="AddTestDevice">AddTestDevice:</name>
+            <comment>Adds a test device. Call LogDeviceIdForDebugging to get the device id.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DeviceId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="SetDebugGeography">SetDebugGeography:</name>
+            <comment>Set the geographic location of the test devices.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>InEea</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="ShowConsentForm">ShowConsentForm::::::</name>
+            <comment>Shows the consent form.
+Page - The container page.
+PrivacyURL - Link to your privacy policy.
+PersonalizedOption - Whether to show the personalized ads option.
+NonPersonalizedOption - Whether to show the non-personalized ads option.
+AdFreeOption - Whether to show the ads free option.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bi</name>
+                <type>B4I*</type>
+            </parameter>
+            <parameter>
+                <name>Page</name>
+                <type>B4IPage*</type>
+            </parameter>
+            <parameter>
+                <name>PrivacyURL</name>
+                <type>NSString*</type>
+            </parameter>
+            <parameter>
+                <name>PersonalizedOption</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>NonPersonalizedOption</name>
+                <type>BOOL</type>
+            </parameter>
+            <parameter>
+                <name>AdFreeOption</name>
+                <type>BOOL</type>
+            </parameter>
+        </method>
+        <property>
+            <name>STATE_PERSONALIZED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_NON_PERSONALIZED</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>STATE_UNKNOWN</name>
+            <returntype>int</returntype>
+        </property>
+        <property>
+            <name>ConsentState</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>p</name>
+                <type>int</type>
+            </parameter>
+        </property>
+        <property>
+            <name>IsRequestLocationInEeaOrUnknown</name>
+            <returntype>BOOL</returntype>
+        </property>
+    </class>
+    <class>
+        <name>B4IAdRequestBuilder</name>
+        <shortname>AdRequestBuilder</shortname>
+        <objectwrapper>GADRequest*</objectwrapper>
+        <method>
+            <name DesignerName="IsInitialized">IsInitialized</name>
+            <comment>Tests whether this object was initialized.</comment>
+            <returntype>BOOL</returntype>
+        </method>
+        <method>
+            <name DesignerName="Initialize">Initialize</name>
+            <returntype>B4IAdRequestBuilder*</returntype>
+        </method>
+        <method>
+            <name DesignerName="AddTestDevice">AddTestDevice:</name>
+            <comment>Don't use. Does not do anything.</comment>
+            <returntype>B4IAdRequestBuilder*</returntype>
+            <parameter>
+                <name>DeviceId</name>
+                <type>NSString*</type>
+            </parameter>
+        </method>
+        <method>
+            <name DesignerName="NonPersonalizedAds">NonPersonalizedAds</name>
+            <comment>Requests non-personalized ads.</comment>
+            <returntype>B4IAdRequestBuilder*</returntype>
+        </method>
+        <property>
+            <name>Tag</name>
+            <comment>Gets or sets the Tag object. This is a placeholder for any object you like to tie to this object.</comment>
+            <returntype>NSObject*</returntype>
+            <parameter>
+                <name>p</name>
+                <type>NSObject*</type>
+            </parameter>
+        </property>
+    </class>
+    <version>1.7</version>
     <dependsOn>AVFoundation.framework</dependsOn>
     <dependsOn>AudioToolbox.framework</dependsOn>
     <dependsOn>AdSupport.framework</dependsOn>
@@ -400,4 +652,8 @@ Note that you can show it whenever you like.</comment>
     <dependsOn>SystemConfiguration.framework</dependsOn>
     <dependsOn>CoreMedia.framework</dependsOn>
     <dependsOn>GoogleMobileAds.framework.3</dependsOn>
+    <dependsOn>MediaPlayer.framework</dependsOn>
+    <dependsOn>SafariServices.framework</dependsOn>
+    <dependsOn>CoreBluetooth.framework</dependsOn>
+    <dependsOn>MobileCoreServices.framework</dependsOn>
 </root>
