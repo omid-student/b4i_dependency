@@ -129,6 +129,11 @@ Public Sub ExecuteRequest(Arg As Map,Headers As Map)
 	
 	#region Add Headers
 	job.GetRequest.SetHeader("Cache-Control","no-store, no-cache, must-revalidate, max-age=0")
+	job.GetRequest.SetHeader("vc",Application.VersionCode)
+	job.GetRequest.SetHeader("vn",Application.VersionName)
+	job.GetRequest.SetHeader("pn",Application.PackageName)
+	job.GetRequest.SetHeader("os","ios")
+	
 	If job.GetRequest.Timeout <> 40000 Then
 		job.GetRequest.Timeout = 16000
 	End If
