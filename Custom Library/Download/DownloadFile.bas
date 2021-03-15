@@ -1,5 +1,5 @@
 ﻿B4i=true
-Group=Default Group
+Group=Libraries
 ModulesStructureVersion=1
 Type=Class
 Version=4.81
