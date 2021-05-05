@@ -8,6 +8,7 @@ Private Sub Class_Globals
 	Private dialog As CustomLayoutDialog
 	Private base As Panel
 	Private pr As PersianCalendar
+	Private default_Date() As String
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -44,6 +45,10 @@ End Sub
 #IgnoreWarnings: 12
 Sub GetPersianCalendar As PersianCalendar
 	Return pr
+End Sub
+
+Sub date2(day As String,month As String,year As String)
+	pr.SetDate(year,month,day)
 End Sub
 
 Sub Show(Title As String) As ResumableSub

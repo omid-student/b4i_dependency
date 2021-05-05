@@ -634,7 +634,11 @@ Sub HideKeyboard(Page As Object)
 		p = Page
 		p.ResignFocus
 	Else
+		#if no_b4xpage
+		
+		#else
 		B4XPages.GetNativeParent(Page).ResignFocus
+		#End If
 	End If
 	
 End Sub
@@ -670,8 +674,9 @@ Sub InputAccessoryView(TextField2 As TextField,Button2 As Button)
 	no.SetField("inputAccessoryView",Button2)
 End Sub
 
-'use after set text to view
-Sub Linkify(tv As TextView)
+'use after set text to view\
+'format parameter and linkcolor is for android
+Sub LinkifyTextView(tv As TextView,format As Int,LinkColor As Int)
 	Dim no As NativeObject = tv
 	no.SetField("editable", False)
 	no.SetField("Selectable", True)
@@ -999,10 +1004,13 @@ view.transform = CGAffineTransformMakeRotation(angle);
 
 Sub SetHintColor(TextField As TextField, Color As Int)
 	
-	Dim NoTxtField As NativeObject = TextField
-	Dim AttrTxt As AttributedString
-	AttrTxt.Initialize(TextField.HintText,TextField.Font,Color)
-	NoTxtField.SetField("attributedPlaceholder",AttrTxt)
+	Try
+		Dim NoTxtField As NativeObject = TextField
+		Dim AttrTxt As AttributedString
+		AttrTxt.Initialize(TextField.HintText,TextField.Font,Color)
+		NoTxtField.SetField("attributedPlaceholder",AttrTxt)
+	Catch
+	End Try
 	
 End Sub
 

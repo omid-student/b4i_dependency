@@ -9,7 +9,7 @@ Module1=DownloadFile
 NumberOfFiles=1
 NumberOfLibraries=3
 NumberOfModules=1
-Version=5.3
+Version=6.8
 @EndOfDesignText@
 'Code module
 #Region  Project Attributes 
